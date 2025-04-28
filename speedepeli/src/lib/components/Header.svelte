@@ -1,8 +1,9 @@
 <script lang="ts">
+  let { text, logo }: { text: string; logo?: string } = $props();
 </script>
 
 <header>
-<h1>SpeedepeliPro</h1>
+<h1>{text}</h1>
 </header>
 
 <style>
