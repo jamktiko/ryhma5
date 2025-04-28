@@ -6,8 +6,8 @@
   style="
     background: {color};
     opacity: {active ? 1 : 0.5};
-    width: 100px;
-    height: 100px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     border: none;
     margin: 8px;

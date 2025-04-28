@@ -64,3 +64,23 @@
 		/>
 	</div>
 </div>
+
+<style>
+	.game-container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 20px;
+	}
+ 
+	.score-display {
+			margin-bottom: 20px;
+			text-align: center;
+	}
+ 
+	.button-container {
+			display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 30px;
+	}
+</style>
