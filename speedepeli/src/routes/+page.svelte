@@ -74,8 +74,8 @@
 <div class="game-container">
 	{#if gameOver}
 		<div class="game-over">
-			<h2>Hävisit! pisteet:{score}</h2>
-			<button onclick={restartGame}>Restart</button>
+			<h2>HÄVISIT! PISTEET:{score}</h2>
+			<button class="restart" onclick={restartGame}>RESTART</button>
 		</div>
 	{:else}
 		<div class="score-display">
@@ -96,11 +96,17 @@
 </div>
 
 <style>
+	@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
 	.game-container {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		padding: 20px;
+		padding: 10px;
+		background: rgba(107, 226, 250, 0.55);
+border-radius: 80px;
+border-color: blueviolet;
+border-style:groove;
+border-width: 20px;
 	}
 
 	.score-display {
@@ -111,6 +117,25 @@
 	.button-container {
 		display: grid;
 		grid-template-columns: repeat(4,1fr);
-		gap:10px;
+		gap:5px;
 	}
+	.game-over {
+		font-family: 'Jersey 10';
+}
+.restart
+{
+	font-family: 'Jersey 10';
+	box-sizing: border-box;
+	font-size: medium;
+
+position: absolute;
+width: 73px;
+height: 49px;
+left: 595px;
+top: 200px;
+
+background: rgba(246, 129, 129, 0.71);
+border: 1px solid #000000;
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
 </style>
