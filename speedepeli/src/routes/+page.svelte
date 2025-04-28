@@ -51,7 +51,6 @@
 	<div class="score-display">
 		<h2>Score: {score}</h2>
 		<p>Active color: {activeColor}</p>
-		<p>Last clicked: {lastClicked || 'None'}</p>
 	</div>
 	<div class="button-container">
 		<Button color="red" active={activeColor === 'red'} onClick={() => handleClick('red')} />
