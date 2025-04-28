@@ -59,3 +59,24 @@
 		/>
 	</div>
 </div>
+
+<style>
+	.game-container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 20px;
+	}
+ 
+	.score-display {
+			margin-bottom: 20px;
+			text-align: center;
+	}
+ 
+	.button-container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			max-width: 250px;
+	}
+</style>
