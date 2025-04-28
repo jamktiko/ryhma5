@@ -4,7 +4,7 @@ import Footer from '$lib/components/Footer.svelte';
 let year = new Date().getFullYear();
 let { children } = $props();
 </script>
-<Header text="SpeedepeliPRo"/>
+<Header text="Speede Game Pro"/>
 <main>
 {@render children()}
 </main>
