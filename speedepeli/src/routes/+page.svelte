@@ -109,9 +109,8 @@
 	}
 
 	.button-container {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		max-width: 250px;
+		display: grid;
+		grid-template-columns: repeat(4,1fr);
+		gap:10px;
 	}
 </style>
