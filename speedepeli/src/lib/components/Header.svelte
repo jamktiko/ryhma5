@@ -3,7 +3,7 @@
 </script>
 
 <header>
-<h1>{text}</h1>
+<h1>Speede Game Pro</h1>
 </header>
 
 <style>
