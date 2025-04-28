@@ -54,17 +54,17 @@
 		setRandomColor();
 		startInterval();
 	}
-	// Start the game when component is mounted
+	// Aloittaa pelin, kun komponentti on ladattu
+	// ja asettaa värit satunnaisesti
 	onMount(() => {
-		// Set initial random color
 		setRandomColor();
 
-		// Start interval to change colors
+		// Asettaa satunnaisen värin ja aloittaa pelin
 		intervalId = setInterval(() => {
 			setRandomColor();
 		}, gameSpeed);
 
-		// Clean up interval when component is destroyed
+		// Siivoaa intervalin, kun komponentti tuhotaan
 		return () => {
 			clearInterval(intervalId);
 		};
@@ -110,7 +110,7 @@
 
 	.button-container {
 		display: grid;
-		grid-template-columns: repeat(4,1fr);
-		gap:10px;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 10px;
 	}
 </style>
