@@ -1,9 +1,14 @@
 <script lang="ts">
+  import { page } from '$app/stores';
   let { text, logo }: { text: string; logo?: string } = $props();
 </script>
 
 <header>
 <h1>{text}</h1>
+<nav>
+  <a href="/" class:is-active={$page.url.pathname === '/'}>Peli</a> /
+	<a href="/about" class:is-active={$page.url.pathname === '/about'}>About sivu</a>
+</nav>
 </header>
 
 <style>
