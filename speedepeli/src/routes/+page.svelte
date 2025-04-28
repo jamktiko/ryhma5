@@ -100,7 +100,12 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		padding: 20px;
+		padding: 10px;
+		background: rgba(107, 226, 250, 0.55);
+		border-radius: 80px;
+		border-color: blueviolet;
+		border-style: groove;
+		border-width: 20px;
 	}
 
 	.score-display {
@@ -112,5 +117,7 @@
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		gap: 10px;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 5px;
 	}
 </style>
