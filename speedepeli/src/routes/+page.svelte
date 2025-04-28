@@ -24,6 +24,11 @@
 			score = Math.max(0, score - 1);
 			console.log('Väärin!' + score);
 		}
+		clearInterval(intervalId); // Pysäytä väri vaihtumasta
+		setRandomColor(); // Aseta uusi väri heti
+		intervalId = setInterval(() => {
+			setRandomColor(); // Vaihda väri uudelleen
+		}, gameSpeed); // Käynnistä väri vaihtuminen uudelleen
 	}
 	// Start the game when component is mounted
 	onMount(() => {
