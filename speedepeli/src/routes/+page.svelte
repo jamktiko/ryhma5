@@ -1,8 +1,18 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
-	let activeColor = 'red';
+	import { onMount, onDestroy } from 'svelte';
+	const colors = ['red', 'blue', 'green', 'yellow'];
+	let activeColor = 'red'; // aloitusväri
 	let score = 0;
-	let lastClicked = '';
+	let lastClicked = ''; // viimeksi klikattu väri
+	let intervalId: ReturnType<typeof setInterval>; // tallentaa setIntervalin ID:n, jotta voimme puhdistaa sen myöhemmin
+	let gameSpeed = 2000; // kertoo pelin nopeuden, kuinka usein väri vaihtuu (2 sekuntia)
+
+	function setRandomColor() {
+		const randomIndex = Math.floor(Math.random() * colors.length);
+		activeColor = colors[randomIndex];
+		console.log('Active color:', activeColor);
+	}
 
 	function handleClick(color: string) {
 		console.log('klikattu', color);
@@ -15,6 +25,21 @@
 			console.log('Väärin!' + score);
 		}
 	}
+	// Start the game when component is mounted
+	onMount(() => {
+		// Set initial random color
+		setRandomColor();
+
+		// Start interval to change colors
+		intervalId = setInterval(() => {
+			setRandomColor();
+		}, gameSpeed);
+
+		// Clean up interval when component is destroyed
+		return () => {
+			clearInterval(intervalId);
+		};
+	});
 </script>
 
 <div class="game-container">
