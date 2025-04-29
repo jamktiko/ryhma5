@@ -17,6 +17,7 @@
 	let gameOver = false; // peli päättynyt -tilamuuttuja
 	let clickedThisRound = false; // tarkistaa, onko pelaaja klikannut väriä tällä kierroksella
 	let showModal = false; // näyttääkö pelin päättymisen jälkeen modalin
+  let highscoreList:number[]=[]; // highscore lista
 
 	function handleKeyPress(event: KeyboardEvent) {
 		if (gameOver) return; // Jos peli on päättynyt, ei tehdä mitään
@@ -68,6 +69,9 @@
 		gameOver = true; 	// Aseta peli päättymään
 		showModal = true; // Näytä pelin päättymisen modal
 		console.log('Game Over!'); 	// debuggaus
+    // tallenna score taulukkoon
+    highscoreList.push(score);
+    console.log(highscoreList)
 	}
 	function restartGame() {
 		score = 0;
