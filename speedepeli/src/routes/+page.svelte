@@ -12,28 +12,28 @@
 
 	function setRandomColor() {
 		clickedThisRound = false; // Nollaa klikkaustila ennen uuden värin asettamista
-		const randomIndex = Math.floor(Math.random() * colors.length);
-		activeColor = colors[randomIndex];
-		console.log('Active color:', activeColor);
+		const randomIndex = Math.floor(Math.random() * colors.length); // satunnainen indeksi väreistä
+		activeColor = colors[randomIndex]; // satunnainen väri
+		console.log('Active color:', activeColor); // debuggaus
 	}
 
-	function handleClick(color: string) {
+	function handleClick(color: string) { 
 		if (gameOver) return; // Jos peli on päättynyt, ei tehdä mitään
 		console.log('klikattu', color);
-		lastClicked = color;
+		lastClicked = color; // viimeksi klikattu väri
 		clickedThisRound = true; // Pelaaja on klikannut väriä tällä kierroksella
 		if (color === activeColor) {
 			score += 1;
 			console.log('Oikein! Pisteet: ' + score);
-			clearInterval(intervalId);
-			setRandomColor();
-			startInterval();
+			clearInterval(intervalId); // Pysäytä edellinen interval
+			setRandomColor(); // Aseta uusi satunnainen väri
+			startInterval(); // Aloita uusi interval
 		} else {
-			triggerGameOver();
+			triggerGameOver(); // Jos väri on väärä, peli päättyy
 		}
 	}
-	function startInterval() {
-		intervalId = setInterval(() => {
+	function startInterval() { // Asettaa uuden intervalin, joka vaihtaa väriä
+		intervalId = setInterval(() => { 
 			if (!clickedThisRound) {
 				// Jos ei klikattu ennen ajan loppumista
 				triggerGameOver();
@@ -42,7 +42,7 @@
 			}
 		}, gameSpeed);
 	}
-	function triggerGameOver() {
+	function triggerGameOver() { 
 		clearInterval(intervalId);
 		gameOver = true;
 		console.log('Game Over!');
