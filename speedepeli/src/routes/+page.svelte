@@ -10,3 +10,4 @@
 {#if showAbout}
 	<About hideModal={() => (showAbout = false)} />
 {/if}
+<a href="/highscore" class:is-active={$page.url.pathname === '/highscore'}>Highscore</a>
