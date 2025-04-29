@@ -1,12 +1,12 @@
 <script lang="ts">
-  import Modal from '$lib/components/Modal.svelte';
+  import ModalAbout from '$lib/components/Modal.svelte';
   interface Props {
   hideModal: () => void;
 }
 
 let {hideModal }: Props = $props();
 </script>
-<Modal>
+<ModalAbout>
   {#snippet header()}
   <h1>Tietoja pelistä</h1>
 {/snippet}
@@ -24,4 +24,4 @@ let {hideModal }: Props = $props();
 {#snippet footer()}
   <button onclick={hideModal}>Sulje</button>
 {/snippet}
-</Modal>
+</ModalAbout>
