@@ -60,7 +60,7 @@
 	</div>
 
 	{#snippet footer()}
-		<button onclick={hideModal}>Sulje</button>
+		<button class="sulje-nappi" onclick={hideModal}>X</button>
 	{/snippet}
 </ModalAbout>
 
@@ -154,19 +154,20 @@
 		outline-offset: -0.5px;
 	}
 
-	.icon {
+	/* .icon {
 		left: 22.75px;
 		top: 22.75px;
 		position: absolute;
-	}
+	} */
 
-	.x {
-		width: 91px;
-		height: 91px;
+	.sulje-nappi {
+		width: 80px;
+		height: 80px;
 		left: 504px;
-		top: 5px;
+		top: 30px;
 		position: absolute;
 		overflow: hidden;
+		font-size: 50px
 	}
 
 	.info {
