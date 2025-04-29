@@ -1,19 +1,19 @@
 <script lang="ts">
   import { page } from '$app/stores';
   let { text, logo }: { text: string; logo?: string } = $props();
-  import About from '$lib/components/About.svelte';
-  let showAbout = $state(false);
+  // import About from '$lib/components/About.svelte';
+  // let showAbout = $state(false);
 </script>
 
 <header>
 <h1>{text}</h1>
 <nav>
-  <a href="/" class:is-active={$page.url.pathname === '/'}>Peli</a> /
-  <button onclick={() => (showAbout = true)}>About</button> 
+  <a href="/" class:is-active={$page.url.pathname === '/'}>Aloitus sivu</a> 
+  <!-- <button onclick={() => (showAbout = true)}>About</button>  -->
 </nav>
-{#if showAbout}
+<!-- {#if showAbout}
   <About hideModal={() => (showAbout = false)} />
-{/if}
+{/if} -->
 </header>
 
 <style>
