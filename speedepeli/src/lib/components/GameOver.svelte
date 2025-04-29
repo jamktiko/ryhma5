@@ -45,7 +45,7 @@
 			<span class="gameoverklikkasitvrvri_span">Game over!<br />Klikkasit väärää väriä!</span>
 		</div>
 		<div data-layer="Line 1" class="line-1"></div>
-		<div data-layer="X" data-size="48" class="x">
+		<div data-layer="sulje-nappi" data-size="48" class="sulje-nappi">
 			<div data-svg-wrapper data-layer="Icon" class="icon">
 				<svg
 					width="51"
@@ -80,8 +80,8 @@
 	</div>
 
 	{#snippet footer()}
-		<button onclick={hideModal}>Sulje</button>
-		<button
+		<button class="sulje-nappi" onclick={hideModal}>X</button>
+		<button class="ressu-nappi"
 			onclick={() => {
 				hideModal();
 			}}>Restart</button
@@ -222,17 +222,27 @@
 		position: absolute;
 	}
 
-	.icon {
+	 /* .icon {
 		left: 22.75px;
 		top: 22.75px;
 		position: absolute;
+	} */
+
+	.sulje-nappi {
+		width: 80px;
+		height: 80px;
+		left: 504px;
+		top: 30px;
+		position: absolute;
+		overflow: hidden;
+		font-size: 50px
 	}
 
-	.x {
-		width: 91px;
-		height: 91px;
-		left: 504px;
-		top: 5px;
+	.ressu-nappi {
+		width: 80px;
+		height: 80px;
+		left: 400px;
+		top: 30px;
 		position: absolute;
 		overflow: hidden;
 	}
@@ -242,4 +252,5 @@
 		height: 600px;
 		position: relative;
 	}
+
 </style>
