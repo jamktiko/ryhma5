@@ -91,6 +91,7 @@
 </Modal>
 
 <style>
+	@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
 	.rectangle-1 {
 		width: 600px;
 		height: 600px;
@@ -105,7 +106,7 @@
 	.gameoverklikkasitvrvri_span {
 		color: black;
 		font-size: 96px;
-		font-family: Jersey 10;
+		font-family: 'Jersey 10';
 		font-weight: 400;
 		word-wrap: break-word;
 	}
@@ -142,8 +143,8 @@
 
 	.f000_span {
 		color: #ff0000;
-		font-size: 128px;
-		font-family: Jacquarda Bastarda 9;
+		font-size: 90px;
+		font-family: 'Jersey 10';
 		font-weight: 400;
 		letter-spacing: 3.84px;
 		word-wrap: break-word;
@@ -153,7 +154,7 @@
 		width: 191px;
 		height: 472px;
 		left: 37px;
-		top: 364px;
+		top: 335px;
 		position: absolute;
 		text-align: center;
 		justify-content: center;
@@ -190,7 +191,7 @@
 	.f000_01_span {
 		color: #ff0000;
 		font-size: 48px;
-		font-family: Jersey 10;
+		font-family: 'Jersey 10';
 		font-weight: 400;
 		letter-spacing: 1.44px;
 		word-wrap: break-word;
@@ -211,7 +212,7 @@
 	.rank_span {
 		color: rgba(0, 0, 0, 0.63);
 		font-size: 48px;
-		font-family: Jersey 10;
+		font-family: 'Jersey 10';
 		font-weight: 400;
 		letter-spacing: 0.96px;
 		word-wrap: break-word;
