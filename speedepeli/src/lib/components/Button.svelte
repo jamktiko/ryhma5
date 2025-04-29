@@ -20,3 +20,12 @@
   <span class="key-label">{keyLabel}</span>
 {/if}
 </button>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+  .key-label {
+    font-family: 'Jersey 10';
+    font-size: 150px;
+    color: grey;
+  }
+</style>
