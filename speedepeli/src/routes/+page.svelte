@@ -7,7 +7,7 @@
 	let score = 0;
 	let lastClicked = ''; // viimeksi klikattu väri
 	let intervalId: ReturnType<typeof setInterval>; // tallentaa setIntervalin ID:n, jotta voimme puhdistaa sen myöhemmin
-	let gameSpeed = 3000; // kertoo pelin nopeuden, kuinka usein väri vaihtuu (2 sekuntia)
+	let gameSpeed = 2000; // kertoo pelin nopeuden, kuinka usein väri vaihtuu (2 sekuntia)
 	let gameOver = false; // peli päättynyt -tilamuuttuja
 	let clickedThisRound = false; // tarkistaa, onko pelaaja klikannut väriä tällä kierroksella
 	let showModal = false; // näyttääkö pelin päättymisen jälkeen modalin
