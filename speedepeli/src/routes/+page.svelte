@@ -9,8 +9,7 @@
 	let gameSpeed = 3000; // kertoo pelin nopeuden, kuinka usein väri vaihtuu (2 sekuntia)
 	let gameOver = false; // peli päättynyt -tilamuuttuja
 	let clickedThisRound = false; // tarkistaa, onko pelaaja klikannut väriä tällä kierroksella
-
-	function setRandomColor() {
+  function setRandomColor() {
 		clickedThisRound = false; // Nollaa klikkaustila ennen uuden värin asettamista
 		const randomIndex = Math.floor(Math.random() * colors.length); // satunnainen indeksi väreistä
 		activeColor = colors[randomIndex]; // satunnainen väri
