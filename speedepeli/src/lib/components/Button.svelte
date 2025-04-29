@@ -1,5 +1,5 @@
 <script lang="ts">
-  let { color, active = false, onClick } = $props();
+  let { color, active = false, onClick, keyLabel } = $props();
 </script>
 
 <button
@@ -16,4 +16,7 @@
   onclick={onClick}
   aria-label="Interactive button"
 >
+{#if keyLabel}
+  <span class="key-label">{keyLabel}</span>
+{/if}
 </button>

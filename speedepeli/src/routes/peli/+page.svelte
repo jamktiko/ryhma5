@@ -3,6 +3,12 @@
 	import GameOver from '$lib/components/GameOver.svelte';
 	import { onMount, onDestroy } from 'svelte';
 	const colors = ['red', 'blue', 'green', 'yellow'];
+	const keyMappings = {
+		'a': 'red',
+		's': 'yellow',
+		'd': 'green',
+		'f': 'blue',
+	}
 	let activeColor = 'red'; // aloitusväri
 	let score = 0;
 	let lastClicked = ''; // viimeksi klikattu väri
@@ -11,6 +17,15 @@
 	let gameOver = false; // peli päättynyt -tilamuuttuja
 	let clickedThisRound = false; // tarkistaa, onko pelaaja klikannut väriä tällä kierroksella
 	let showModal = false; // näyttääkö pelin päättymisen jälkeen modalin
+
+	function handleKeyPress(event: KeyboardEvent) {
+		if (gameOver) return; // Jos peli on päättynyt, ei tehdä mitään
+		const key = event.key.toLowerCase(); // Muuta näppäin pieniksi kirjaimiksi
+    if (key in keyMappings) {
+      const color = keyMappings[key as keyof typeof keyMappings];
+      handleClick(color); // Klikkaa väriä, joka vastaa näppäintä
+		}
+	}
 
 	function hideModal() {
 		showModal = false; // sulje modal
@@ -65,18 +80,18 @@
 	// Aloittaa pelin, kun komponentti on ladattu
 	// ja asettaa värit satunnaisesti
 	onMount(() => {
-		setRandomColor();
-
-		// Asettaa satunnaisen värin ja aloittaa pelin
-		intervalId = setInterval(() => {
-			setRandomColor();
-		}, gameSpeed);
-
-		// Siivoaa intervalin, kun komponentti tuhotaan
-		return () => {
-			clearInterval(intervalId);
-		};
-	});
+    setRandomColor();
+    startInterval();
+    
+    // Add keyboard event listener
+    window.addEventListener('keydown', handleKeyPress);
+    
+    return () => {
+      clearInterval(intervalId);
+      // Remove keyboard event listener on cleanup
+      window.removeEventListener('keydown', handleKeyPress);
+    };
+  });
 </script>
 
 <div class="game-container">
@@ -85,14 +100,15 @@
     <p>Active color: {activeColor}</p>
   </div>
   <div class="button-container">
-    <Button color="red" active={activeColor === 'red'} onClick={() => handleClick('red')} />
-    <Button color="blue" active={activeColor === 'blue'} onClick={() => handleClick('blue')} />
-    <Button color="green" active={activeColor === 'green'} onClick={() => handleClick('green')} />
-    <Button
-      color="yellow"
-      active={activeColor === 'yellow'}
-      onClick={() => handleClick('yellow')}
-    />
+    <Button color="red" active={activeColor === 'red'} onClick={() => handleClick('red')} keyLabel='A' />
+			<Button
+				color="yellow"
+				active={activeColor === 'yellow'}
+				onClick={() => handleClick('yellow')}
+				keyLabel='S'
+			/>
+			<Button color="green" active={activeColor === 'green'} onClick={() => handleClick('green')} keyLabel='D' />
+    <Button color="blue" active={activeColor === 'blue'} onClick={() => handleClick('blue')} keyLabel='F' />
   </div>
 </div>
 
