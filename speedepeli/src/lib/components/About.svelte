@@ -65,6 +65,7 @@
 </ModalAbout>
 
 <style>
+	@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
 	.rectangle-1 {
 		width: 600px;
 		height: 600px;
@@ -79,7 +80,7 @@
 	.speedeonreaktiopelijokatestaareaktiokykyjsijatarkkuuttasi_span {
 		color: black;
 		font-size: 32px;
-		font-family: Jersey 10;
+		font-family: 'Jersey 10';
 		font-weight: 400;
 		word-wrap: break-word;
 	}
@@ -96,7 +97,7 @@
 	.pelissonkolmeerimodeajotkatarjoavateripelitapoja_span {
 		color: black;
 		font-size: 32px;
-		font-family: Jersey 10;
+		font-family: 'Jersey 10';
 		font-weight: 400;
 		word-wrap: break-word;
 	}
@@ -113,7 +114,7 @@
 	.classicajoitettu_span {
 		color: black;
 		font-size: 32px;
-		font-family: Jersey 10;
+		font-family: 'Jersey 10';
 		font-weight: 400;
 		word-wrap: break-word;
 	}
@@ -130,7 +131,7 @@
 	.kehittjttatuolkinuoraaapohampaalateemujalavaoskaripuranen_span {
 		color: black;
 		font-size: 32px;
-		font-family: Jersey 10;
+		font-family: 'Jersey 10';
 		font-weight: 400;
 		word-wrap: break-word;
 	}
