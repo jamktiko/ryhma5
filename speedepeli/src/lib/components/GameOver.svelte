@@ -71,7 +71,7 @@
 				<br /></span
 			>
 		</div>
-		<div data-layer="score" class="score"><span class="score_span">score:</span></div>
+		<div data-layer="score" class="score"><span class="score_span">Score:</span></div>
 		<div data-layer="score counter" class="score-counter_01"></div>
 		<div data-layer="1000" class="text-1000_01">
 			<span class="f000_01_span"><div class="game-rank"><p>{rank}</p></div></span>
