@@ -206,6 +206,7 @@
 		margin-bottom: 20px;
 		text-align: center;
 		font-family: 'Jersey 10';
+		font-size: 25px;
 	}
 
 	.button-container {
@@ -217,5 +218,6 @@
 	}
 	.countdown-display {
 		font-family: 'Jersey 10';
+		font-size: 60px;
 	}
 </style>
