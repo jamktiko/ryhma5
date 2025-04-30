@@ -29,6 +29,12 @@
 			"name": "Ylisuorittaja",
 			"min_points": 81,
 			"max_points": 100
+		},
+		{
+			"id": 6,
+			"name": "Hyvä Teemu!",
+			"min_points": 200,
+			"max_points": 300
 		}
 	]
 }
