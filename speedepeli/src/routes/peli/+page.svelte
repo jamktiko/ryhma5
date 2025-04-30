@@ -1,4 +1,5 @@
 <script lang="ts">
+	import {lista} from '$lib/components/highscore.svelte.js';
 	import Button from '$lib/components/Button.svelte';
 	import GameOver from '$lib/components/GameOver.svelte';
 	import { onMount, onDestroy } from 'svelte';
@@ -9,15 +10,15 @@
 		'd': 'green',
 		'f': 'blue',
 	}
-	let activeColor = 'red'; // aloitusväri
-	let score = 0;
+	let activeColor = $state('red'); // aloitusväri
+	let score = $state(0);
 	let lastClicked = ''; // viimeksi klikattu väri
 	let intervalId: ReturnType<typeof setInterval>; // tallentaa setIntervalin ID:n, jotta voimme puhdistaa sen myöhemmin
 	let gameSpeed = 2000; // kertoo pelin nopeuden, kuinka usein väri vaihtuu (2 sekuntia)
 	let gameOver = false; // peli päättynyt -tilamuuttuja
 	let clickedThisRound = false; // tarkistaa, onko pelaaja klikannut väriä tällä kierroksella
-	let showModal = false; // näyttääkö pelin päättymisen jälkeen modalin
-  let highscoreList:number[]=[]; // highscore lista
+	let showModal = $state(false); // näyttääkö pelin päättymisen jälkeen modalin
+  let highscoreList:number[]=$state([]); // highscore lista
 
 	function handleKeyPress(event: KeyboardEvent) {
 		if (gameOver) return; // Jos peli on päättynyt, ei tehdä mitään
@@ -70,8 +71,9 @@
 		showModal = true; // Näytä pelin päättymisen modal
 		console.log('Game Over!'); 	// debuggaus
     // tallenna score taulukkoon
-    highscoreList.push(score);
-    console.log(highscoreList)
+	highscoreList.push(score);
+	console.log(highscoreList)
+	lista.set(highscoreList);
 	}
 	function restartGame() {
 		score = 0;
