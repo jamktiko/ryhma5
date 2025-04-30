@@ -19,7 +19,7 @@
 			></span
 		>
 	</div>
-	<div data-layer="Info" class="info">
+	<!-- <div data-layer="Info" class="info">
 		<div data-svg-wrapper data-layer="Ellipse 1" class="ellipse-1">
 			<svg
 				width="57"
@@ -30,15 +30,14 @@
 			>
 				<circle cx="28.5" cy="28.5" r="28.5" fill="white" />
 			</svg>
-		</div>
+		</div> -->
 		<div data-svg-wrapper data-layer="Info" data-size="48" class="info_01">
-			<button onclick={() => (showAbout = true)}>About</button>
+			<button class="about" onclick={() => (showAbout = true)}>i</button>
 			{#if showAbout}
 				<About hideModal={() => (showAbout = false)} />
 			{/if}
 		</div>
 	</div>
-</div>
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
@@ -121,15 +120,29 @@
 		position: absolute;
 	}
 
-	.ellipse-1 {
+	/* .ellipse-1 {
 		left: 0px;
 		top: 0px;
 		position: absolute;
-	}
+	} */
 
 	.info {
 		width: 57px;
 		height: 57px;
 		position: relative;
+	}
+	.about
+	{
+		width: 80px;
+		height: 80px;
+		border-radius: 50px;
+		position: absolute;
+		left: 1280px;
+		top: 5px;
+		background: linear-gradient(180.58deg, #FE4545 40.5%, #F20C0C 54.6%, #990000 89.86%);
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.63);
+		backdrop-filter: blur(4.3px);
+		font-size: 50px;
+
 	}
 </style>
