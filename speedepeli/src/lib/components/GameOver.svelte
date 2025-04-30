@@ -81,7 +81,8 @@
 
 	{#snippet footer()}
 		<button class="sulje-nappi" onclick={hideModal}>X</button>
-		<button class="ressu-nappi"
+		<button
+			class="ressu-nappi"
 			onclick={() => {
 				hideModal();
 			}}>Restart</button
@@ -223,7 +224,7 @@
 		position: absolute;
 	}
 
-	 /* .icon {
+	/* .icon {
 		left: 22.75px;
 		top: 22.75px;
 		position: absolute;
@@ -236,7 +237,7 @@
 		top: 30px;
 		position: absolute;
 		overflow: hidden;
-		font-size: 50px
+		font-size: 50px;
 	}
 
 	.ressu-nappi {
@@ -253,5 +254,4 @@
 		height: 600px;
 		position: relative;
 	}
-
 </style>

@@ -8,7 +8,9 @@
 <header>
 <h1>{text}</h1>
 <nav>
+  {#if $page.url.pathname !== '/'}
   <a href="/" class:is-active={$page.url.pathname === '/'}>Aloitus sivu</a> 
+  {/if}
   <!-- <button onclick={() => (showAbout = true)}>About</button>  -->
 </nav>
 <!-- {#if showAbout}
