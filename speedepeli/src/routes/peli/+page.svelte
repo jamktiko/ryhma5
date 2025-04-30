@@ -1,31 +1,32 @@
 <script lang="ts">
+	import {lista} from '$lib/components/highscore.svelte.js';
 	import Button from '$lib/components/Button.svelte';
 	import GameOver from '$lib/components/GameOver.svelte';
 	import { onMount, onDestroy } from 'svelte';
 	const colors = ['red', 'blue', 'green', 'yellow'];
 	const keyMappings = {
-		a: 'red',
-		s: 'yellow',
-		d: 'green',
-		f: 'blue'
-	};
-	let activeColor = 'red'; // aloitusväri
-	let score = 0;
+		'a': 'red',
+		's': 'yellow',
+		'd': 'green',
+		'f': 'blue',
+	}
+	let activeColor = $state('red'); // aloitusväri
+	let score = $state(0);
 	let lastClicked = ''; // viimeksi klikattu väri
 	let intervalId: ReturnType<typeof setInterval>; // tallentaa setIntervalin ID:n, jotta voimme puhdistaa sen myöhemmin
-	let gameSpeed = 2000; // kertoo pelin nopeuden, kuinka usein väri vaihtuu (2 sekuntia)
+	let gameSpeed = $state(2000); // kertoo pelin nopeuden, kuinka usein väri vaihtuu (2 sekuntia)
 	let initialGameSpeed = 2000;
 	let speedIncreaseInterval = 10; // pisteet, jonka jälkeen nopeus kasvaa
 	let speedDecreaseAmount = 100; // peliaika vähenee 100ms joka kerta, kun pelaaja saa 10 pistettä
 	let minGameSpeed = 500; // miniminopeus, jota peli ei alita
 	let gameOver = false; // peli päättynyt -tilamuuttuja
 	let clickedThisRound = false; // tarkistaa, onko pelaaja klikannut väriä tällä kierroksella
-	let showModal = false; // näyttääkö pelin päättymisen jälkeen modalin
+	let showModal = $state(false); // näyttääkö pelin päättymisen jälkeen modalin
 	let highscoreList: number[] = []; // highscore lista
 
 	//countdown muuttujat
-	let countdownValue = 3; // aloituslaskuri
-	let isCountingDown = true; // onko laskuri käynnissä
+	let countdownValue = $state(3); // aloituslaskuri
+	let isCountingDown = $state(true); // onko laskuri käynnissä
 	let countdownInterval: ReturnType<typeof setInterval>; // tallentaa setIntervalin ID:n laskurille
 
 	function handleKeyPress(event: KeyboardEvent) {
@@ -105,10 +106,11 @@
 		clearInterval(countdownInterval); // Pysäytä laskuri
 		gameOver = true; // Aseta peli päättymään
 		showModal = true; // Näytä pelin päättymisen modal
-		console.log('Game Over!'); // debuggaus
-		// tallenna score taulukkoon
-		highscoreList.push(score);
-		console.log(highscoreList);
+		console.log('Game Over!'); 	// debuggaus
+    // tallenna score taulukkoon
+	highscoreList.push(score);
+	console.log(highscoreList)
+	lista.set(highscoreList);
 	}
 	function restartGame() {
 		score = 0;
