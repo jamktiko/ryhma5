@@ -14,18 +14,27 @@
 	let score = $state(0);
 	let lastClicked = ''; // viimeksi klikattu väri
 	let intervalId: ReturnType<typeof setInterval>; // tallentaa setIntervalin ID:n, jotta voimme puhdistaa sen myöhemmin
-	let gameSpeed = 2000; // kertoo pelin nopeuden, kuinka usein väri vaihtuu (2 sekuntia)
+	let gameSpeed = $state(2000); // kertoo pelin nopeuden, kuinka usein väri vaihtuu (2 sekuntia)
+	let initialGameSpeed = 2000;
+	let speedIncreaseInterval = 10; // pisteet, jonka jälkeen nopeus kasvaa
+	let speedDecreaseAmount = 100; // peliaika vähenee 100ms joka kerta, kun pelaaja saa 10 pistettä
+	let minGameSpeed = 500; // miniminopeus, jota peli ei alita
 	let gameOver = false; // peli päättynyt -tilamuuttuja
 	let clickedThisRound = false; // tarkistaa, onko pelaaja klikannut väriä tällä kierroksella
 	let showModal = $state(false); // näyttääkö pelin päättymisen jälkeen modalin
-  let highscoreList:number[]=$state([]); // highscore lista
+	let highscoreList: number[] = []; // highscore lista
+
+	//countdown muuttujat
+	let countdownValue = $state(3); // aloituslaskuri
+	let isCountingDown = $state(true); // onko laskuri käynnissä
+	let countdownInterval: ReturnType<typeof setInterval>; // tallentaa setIntervalin ID:n laskurille
 
 	function handleKeyPress(event: KeyboardEvent) {
-		if (gameOver) return; // Jos peli on päättynyt, ei tehdä mitään
+		if (gameOver || isCountingDown) return; // Jos peli on päättynyt, ei tehdä mitään
 		const key = event.key.toLowerCase(); // Muuta näppäin pieniksi kirjaimiksi
-    if (key in keyMappings) {
-      const color = keyMappings[key as keyof typeof keyMappings];
-      handleClick(color); // Klikkaa väriä, joka vastaa näppäintä
+		if (key in keyMappings) {
+			const color = keyMappings[key as keyof typeof keyMappings];
+			handleClick(color); // Klikkaa väriä, joka vastaa näppäintä
 		}
 	}
 
@@ -40,14 +49,20 @@
 		console.log('Active color:', activeColor); // debuggaus
 	}
 
-	function handleClick(color: string) { 
-		if (gameOver) return; // Jos peli on päättynyt, ei tehdä mitään
+	function handleClick(color: string) {
+		if (gameOver || isCountingDown) return; // Jos peli on päättynyt, ei tehdä mitään
 		console.log('klikattu', color);
 		lastClicked = color; // viimeksi klikattu väri
 		clickedThisRound = true; // Pelaaja on klikannut väriä tällä kierroksella
 		if (color === activeColor) {
 			score += 1;
 			console.log('Oikein! Pisteet: ' + score);
+
+			if (score % speedIncreaseInterval === 0) {
+				// Vähennä aikaväliä kiinteällä määrällä, mutta ei alle minimiajan
+				gameSpeed = Math.max(minGameSpeed, gameSpeed - speedDecreaseAmount);
+				console.log('Pelin nopeus kasvaa! Uusi aika: ' + gameSpeed + 'ms');
+			}
 			clearInterval(intervalId); // Pysäytä edellinen interval
 			setRandomColor(); // Aseta uusi satunnainen väri
 			startInterval(); // Aloita uusi interval
@@ -55,8 +70,9 @@
 			triggerGameOver(); // Jos väri on väärä, peli päättyy
 		}
 	}
-	function startInterval() { // Asettaa uuden intervalin, joka vaihtaa väriä
-		intervalId = setInterval(() => { 
+	function startInterval() {
+		// Asettaa uuden intervalin, joka vaihtaa väriä
+		intervalId = setInterval(() => {
 			if (!clickedThisRound) {
 				// Jos ei klikattu ennen ajan loppumista
 				triggerGameOver();
@@ -65,9 +81,30 @@
 			}
 		}, gameSpeed);
 	}
-	function triggerGameOver() { 
+	function startCountdown() {
+		isCountingDown = true;
+		countdownValue = 3;
+
+		// Tyhjentää edellisen laskurin varuilta
+		clearInterval(countdownInterval);
+
+		// Aloita countdown
+		countdownInterval = setInterval(() => {
+			countdownValue--;
+
+			if (countdownValue <= 0) {
+				clearInterval(countdownInterval);
+				isCountingDown = false;
+				// Start the actual game
+				setRandomColor();
+				startInterval();
+			}
+		}, 1000);
+	}
+	function triggerGameOver() {
 		clearInterval(intervalId);
-		gameOver = true; 	// Aseta peli päättymään
+		clearInterval(countdownInterval); // Pysäytä laskuri
+		gameOver = true; // Aseta peli päättymään
 		showModal = true; // Näytä pelin päättymisen modal
 		console.log('Game Over!'); 	// debuggaus
     // tallenna score taulukkoon
@@ -80,46 +117,75 @@
 		gameOver = false; // Nollaa peli
 		showModal = false; // Sulje modal
 		lastClicked = '';
-		setRandomColor();
-		startInterval();
+		gameSpeed = initialGameSpeed; // Nollaa pelin nopeus
+		startCountdown(); // Aloita laskuri
 	}
 	// Aloittaa pelin, kun komponentti on ladattu
 	// ja asettaa värit satunnaisesti
 	onMount(() => {
-    setRandomColor();
-    startInterval();
-    
-    // Add keyboard event listener
-    window.addEventListener('keydown', handleKeyPress);
-    
-    return () => {
-      clearInterval(intervalId);
-      // Remove keyboard event listener on cleanup
-      window.removeEventListener('keydown', handleKeyPress);
-    };
-  });
+		startCountdown(); // Aloita laskuri
+
+		// Add keyboard event listener
+		window.addEventListener('keydown', handleKeyPress);
+
+		return () => {
+			clearInterval(intervalId);
+			clearInterval(countdownInterval); // Pysäytä laskuri
+			// Remove keyboard event listener on cleanup
+			window.removeEventListener('keydown', handleKeyPress);
+		};
+	});
 </script>
 
 <div class="game-container">
-  <div class="score-display">
-    <h2>Score: {score}</h2>
-    <p>Active color: {activeColor}</p>
-  </div>
-  <div class="button-container">
-    <Button color="red" active={activeColor === 'red'} onClick={() => handleClick('red')} keyLabel='A' />
+	{#if isCountingDown}
+		<div class="countdown-display">
+			<h1>{countdownValue}</h1>
+			<p>Gentlemen, start yourrrrrrr engineeeessssssss!!!!</p>
+		</div>
+	{:else}
+		<div class="score-display">
+			<h2>Score: {score}</h2>
+			<p>Active color: {activeColor}</p>
+			<p>Nopeus: {gameSpeed}ms</p>
+		</div>
+		<div class="button-container">
+			<Button
+				color="red"
+				active={activeColor === 'red'}
+				onClick={() => handleClick('red')}
+				keyLabel="A"
+			/>
 			<Button
 				color="yellow"
 				active={activeColor === 'yellow'}
 				onClick={() => handleClick('yellow')}
-				keyLabel='S'
+				keyLabel="S"
 			/>
-			<Button color="green" active={activeColor === 'green'} onClick={() => handleClick('green')} keyLabel='D' />
-    <Button color="blue" active={activeColor === 'blue'} onClick={() => handleClick('blue')} keyLabel='F' />
-  </div>
+			<Button
+				color="green"
+				active={activeColor === 'green'}
+				onClick={() => handleClick('green')}
+				keyLabel="D"
+			/>
+			<Button
+				color="blue"
+				active={activeColor === 'blue'}
+				onClick={() => handleClick('blue')}
+				keyLabel="F"
+			/>
+		</div>
+	{/if}
 </div>
 
 {#if showModal}
-  <GameOver score={score} hideModal={() => { hideModal(); restartGame(); }} />
+	<GameOver
+		{score}
+		hideModal={() => {
+			hideModal();
+			restartGame();
+		}}
+	/>
 {/if}
 
 <style>
@@ -148,7 +214,4 @@
 		grid-template-columns: repeat(4, 1fr);
 		gap: 5px;
 	}
-
-
-
 </style>
