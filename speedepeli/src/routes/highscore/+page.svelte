@@ -1,6 +1,15 @@
 <script lang="ts">
-	import { lista } from '$lib/components/highscore.svelte.js';
-	const highscores = $derived($lista);
+ import {lista} from '$lib/components/highscore.svelte.js';
+ let highscores = $derived($lista);
+ function orderList(a: number, b: number) {
+   return b - a 
+ }
+ function sorted(){
+  highscores.sort()
+  highscores.sort(orderList)
+  return highscores
+ }
+ sorted()
 </script>
 
 <div data-layer="Highscores" class="highscores_01">
