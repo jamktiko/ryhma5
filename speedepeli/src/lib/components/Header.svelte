@@ -7,12 +7,14 @@
 
 <header>
 <h1>{text}</h1>
+{#if $page.url.pathname !== '/'}
 <nav>
-  {#if $page.url.pathname !== '/'}
+ 
   <a href="/" class:is-active={$page.url.pathname === '/'}>Aloitus sivu</a> 
-  {/if}
+
   <!-- <button onclick={() => (showAbout = true)}>About</button>  -->
 </nav>
+{/if}
 <!-- {#if showAbout}
   <About hideModal={() => (showAbout = false)} />
 {/if} -->
@@ -33,5 +35,24 @@ line-height: 137px;
 letter-spacing: 0.02em;
 color: #000000;
 text-shadow: 0px 4px 9.3px rgba(255, 0, 0, 0.25);
+}
+nav{
+  position: absolute;
+width: 120px;
+height: 50px;
+left: 52px;
+top: 60px;
+box-sizing: border-box;
+
+/* starttinappi tyyli
+
+starttinappityyli
+*/
+background: linear-gradient(180deg, #FF6161 29.81%, #D55151 70.19%, #993A3A 90.87%);
+border: 1px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 14px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: x-large;
 }
 </style>
