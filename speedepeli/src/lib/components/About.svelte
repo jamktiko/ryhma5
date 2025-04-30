@@ -145,7 +145,7 @@
 	}
 
 	.line-1 {
-		width: 590px;
+		width: 600px;
 		height: 0px;
 		left: 5px;
 		top: 97px;
@@ -167,7 +167,7 @@
 		top: 30px;
 		position: absolute;
 		overflow: hidden;
-		font-size: 50px
+		font-size: 50px;
 	}
 
 	.info {
