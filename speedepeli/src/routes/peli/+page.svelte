@@ -22,7 +22,7 @@
 	let gameOver = false; // peli päättynyt -tilamuuttuja
 	let clickedThisRound = false; // tarkistaa, onko pelaaja klikannut väriä tällä kierroksella
 	let showModal = $state(false); // näyttääkö pelin päättymisen jälkeen modalin
-	let highscoreList: number[] = $state([]); // highscore lista
+	let highscoreList: number[] = $derived($lista); // highscore lista
 
 	//countdown muuttujat
 	let countdownValue = $state(3); // aloituslaskuri
@@ -124,7 +124,7 @@
 	// ja asettaa värit satunnaisesti
 	onMount(() => {
 		startCountdown(); // Aloita laskuri
-
+		
 		// Add keyboard event listener
 		window.addEventListener('keydown', handleKeyPress);
 
