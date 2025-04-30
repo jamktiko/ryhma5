@@ -165,7 +165,7 @@
 	.score_span {
 		color: rgba(0, 0, 0, 0.63);
 		font-size: 48px;
-		font-family: Jersey 10;
+		font-family: 'Jersey 10';
 		font-weight: 400;
 		letter-spacing: 0.96px;
 		word-wrap: break-word;
