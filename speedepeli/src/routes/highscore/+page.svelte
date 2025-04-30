@@ -1,5 +1,4 @@
 <script lang="ts">
-<<<<<<< HEAD
  import {lista} from '$lib/components/highscore.svelte.js';
  let highscores = $derived($lista);
  function orderList(a: number, b: number) {
@@ -11,10 +10,6 @@
   return highscores
  }
  sorted()
-=======
-	import { lista } from '$lib/components/highscore.svelte.js';
-	const highscores = $derived($lista);
->>>>>>> develop
 </script>
 
 <div data-layer="Highscores" class="highscores_01">
