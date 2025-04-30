@@ -1,15 +1,15 @@
 <script lang="ts">
-	import {lista} from '$lib/components/highscore.svelte.js';
+	import { lista } from '$lib/components/highscore.svelte.js';
 	import Button from '$lib/components/Button.svelte';
 	import GameOver from '$lib/components/GameOver.svelte';
 	import { onMount, onDestroy } from 'svelte';
 	const colors = ['red', 'blue', 'green', 'yellow'];
 	const keyMappings = {
-		'a': 'red',
-		's': 'yellow',
-		'd': 'green',
-		'f': 'blue',
-	}
+		a: 'red',
+		s: 'yellow',
+		d: 'green',
+		f: 'blue'
+	};
 	let activeColor = $state('red'); // aloitusväri
 	let score = $state(0);
 	let lastClicked = ''; // viimeksi klikattu väri
@@ -106,11 +106,11 @@
 		clearInterval(countdownInterval); // Pysäytä laskuri
 		gameOver = true; // Aseta peli päättymään
 		showModal = true; // Näytä pelin päättymisen modal
-		console.log('Game Over!'); 	// debuggaus
-    // tallenna score taulukkoon
-	highscoreList.push(score);
-	console.log(highscoreList)
-	lista.set(highscoreList);
+		console.log('Game Over!'); // debuggaus
+		// tallenna score taulukkoon
+		highscoreList.push(score);
+		console.log(highscoreList);
+		lista.set(highscoreList);
 	}
 	function restartGame() {
 		score = 0;
@@ -205,6 +205,7 @@
 	.score-display {
 		margin-bottom: 20px;
 		text-align: center;
+		font-family: 'Jersey 10';
 	}
 
 	.button-container {
@@ -213,5 +214,8 @@
 		gap: 10px;
 		grid-template-columns: repeat(4, 1fr);
 		gap: 5px;
+	}
+	.countdown-display {
+		font-family: 'Jersey 10';
 	}
 </style>
