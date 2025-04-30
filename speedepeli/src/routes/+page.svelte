@@ -41,6 +41,7 @@
 </div>
 
 <style>
+	@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
 	.rectangle-8 {
 		width: 1440px;
 		height: 1024px;
@@ -65,7 +66,7 @@
 	.startgame_01_span {
 		color: black;
 		font-size: 64px;
-		font-family: Jersey 10;
+		font-family: 'Jersey 10';
 		font-weight: 400;
 		word-wrap: break-word;
 	}
@@ -93,7 +94,7 @@
 	.highscores_span {
 		color: black;
 		font-size: 60px;
-		font-family: Jersey 10;
+		font-family: 'Jersey 10';
 		font-weight: 400;
 		word-wrap: break-word;
 	}
