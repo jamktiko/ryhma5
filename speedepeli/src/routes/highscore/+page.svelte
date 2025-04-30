@@ -1,15 +1,15 @@
 <script lang="ts">
- import {lista} from '$lib/components/highscore.svelte.js';
- let highscores = $derived($lista);
- function orderList(a: number, b: number) {
-   return b - a 
- }
- function sorted(){
-  highscores.sort()
-  highscores.sort(orderList)
-  return highscores
- }
- sorted()
+	import { lista } from '$lib/components/highscore.svelte.js';
+	let highscores = $derived($lista);
+	function orderList(a: number, b: number) {
+		return b - a;
+	}
+	function sorted() {
+		highscores.sort();
+		highscores.sort(orderList);
+		return highscores;
+	}
+	sorted();
 </script>
 
 <div data-layer="Highscores" class="highscores_01">
@@ -41,6 +41,7 @@
 </div>
 
 <style>
+	@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
 	.tausta {
 		width: 1440px;
 		height: 1024px;
@@ -53,7 +54,7 @@
 	.highscores_span {
 		color: black;
 		font-size: 80px;
-		font-family: Jersey 10;
+		font-family: 'Jersey 10';
 		font-weight: 400;
 		word-wrap: break-word;
 	}
@@ -69,7 +70,7 @@
 	.f000_span {
 		color: #ff0000;
 		font-size: 60px;
-		font-family: Jersey 10;
+		font-family: 'Jersey 10';
 		font-weight: 400;
 		word-wrap: break-word;
 	}
