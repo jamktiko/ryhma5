@@ -121,7 +121,7 @@
 	}
 
 	.line-1 {
-		width: 590px;
+		width: 600px;
 		height: 0px;
 		left: 5px;
 		top: 97px;
