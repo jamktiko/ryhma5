@@ -23,7 +23,7 @@
 	<div data-layer="Highscores" class="highscores_01">
 		<div data-layer="tausta" class="tausta"></div>
 		<div data-layer="Highscores:" class="highscores">
-			<span class="highscores_span">Highscores:</span>
+			<span class="highscores_span">Classic Highscores:</span>
 		</div>
 		<div data-layer="1000" class="text-1000">
 			<span class="f000_span"
@@ -49,7 +49,33 @@
 	</div>
 {/if}
 {#if gameMode === 'ajoitettu'}
-	Ei vielä luotu
+	<div data-layer="Highscores" class="highscores_01">
+		<div data-layer="tausta" class="tausta"></div>
+		<div data-layer="Highscores:" class="highscores">
+			<span class="highscores_span">Ajoitettu Highscores:</span>
+		</div>
+		<div data-layer="1000" class="text-1000">
+			<span class="f000_span"
+				>{#each highscores as score}
+					<div class="highscore">
+						<p>{score}</p>
+					</div>
+				{/each}</span
+			>
+		</div>
+		<div data-layer="Rectangle 8" class="rectangle-8"></div>
+		<div data-svg-wrapper data-layer="Line 2" class="line-2">
+			<svg
+				width="1440"
+				height="2"
+				viewBox="0 0 1440 2"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path d="M0 1L1440 1.00013" stroke="black" />
+			</svg>
+		</div>
+	</div>
 {/if}
 
 <style>
@@ -65,7 +91,7 @@
 
 	.highscores_span {
 		color: black;
-		font-size: 80px;
+		font-size: 50px;
 		font-family: 'Jersey 10';
 		font-weight: 400;
 		word-wrap: break-word;
