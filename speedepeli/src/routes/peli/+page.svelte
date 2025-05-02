@@ -151,7 +151,7 @@
 		</div>
 		<div class="button-container">
 			<Button
-				color="red"
+				color="#F70000"
 				active={activeColor === 'red'}
 				onClick={() => handleClick('red')}
 				keyLabel="A"
@@ -163,13 +163,13 @@
 				keyLabel="S"
 			/>
 			<Button
-				color="green"
+				color="#00FF00"
 				active={activeColor === 'green'}
 				onClick={() => handleClick('green')}
 				keyLabel="D"
 			/>
 			<Button
-				color="blue"
+				color="#00F7FF"
 				active={activeColor === 'blue'}
 				onClick={() => handleClick('blue')}
 				keyLabel="F"
