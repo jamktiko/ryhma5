@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { lista } from '$lib/components/highscore.svelte.js';
+	import { lista2 } from '$lib/components/highscore.svelte.js';
 	let highscores = $derived($lista);
 	type GameModes = 'classic' | 'ajoitettu';
 	let gameMode = $state('classic');
@@ -12,6 +13,14 @@
 		return highscores;
 	}
 	sorted();
+	let highscores2 = $derived($lista2);
+	
+	function sorted2() {
+		highscores2.sort();
+		highscores2.sort(orderList);
+		return highscores2;
+	}
+	sorted2();
 </script>
 
 <h1>Gamemodes</h1>
@@ -35,7 +44,13 @@
 			>
 		{/if}
 		{#if gameMode === 'ajoitettu'}
-			<p>Ajoitettu</p>
+		<span class="f000_span">
+			{#each highscores2 as score2}
+				<div class="highscore">
+					<p>{score2}</p>
+				</div>
+			{/each}</span
+		>
 		{/if}
 	</div>
 	<div data-layer="Rectangle 8" class="rectangle-8"></div>
