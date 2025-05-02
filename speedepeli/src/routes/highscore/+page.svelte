@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { lista } from '$lib/components/highscore.svelte.js';
 	let highscores = $derived($lista);
+	type GameModes = 'classic'	| 'ajoitettu';
+	let gameMode = $state('classic'); 
 	function orderList(a: number, b: number) {
 		return b - a;
 	}
@@ -11,7 +13,12 @@
 	}
 	sorted();
 </script>
-
+<h1>Gamemodes</h1>
+<select bind:value={gameMode}>
+	<option value="classic">Classic</option>
+	<option value="ajoitettu">Ajoitettu</option>
+</select>
+{#if gameMode === 'classic'}
 <div data-layer="Highscores" class="highscores_01">
 	<div data-layer="tausta" class="tausta"></div>
 	<div data-layer="Highscores:" class="highscores">
@@ -39,7 +46,10 @@
 		</svg>
 	</div>
 </div>
-
+{/if}
+{#if gameMode === 'ajoitettu'}
+Ei vielä luotu
+{/if}
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
 	.tausta {
