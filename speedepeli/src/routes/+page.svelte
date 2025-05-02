@@ -11,9 +11,11 @@
 		<span class="startgame_01_span"
 			><a href="/peli" class:is-active={$page.url.pathname === '/peli'}>Pelaa</a></span
 		>
-		<span class="startgame_01_span"
-			><a href="/peli2" class:is-active={$page.url.pathname === '/peli2'}>Pelaa</a></span
-		>
+		<div data-layer="Start Game" class="start-game_02">
+			<span class="startgame_01_span"
+				><a href="/peli2" class:is-active={$page.url.pathname === '/peli2'}>Pelaa</a></span
+			>
+		</div>
 	</div>
 	<div data-layer="Rectangle 9" class="rectangle-9"></div>
 	<div data-layer="Highscores" class="highscores">
@@ -78,6 +80,14 @@
 		height: 62px;
 		left: 593px;
 		top: 135px;
+		position: absolute;
+	}
+
+	.start-game_02 {
+		width: 254px;
+		height: 62px;
+		left: 400px;
+		top: 0px;
 		position: absolute;
 	}
 
