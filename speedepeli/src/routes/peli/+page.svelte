@@ -20,7 +20,7 @@
 	let speedDecreaseAmount = 100; // peliaika vähenee 100ms joka kerta, kun pelaaja saa 10 pistettä
 	let minGameSpeed = 500; // miniminopeus, jota peli ei alita
 	let gameOver = false; // peli päättynyt -tilamuuttuja
-	let clickedThisRound = false; // tarkistaa, onko pelaaja klikannut väriä tällä kierroksella
+	let clickedThisRound = $state(false); // tarkistaa, onko pelaaja klikannut väriä tällä kierroksella
 	let showModal = $state(false); // näyttääkö pelin päättymisen jälkeen modalin
 	let highscoreList: number[] = $derived($lista); // highscore lista
 
@@ -181,6 +181,7 @@
 {#if showModal}
 	<GameOver
 		{score}
+		{clickedThisRound}
 		hideModal={() => {
 			hideModal();
 			restartGame();
