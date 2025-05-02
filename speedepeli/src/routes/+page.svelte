@@ -1,16 +1,23 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import About from '$lib/components/About.svelte';
+	import Pelaa from '$lib/components/Pelaa.svelte';
+
 	let showAbout = $state(false);
+	let hidePelaa = $state(false);
 </script>
 
 <div data-layer="Start Game" class="start-game">
 	<div data-layer="Rectangle 8" class="rectangle-8"></div>
 	<div data-layer="Rectangle 8" class="rectangle-8_01"></div>
 	<div data-layer="Start Game" class="start-game_01">
-		<span class="startgame_01_span"
-			><a href="/peli" class:is-active={$page.url.pathname === '/peli'}>Pelaa</a></span
-		>
+		<span class="startgame_01_span">
+			<!-- <a href="/peli" class:is-active={$page.url.pathname === '/peli'}>Pelaa</a> -->
+			<button onclick={()=>(hidePelaa=true)}>Pelaa</button>
+			{#if hidePelaa}
+			<Pelaa hidePelaa={() => (hidePelaa = false)} />
+		{/if}
+			</span>
 	</div>
 	<div data-layer="Rectangle 9" class="rectangle-9"></div>
 	<div data-layer="Highscores" class="highscores">
