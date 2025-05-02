@@ -13,11 +13,11 @@
 	<div data-layer="Start Game" class="start-game_01">
 		<span class="startgame_01_span">
 			<!-- <a href="/peli" class:is-active={$page.url.pathname === '/peli'}>Pelaa</a> -->
-			<button onclick={()=>(hidePelaa=true)}>Pelaa</button>
+			<button onclick={() => (hidePelaa = true)}>Pelaa</button>
 			{#if hidePelaa}
-			<Pelaa hidePelaa={() => (hidePelaa = false)} />
-		{/if}
-			</span>
+				<Pelaa hidePelaa={() => (hidePelaa = false)} />
+			{/if}
+		</span>
 	</div>
 	<div data-layer="Rectangle 9" class="rectangle-9"></div>
 	<div data-layer="Highscores" class="highscores">
