@@ -1,4 +1,5 @@
 # SpeedeGamePro
 ### Tekijät: Aapo Hampaala, Tatu Olkinuora, Teemu Jalava, Oskari Puranen
 
-SpeedeGamePro on Speden Spelit- ohjelmasta tutusta nopeustesti pelin innoittama web peli.
+SpeedeGamePro on Speden Spelit- ohjelmasta tutusta nopeustesti pelin innoittama web peli. Pelissä kerätään pisteitä klikkaamalla tai painamalla näppäimistöstä nappulan
+osoittamaa kirjainta. Peli vaikeutuu aina 10 pisteen välein vähentämällä aika ikkunaa, jossa pelaajan täytyy nappulaa painaa.
