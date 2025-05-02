@@ -63,7 +63,7 @@
 		width: 387px;
 		height: 105px;
 		left: 520px;
-		top: 201px;
+		top: 10px;
 		position: absolute;
 	}
 
@@ -79,7 +79,7 @@
 		width: 387px;
 		height: 105px;
 		left: 520px;
-		top: 406px;
+		top: 200px;
 		position: absolute;
 		text-align: center;
 		justify-content: center;
@@ -87,18 +87,18 @@
 		flex-direction: column;
 	}
 
-	.rectangle-8 {
+	/*.rectangle-8 {
 		width: 1440px;
 		height: 171px;
 		left: 0px;
 		top: 0px;
 		position: absolute;
 		background: #aeeffc;
-	}
+	}*/
 
 	.line-2 {
 		left: 0px;
-		top: 305px;
+		top: 100px;
 		position: absolute;
 	}
 
