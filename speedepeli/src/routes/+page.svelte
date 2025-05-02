@@ -54,7 +54,7 @@
 		width: 334px;
 		height: 142px;
 		left: 553px;
-		top: 370px;
+		top: 100px;
 		position: absolute;
 		background: #ff6161;
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -74,7 +74,7 @@
 		width: 254px;
 		height: 62px;
 		left: 593px;
-		top: 410px;
+		top: 135px;
 		position: absolute;
 	}
 
@@ -82,7 +82,7 @@
 		width: 334px;
 		height: 142px;
 		left: 553px;
-		top: 576px;
+		top: 300px;
 		position: absolute;
 		background: #ff6161;
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -102,13 +102,13 @@
 		width: 249px;
 		height: 62px;
 		left: 595px;
-		top: 616px;
+		top: 340px;
 		position: absolute;
 	}
 
 	.start-game {
 		width: 1440px;
-		height: 1024px;
+		height: 500px;
 		position: relative;
 		background: white;
 		overflow: hidden;
