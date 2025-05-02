@@ -17,9 +17,27 @@
     <span>
       <a href="/peli2" class:is-active={$page.url.pathname === '/peli2'}>Ajoitettu</a></span>
   </main>
-</div>
-  {#snippet footer()}
-  <button class="sulje-nappi" onclick={hidePelaa}>X</button>
-{/snippet}
-</ModalPelaa>
 
+  <button class="sulje-nappi" onclick={hidePelaa}>X</button>
+</div>
+</ModalPelaa>
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #aeeffc;
+  } 
+  .sulje-nappi {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+</style>
