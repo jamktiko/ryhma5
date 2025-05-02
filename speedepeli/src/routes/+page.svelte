@@ -11,6 +11,9 @@
 		<span class="startgame_01_span"
 			><a href="/peli" class:is-active={$page.url.pathname === '/peli'}>Pelaa</a></span
 		>
+		<span class="startgame_01_span"
+			><a href="/peli2" class:is-active={$page.url.pathname === '/peli2'}>Pelaa</a></span
+		>
 	</div>
 	<div data-layer="Rectangle 9" class="rectangle-9"></div>
 	<div data-layer="Highscores" class="highscores">
