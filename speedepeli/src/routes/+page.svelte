@@ -85,14 +85,6 @@
 		position: absolute;
 	}
 
-	.start-game_02 {
-		width: 254px;
-		height: 62px;
-		left: 400px;
-		top: 0px;
-		position: absolute;
-	}
-
 	.rectangle-9 {
 		width: 334px;
 		height: 142px;
