@@ -5,9 +5,10 @@
 	interface Props {
 		hideModal: () => void;
 		score: number;
+		clickedThisRound: boolean;
 	}
 
-	let { hideModal, score }: Props = $props(); //
+	let { hideModal, score, clickedThisRound }: Props = $props(); //
 	let rank = $state(); // Pelaajan rankki
 
 	function returnHome() {
@@ -47,7 +48,12 @@
 	<div data-layer="Classi Gameover alt" class="classi-gameover-alt">
 		<div data-layer="Rectangle 1" class="rectangle-1"></div>
 		<div data-layer="Game over! Klikkasit väärää väriä!" class="game-over-klikkasit-vr-vri">
+			{#if !clickedThisRound}
+			<span class="gameoverklikkasitvrvri_span">Game over!<br />Aika loppui!</span>
+			{/if}
+			{#if clickedThisRound}
 			<span class="gameoverklikkasitvrvri_span">Game over!<br />Klikkasit väärää väriä!</span>
+			{/if}
 		</div>
 		<div data-layer="Line 1" class="line-1"></div>
 		<div data-layer="sulje-nappi" data-size="48" class="sulje-nappi">
