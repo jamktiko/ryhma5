@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { lista } from '$lib/components/highscore.svelte.js';
+	import { lista2 } from '$lib/components/highscore.svelte.js';
 	import Button from '$lib/components/Button.svelte';
 	import GameOver from '$lib/components/GameOver.svelte';
 	import { onMount, onDestroy } from 'svelte';
@@ -18,7 +18,7 @@
 	let gameOver = false;
 	let clickedThisRound = $state(false);
 	let showModal = $state(false);
-	let highscoreList: number[] = $derived($lista);
+	let highscoreList: number[] = $derived($lista2);
 
 	// Timer mode variables
 	let gameDuration = 30; // Game lasts 30 seconds
@@ -106,7 +106,7 @@
 
 		// Save score to highscore list
 		highscoreList.push(score);
-		lista.set(highscoreList);
+		lista2.set(highscoreList);
 	}
 
 	function restartGame() {
