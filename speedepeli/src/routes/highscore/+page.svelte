@@ -14,7 +14,7 @@
 	}
 	sorted();
 	let highscores2 = $derived($lista2);
-	
+
 	function sorted2() {
 		highscores2.sort();
 		highscores2.sort(orderList);
@@ -31,7 +31,7 @@
 <div data-layer="Highscores" class="highscores_01">
 	<div data-layer="tausta" class="tausta"></div>
 	<div data-layer="Highscores:" class="highscores">
-		<span class="highscores_span">Classic Highscores:</span>
+		<span class="highscores_span">Highscores:</span>
 	</div>
 	<div data-layer="1000" class="text-1000">
 		{#if gameMode === 'classic'}
@@ -44,13 +44,13 @@
 			>
 		{/if}
 		{#if gameMode === 'ajoitettu'}
-		<span class="f000_span">
-			{#each highscores2 as score2}
-				<div class="highscore">
-					<p>{score2}</p>
-				</div>
-			{/each}</span
-		>
+			<span class="f000_span">
+				{#each highscores2 as score2}
+					<div class="highscore">
+						<p>{score2}</p>
+					</div>
+				{/each}</span
+			>
 		{/if}
 	</div>
 	<div data-layer="Rectangle 8" class="rectangle-8"></div>
