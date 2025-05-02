@@ -1,14 +1,19 @@
 <script lang="ts">
 	import Modal from './Modal.svelte';
 	import { onMount } from 'svelte';
+	import { goto } from '$app/navigation';
 	interface Props {
 		hideModal: () => void;
 		score: number;
 	}
 
-	let { hideModal, score }: Props = $props();
-	let rank = $state();
-	// Alustetaan rank muuttuja, joka tulee olemaan pelaajan rankki
+	let { hideModal, score }: Props = $props(); //
+	let rank = $state(); // Pelaajan rankki
+
+	function returnHome() {
+		hideModal(); // Sulje modal
+		goto('/'); // Siirry etusivulle
+	}
 
 	interface Rank {
 		id: number;
@@ -80,7 +85,7 @@
 	</div>
 
 	{#snippet footer()}
-		<button class="sulje-nappi" onclick={hideModal}>X</button>
+		<button class="sulje-nappi" onclick={returnHome}>X</button>
 		<button
 			class="ressu-nappi"
 			onclick={() => {
