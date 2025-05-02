@@ -13,8 +13,9 @@
     <h1>Pelivaihtoehdot</h1>
   <main>
     <span>
-    <a href="/peli" class:is-active={$page.url.pathname === '/peli'}>Classic</a></span
-		>
+    <a href="/peli" class:is-active={$page.url.pathname === '/peli'}>Classic</a></span>
+    <span>
+      <a href="/peli2" class:is-active={$page.url.pathname === '/peli2'}>Ajoitettu</a></span>
   </main>
 </div>
   {#snippet footer()}

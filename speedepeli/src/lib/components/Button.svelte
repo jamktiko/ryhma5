@@ -20,7 +20,7 @@
 	>
 		{#if keyLabel}
 		<div style=
-		"background: linear-gradient(180deg, rgba(255, 255, 255, 0.52) 50.78%, rgba(196, 196, 196, 0.41) 60.58%, rgba(93, 93, 93, 0.26) 77.88%);
+		"background: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 50.78%, rgba(196, 196, 196, 0.22) 60.58%, rgba(93, 93, 93, 0.15) 77.88%);
 		/* Note: backdrop-filter has minimal browser support */
 			display:block
 			width: 250px;
