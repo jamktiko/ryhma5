@@ -124,7 +124,7 @@
 	// ja asettaa värit satunnaisesti
 	onMount(() => {
 		startCountdown(); // Aloita laskuri
-		
+
 		// Add keyboard event listener
 		window.addEventListener('keydown', handleKeyPress);
 
@@ -207,7 +207,7 @@
 		margin-bottom: 20px;
 		text-align: center;
 		font-family: 'Jersey 10';
-		font-size: 25px;
+		font-size: 20px;
 	}
 
 	.button-container {
