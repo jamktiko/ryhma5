@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { lista } from '$lib/components/highscore.svelte.js';
 	let highscores = $derived($lista);
-	type GameModes = 'classic'	| 'ajoitettu';
-	let gameMode = $state('classic'); 
+	type GameModes = 'classic' | 'ajoitettu';
+	let gameMode = $state('classic');
 	function orderList(a: number, b: number) {
 		return b - a;
 	}
@@ -13,43 +13,45 @@
 	}
 	sorted();
 </script>
+
 <h1>Gamemodes</h1>
 <select bind:value={gameMode}>
 	<option value="classic">Classic</option>
 	<option value="ajoitettu">Ajoitettu</option>
 </select>
 {#if gameMode === 'classic'}
-<div data-layer="Highscores" class="highscores_01">
-	<div data-layer="tausta" class="tausta"></div>
-	<div data-layer="Highscores:" class="highscores">
-		<span class="highscores_span">Highscores:</span>
+	<div data-layer="Highscores" class="highscores_01">
+		<div data-layer="tausta" class="tausta"></div>
+		<div data-layer="Highscores:" class="highscores">
+			<span class="highscores_span">Highscores:</span>
+		</div>
+		<div data-layer="1000" class="text-1000">
+			<span class="f000_span"
+				>{#each highscores as score}
+					<div class="highscore">
+						<p>{score}</p>
+					</div>
+				{/each}</span
+			>
+		</div>
+		<div data-layer="Rectangle 8" class="rectangle-8"></div>
+		<div data-svg-wrapper data-layer="Line 2" class="line-2">
+			<svg
+				width="1440"
+				height="2"
+				viewBox="0 0 1440 2"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path d="M0 1L1440 1.00013" stroke="black" />
+			</svg>
+		</div>
 	</div>
-	<div data-layer="1000" class="text-1000">
-		<span class="f000_span"
-			>{#each highscores as score}
-				<div class="highscore">
-					<p>{score}</p>
-				</div>
-			{/each}</span
-		>
-	</div>
-	<div data-layer="Rectangle 8" class="rectangle-8"></div>
-	<div data-svg-wrapper data-layer="Line 2" class="line-2">
-		<svg
-			width="1440"
-			height="2"
-			viewBox="0 0 1440 2"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
-		>
-			<path d="M0 1L1440 1.00013" stroke="black" />
-		</svg>
-	</div>
-</div>
 {/if}
 {#if gameMode === 'ajoitettu'}
-Ei vielä luotu
+	Ei vielä luotu
 {/if}
+
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
 	.tausta {
@@ -58,7 +60,7 @@ Ei vielä luotu
 		left: 0px;
 		top: 0px;
 		position: absolute;
-		background: #00d4ff;
+		background: #aeeffc;
 	}
 
 	.highscores_span {
@@ -73,7 +75,7 @@ Ei vielä luotu
 		width: 387px;
 		height: 105px;
 		left: 520px;
-		top: 201px;
+		top: 10px;
 		position: absolute;
 	}
 
@@ -89,7 +91,7 @@ Ei vielä luotu
 		width: 387px;
 		height: 105px;
 		left: 520px;
-		top: 406px;
+		top: 200px;
 		position: absolute;
 		text-align: center;
 		justify-content: center;
@@ -97,18 +99,18 @@ Ei vielä luotu
 		flex-direction: column;
 	}
 
-	.rectangle-8 {
+	/*.rectangle-8 {
 		width: 1440px;
 		height: 171px;
 		left: 0px;
 		top: 0px;
 		position: absolute;
 		background: #aeeffc;
-	}
+	}*/
 
 	.line-2 {
 		left: 0px;
-		top: 305px;
+		top: 100px;
 		position: absolute;
 	}
 
