@@ -49,8 +49,8 @@
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
 	.rectangle-8 {
-		width: 1440px;
-		height: 1024px;
+		width: 100%;
+		height: 100%;
 		left: 0px;
 		top: 0px;
 		position: absolute;
@@ -114,7 +114,7 @@
 	}
 
 	.start-game {
-		width: 1300px;
+		width: 100%;
 		height: 500px;
 		position: relative;
 		background: white;
