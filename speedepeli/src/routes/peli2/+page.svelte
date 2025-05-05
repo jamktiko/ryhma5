@@ -13,17 +13,15 @@
 	let activeColor = $state('red');
 	let score = $state(0);
 	let lastClicked = '';
-	let intervalId: ReturnType<typeof setInterval>;
-	let gameSpeed = $state(1500);
 	let gameOver = false;
 	let clickedThisRound = $state(false);
 	let showModal = $state(false);
 	let highscoreList: number[] = $derived($lista2);
 
 	// Time attack muuttujat
-	let gameDuration = 30; // Game lasts 30 seconds
-	let timeRemaining = $state(gameDuration);
-	let timerInterval: ReturnType<typeof setInterval>;
+	let gameDuration = 30; // Pelin kesto sekunteina
+	let timeRemaining = $state(gameDuration); // jäljellä oleva aika
+	let timerInterval: ReturnType<typeof setInterval>; // ajastin, joka vähentää aikaa
 
 	// countdown muuttujat
 	let countdownValue = $state(3);
@@ -44,9 +42,10 @@
 	}
 
 	function setRandomColor() {
-		clickedThisRound = false;
-		const randomIndex = Math.floor(Math.random() * colors.length);
-		activeColor = colors[randomIndex];
+		// Aseta satunnainen väri
+		clickedThisRound = false; // Nollaa klikkaustila ennen uuden värin asettamista
+		const randomIndex = Math.floor(Math.random() * colors.length); // satunnainen indeksi väreistä
+		activeColor = colors[randomIndex]; // satunnainen väri
 	}
 
 	function handleClick(color: string) {
@@ -206,10 +205,9 @@
 	}
 
 	.button-container {
-		display: grid;
-		grid-template-columns: repeat(4, 1fr);
-		gap: 5px;
-	}
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center; }
 
 	.countdown-display {
 		font-family: 'Jersey 10';
