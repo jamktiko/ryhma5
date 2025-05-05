@@ -121,12 +121,6 @@
 		overflow: hidden;
 	}
 
-	.info_01 {
-		left: 4px;
-		top: 5px;
-		position: absolute;
-	}
-
 	/* .ellipse-1 {
 		left: 0px;
 		top: 0px;
@@ -142,9 +136,9 @@
 		width: 80px;
 		height: 80px;
 		border-radius: 50px;
-		position: absolute;
-		left: 1200px;
+		left: 93%;
 		top: 5px;
+		position: absolute;
 		background: linear-gradient(180.58deg, #fe4545 40.5%, #f20c0c 54.6%, #990000 89.86%);
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.63);
 		backdrop-filter: blur(4.3px);
