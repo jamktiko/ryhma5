@@ -49,10 +49,10 @@
 		<div data-layer="Rectangle 1" class="rectangle-1"></div>
 		<div data-layer="Game over! Klikkasit väärää väriä!" class="game-over-klikkasit-vr-vri">
 			{#if !clickedThisRound}
-			<span class="gameoverklikkasitvrvri_span">Game over!<br />Aika loppui!</span>
+				<span class="gameoverklikkasitvrvri_span">Game over!<br />Aika loppui!</span>
 			{/if}
 			{#if clickedThisRound}
-			<span class="gameoverklikkasitvrvri_span">Game over!<br />Klikkasit väärää väriä!</span>
+				<span class="gameoverklikkasitvrvri_span">Game over!<br />Klikkasit väärää väriä!</span>
 			{/if}
 		</div>
 		<div data-layer="Line 1" class="line-1"></div>
@@ -113,13 +113,22 @@
 		border-radius: 5px;
 		border: 5px white solid;
 	}
-
+	@media (max-width: 500px) {
+		.rectangle-1 {
+			width: 350px;
+		}
+	}
 	.gameoverklikkasitvrvri_span {
 		color: black;
 		font-size: 96px;
 		font-family: 'Jersey 10';
 		font-weight: 400;
 		word-wrap: break-word;
+	}
+	@media (max-width: 500px) {
+		.gameoverklikkasitvrvri_span {
+			font-size: 80px;
+		}
 	}
 
 	.game-over-klikkasit-vr-vri {
@@ -130,7 +139,11 @@
 		position: absolute;
 		text-align: center;
 	}
-
+	@media (max-width: 500px) {
+		.game-over-klikkasit-vr-vri {
+			left: -120px;
+		}
+	}
 	.line-1 {
 		width: 600px;
 		height: 0px;
@@ -139,6 +152,11 @@
 		position: absolute;
 		outline: 1px black solid;
 		outline-offset: -0.5px;
+	}
+	@media (max-width: 500px) {
+		.line-1 {
+			width: 350px;
+		}
 	}
 
 	.score-counter {
@@ -151,6 +169,13 @@
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) inset;
 		border: 1px black solid;
 	}
+	@media (max-width: 500px) {
+		.score-counter {
+			left: 10px;
+			width: 100px;
+			height: 50px;
+		}
+	}
 
 	.f000_span {
 		color: #ff0000;
@@ -159,6 +184,11 @@
 		font-weight: 400;
 		letter-spacing: 3.84px;
 		word-wrap: break-word;
+	}
+	@media (max-width: 500px) {
+		.f000_span {
+			font-size: 60px;
+		}
 	}
 
 	.text-1000 {
@@ -171,6 +201,12 @@
 		justify-content: center;
 		display: flex;
 		flex-direction: column;
+	}
+	@media (max-width: 500px) {
+		.text-1000 {
+			left: -30px;
+			top: 287px;
+		}
 	}
 
 	.score_span {
@@ -188,6 +224,12 @@
 		position: absolute;
 	}
 
+	@media (max-width: 500px) {
+		.score {
+			left: 10px;
+		}
+	}
+
 	.score-counter_01 {
 		width: 191px;
 		height: 104px;
@@ -198,6 +240,13 @@
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) inset;
 		border: 1px black solid;
 	}
+	@media (max-width: 500px) {
+		.score-counter_01 {
+			left: 200px;
+			width: 150px;
+			height: 50px;
+		}
+	}
 
 	.f000_01_span {
 		color: #ff0000;
@@ -206,6 +255,11 @@
 		font-weight: 400;
 		letter-spacing: 1.44px;
 		word-wrap: break-word;
+	}
+	@media (max-width: 500px) {
+		.f000_01_span {
+			font-size: 30px;
+		}
 	}
 
 	.text-1000_01 {
@@ -220,6 +274,12 @@
 		flex-direction: column;
 	}
 
+	@media (max-width: 500px) {
+		.text-1000_01 {
+			left: 180px;
+			top: 335px;
+		}
+	}
 	.rank_span {
 		color: rgba(0, 0, 0, 0.63);
 		font-size: 48px;
@@ -233,6 +293,11 @@
 		left: 404px;
 		top: 413px;
 		position: absolute;
+	}
+	@media (max-width: 500px) {
+		.rank {
+			left: 200px;
+		}
 	}
 
 	/* .icon {
@@ -250,7 +315,11 @@
 		overflow: hidden;
 		font-size: 50px;
 	}
-
+	@media (max-width: 500px) {
+		.sulje-nappi {
+			left: 170px;
+		}
+	}
 	.ressu-nappi {
 		width: 80px;
 		height: 80px;
@@ -259,10 +328,20 @@
 		position: absolute;
 		overflow: hidden;
 	}
+	@media (max-width: 500px) {
+		.ressu-nappi {
+			left: 270px;
+		}
+	}
 
 	.classi-gameover-alt {
 		width: 600px;
 		height: 600px;
 		position: relative;
+	}
+	@media (max-width: 500px) {
+		.classi-gameover-alt {
+			width: 400px;
+		}
 	}
 </style>
