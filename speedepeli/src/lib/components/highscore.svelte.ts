@@ -4,3 +4,4 @@ const listaAjoitettu = writable<number[]>([]);
 
 export const lista = listaClassic;
 export const lista2 = listaAjoitettu;
+export const showModal1 = writable<boolean>(false);
