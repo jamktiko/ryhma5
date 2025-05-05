@@ -55,7 +55,7 @@ _Kirjaa tähän lukuun aikataulu. Millä tavoin projekti viedään läpi. Voitte
 | Idean alustava esitys | 25.4.2025  | Esitetään opettajille projektisuunnitelma |
 | Projekti päättyy      | 16.05.2025 | Ohjelmistoprojekti 1 päättyy              |
 | 
-|
+
 
 ## Raportointi, kommunikointi ja dokumentointi
 
@@ -87,7 +87,6 @@ _Dokumenttien säilytys on github repossa ja dokumentti päällikön läppärill
 
 _Kuvaa tässä kuinka projekti aikoo hallinnoida ja seurata projektiriskejä._
 
-Esimerkiksi näin.
 
 | Riskit                                            | Todennäköisyys | Impakti     | Minimointi                            |
 | ------------------------------------------------- | -------------- | ----------- | ------------------------------------- |
