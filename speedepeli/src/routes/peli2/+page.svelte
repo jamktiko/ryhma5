@@ -14,18 +14,18 @@
 	let score = $state(0);
 	let lastClicked = '';
 	let intervalId: ReturnType<typeof setInterval>;
-	let gameSpeed = $state(1500); // Slightly faster base speed for time attack mode
+	let gameSpeed = $state(1500);
 	let gameOver = false;
 	let clickedThisRound = $state(false);
 	let showModal = $state(false);
 	let highscoreList: number[] = $derived($lista2);
 
-	// Timer mode variables
+	// Time attack muuttujat
 	let gameDuration = 30; // Game lasts 30 seconds
 	let timeRemaining = $state(gameDuration);
 	let timerInterval: ReturnType<typeof setInterval>;
 
-	// Countdown variables
+	// countdown muuttujat
 	let countdownValue = $state(3);
 	let isCountingDown = $state(true);
 	let countdownInterval: ReturnType<typeof setInterval>;
@@ -54,24 +54,22 @@
 		console.log('klikattu', color);
 		lastClicked = color;
 		if (color === activeColor) {
-			// Correct color clicked
 			score += 1;
 			console.log('Oikein! Pisteet: ' + score);
 		} else {
-			// Wrong color clicked but no penalty in this mode
+			score = Math.max(0, score - 1); // Vähennä pistettä, jos väärä väri, mutta älä mene alle nollan
 			console.log('Väärä väri, mutta jatketaan!');
 		}
-		// Always change to a new color after click, regardless of whether it was correct
-		setRandomColor();
+		setRandomColor(); // Aseta uusi väri riippumatta oliko klikkaus oikea vai väärä
 	}
 
 	function startGameTimer() {
+		// Aloita peliaika
 		timeRemaining = gameDuration;
 		timerInterval = setInterval(() => {
 			timeRemaining -= 1;
 			if (timeRemaining <= 0) {
-				// Time's up - end the game
-				endGame();
+				endGame(); // Peli päättyy
 			}
 		}, 1000);
 	}
@@ -89,33 +87,27 @@
 				clearInterval(countdownInterval);
 				isCountingDown = false;
 
-				// Start the game timer
-				startGameTimer();
-
-				// Set initial color
-				setRandomColor();
+				startGameTimer(); // Aloita peliaika
+				setRandomColor(); // Aseta ensimmäinen väri
 			}
 		}, 1000);
 	}
 
 	function endGame() {
-		clearInterval(timerInterval);
+		// Peli päättyy
+		clearInterval(timerInterval); // Pysäytä ajastin
 		gameOver = true;
 		showModal = true;
 		console.log("Time's up! Final score: " + score);
-
-		// Save score to highscore list
 		highscoreList.push(score);
-		lista2.set(highscoreList);
+		lista2.set(highscoreList); // päivittää highscore-listan
 	}
-
 	function restartGame() {
 		score = 0;
 		gameOver = false;
 		showModal = false;
 		lastClicked = '';
 
-		// Start the countdown again
 		startCountdown();
 	}
 
@@ -136,8 +128,8 @@
 	{#if isCountingDown}
 		<div class="countdown-display">
 			<h1>{countdownValue}</h1>
-			<p>Time Attack Mode</p>
-			<p>Get as many points as possible in 30 seconds!</p>
+			<p>Time Attack!</p>
+			<p>Koita saada mahdollisimman monta pistettä 30 sekunnissa!</p>
 		</div>
 	{:else}
 		<div class="score-display">
