@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-  import { scale } from 'svelte/transition';
 	interface Props {
 		header?: Snippet;
 		children: Snippet;
@@ -12,7 +11,7 @@
 	
 </script>
 
-<div class="modal" transition:scale={{ delay:200, duration: 200 }}>
+<div class="modal">
   <header>
     {@render header?.()}
   </header>
