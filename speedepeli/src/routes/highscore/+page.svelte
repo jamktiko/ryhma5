@@ -70,8 +70,8 @@
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
 	.tausta {
-		width: 1440px;
-		height: 1024px;
+		width: 100%;
+		height: 100%;
 		left: 0px;
 		top: 0px;
 		position: absolute;
@@ -87,10 +87,10 @@
 	}
 
 	.highscores {
-		width: 387px;
+		width: 250px;
 		height: 105px;
-		left: 520px;
-		top: 10px;
+		left: 45%;
+		top: 3%;
 		position: absolute;
 	}
 
@@ -103,15 +103,16 @@
 	}
 
 	.text-1000 {
-		width: 387px;
+		width: 100px;
 		height: 105px;
-		left: 520px;
-		top: 200px;
+		left: 50%;
+		top: 40%;
 		position: absolute;
 		text-align: center;
 		justify-content: center;
 		display: flex;
 		flex-direction: column;
+		align-items: flex-start;
 	}
 
 	/*.rectangle-8 {
@@ -130,7 +131,7 @@
 	}
 
 	.highscores_01 {
-		width: 1440px;
+		width: 100%;
 		height: 1024px;
 		position: relative;
 		background: white;
