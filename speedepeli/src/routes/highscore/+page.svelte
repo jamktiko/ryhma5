@@ -87,10 +87,10 @@
 	}
 
 	.highscores {
-		width: 387px;
+		width: 250px;
 		height: 105px;
-		left: 520px;
-		top: 10px;
+		left: 45%;
+		top: 3%;
 		position: absolute;
 	}
 
@@ -103,15 +103,16 @@
 	}
 
 	.text-1000 {
-		width: 387px;
+		width: 100px;
 		height: 105px;
-		left: 520px;
-		top: 200px;
+		left: 50%;
+		top: 40%;
 		position: absolute;
 		text-align: center;
 		justify-content: center;
 		display: flex;
 		flex-direction: column;
+		align-items: flex-start;
 	}
 
 	/*.rectangle-8 {
