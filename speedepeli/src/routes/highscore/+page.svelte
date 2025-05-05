@@ -10,6 +10,7 @@
 	function sorted() {
 		highscores.sort();
 		highscores.sort(orderList);
+		highscores = highscores.slice(0, 10); // Järjestetään korkeimmat kymmenen pistettä
 		return highscores;
 	}
 	sorted();
@@ -18,6 +19,7 @@
 	function sorted2() {
 		highscores2.sort();
 		highscores2.sort(orderList);
+		highscores2 = highscores2.slice(0, 10); // Järjestetään korkeimmat kymmenen pistettä
 		return highscores2;
 	}
 	sorted2();
@@ -38,7 +40,7 @@
 			<span class="f000_span">
 				{#each highscores as score}
 					<div class="highscore">
-						<p>{score}</p>
+						<p class="pTeksti">{score}</p>
 					</div>
 				{/each}</span
 			>
@@ -47,7 +49,7 @@
 			<span class="f000_span">
 				{#each highscores2 as score2}
 					<div class="highscore">
-						<p>{score2}</p>
+						<p class="pTeksti">{score2}</p>
 					</div>
 				{/each}</span
 			>
@@ -136,5 +138,8 @@
 		position: relative;
 		background: white;
 		overflow: hidden;
+	}
+	.pTeksti {
+		margin: 0
 	}
 </style>
