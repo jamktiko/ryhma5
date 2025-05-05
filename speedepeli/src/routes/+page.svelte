@@ -47,6 +47,7 @@
 </div>
 
 <style>
+	@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
 	.custom-button {
 		background: linear-gradient(180deg, #ff6161 0%, #d55151 50%, #993a3a 100%);
 		border: 3px solid #000000;
@@ -74,7 +75,7 @@
 		transform: translateY(1px);
 		box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
 	}
-	@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+
 	.rectangle-8 {
 		width: 100%;
 		height: 100%;
@@ -163,12 +164,27 @@
 		width: 80px;
 		height: 80px;
 		border-radius: 50px;
-		left: 93%;
+		margin-right: 10%;
+		left: 90%;
 		top: 5px;
 		position: absolute;
 		background: linear-gradient(180.58deg, #fe4545 40.5%, #f20c0c 54.6%, #990000 89.86%);
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.63);
 		backdrop-filter: blur(4.3px);
 		font-size: 50px;
+	}
+	@media (max-width: 1000px) {
+		.about {
+			width: 60px;
+			height: 60px;
+			font-size: 12;
+		}
+	}
+	@media (max-width: 600px) {
+		.about {
+			width: 40px;
+			height: 40px;
+			font-size: 25px;
+		}
 	}
 </style>
