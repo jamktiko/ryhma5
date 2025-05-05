@@ -49,8 +49,8 @@
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
 	.rectangle-8 {
-		width: 1440px;
-		height: 1024px;
+		width: 100%;
+		height: 100%;
 		left: 0px;
 		top: 0px;
 		position: absolute;
@@ -114,7 +114,7 @@
 	}
 
 	.start-game {
-		width: 1440px;
+		width: 100%;
 		height: 500px;
 		position: relative;
 		background: white;
@@ -143,7 +143,7 @@
 		height: 80px;
 		border-radius: 50px;
 		position: absolute;
-		left: 1280px;
+		left: 1200px;
 		top: 5px;
 		background: linear-gradient(180.58deg, #fe4545 40.5%, #f20c0c 54.6%, #990000 89.86%);
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.63);
