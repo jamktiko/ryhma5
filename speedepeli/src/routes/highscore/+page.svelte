@@ -70,8 +70,8 @@
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
 	.tausta {
-		width: 1440px;
-		height: 1024px;
+		width: 100%;
+		height: 100%;
 		left: 0px;
 		top: 0px;
 		position: absolute;
@@ -130,7 +130,7 @@
 	}
 
 	.highscores_01 {
-		width: 1440px;
+		width: 100%;
 		height: 1024px;
 		position: relative;
 		background: white;
