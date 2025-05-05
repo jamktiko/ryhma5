@@ -10,8 +10,7 @@
 	let { hidePelaa}: Props = $props();
 </script>
 <ModalPelaa>
-  <div class="container" in:scale={{delay:200, duration: 300 }}
-  out:scale={{delay:200, duration: 200 }}>
+  <div class="container" transition:scale={{delay:200, duration: 300 }}>
     <h1>Pelivaihtoehdot</h1>
   <main>
     <span>

@@ -2,7 +2,6 @@
   import { page } from '$app/stores';
   let { text, logo }: { text: string; logo?: string } = $props();
   // import About from '$lib/components/About.svelte';
-  // let showAbout = $state(false);
 </script>
 
 <header>
