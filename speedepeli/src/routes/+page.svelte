@@ -80,24 +80,24 @@
 		height: 100%;
 		left: 0px;
 		top: 0px;
-		position: absolute;
+		/* position: absolute; */
 		background: #aeeffc;
 	}
 
 	.startgame_01_span {
-		color: black;
-		font-size: 64px;
-		font-family: 'Jersey 10';
-		font-weight: 400;
-		word-wrap: break-word;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
 	}
 
 	.start-game_01 {
-		width: 254px;
-		height: 62px;
-		left: 593px;
+		width: 100%;
+		height: 100px;
+		/* left: 593px; */
 		top: 135px;
 		position: absolute;
+		display: flex;
 	}
 
 
@@ -110,11 +110,14 @@
 	}
 
 	.highscores {
-		width: 249px;
+		width: 100%;
 		height: 62px;
-		left: 595px;
+		/* left: 595px; */
 		top: 340px;
 		position: absolute;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.start-game {
