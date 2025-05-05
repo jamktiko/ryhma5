@@ -215,11 +215,16 @@
 	}
 
 	.button-container {
-		display: grid;
-		grid-template-columns: repeat(4, 1fr);
-		gap: 10px;
-		grid-template-columns: repeat(4, 1fr);
-		gap: 5px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		
+	}
+	@media (max-width:600px) {
+		.button-container {
+			width: 96%;
+			margin: 2%;
+		}
 	}
 	.countdown-display {
 		font-family: 'Jersey 10';
