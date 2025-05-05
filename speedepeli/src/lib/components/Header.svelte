@@ -8,13 +8,11 @@
 
 <header>
 <h1>{text}</h1>
-{#if $page.url.pathname !== '/'}
+{#if $page.url.pathname !== '/' && !showModal2}
 <nav>
- {#if !showModal2} <!--Tämä if lause ei toimi vielä-->
+ 
   <a href="/" class:is-active={$page.url.pathname === '/'}>Aloitus sivu</a> 
-{:else if showModal2 && $page.url.pathname !== '/'}
-<p>Aloitus sivu</p>
-{/if}
+
   <!-- <button onclick={() => (showAbout = true)}>About</button>  -->
 </nav>
 {/if}
