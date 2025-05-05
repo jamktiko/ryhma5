@@ -9,7 +9,7 @@
 
 <div data-layer="Start Game" class="start-game">
 	<div data-layer="Rectangle 8" class="rectangle-8"></div>
-	<div data-layer="Rectangle 8" class="rectangle-8_01"></div>
+
 	<div data-layer="Start Game" class="start-game_01">
 		<span class="startgame_01_span">
 			<!-- <a href="/peli" class:is-active={$page.url.pathname === '/peli'}>Pelaa</a> -->
@@ -19,10 +19,9 @@
 			{/if}
 		</span>
 	</div>
-	<div data-layer="Rectangle 9" class="rectangle-9"></div>
 	<div data-layer="Highscores" class="highscores">
-		<span class="highscores_span"
-			><a href="/highscore" class:is-active={$page.url.pathname === '/highscore'}>Highscore</a
+		<span class="highscores_span">
+			<a href="/highscore" class="custom-button">Highscore</a
 			></span
 		>
 	</div>
@@ -54,13 +53,13 @@
 		border-radius: 14px;
 		color: black;
 		font-family: 'Jersey 10', sans-serif;
-		font-size: 64px;
-		padding: 10px 40px;
+		font-size: 45px;
+		padding: 10px 30px;
 		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 		box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
 		cursor: pointer;
 		transition: all 0.2s ease;
-		position: relative;
+		position: flex;
 		top: 0;
 	}
 
@@ -85,18 +84,6 @@
 		background: #aeeffc;
 	}
 
-	.rectangle-8_01 {
-		width: 334px;
-		height: 142px;
-		left: 553px;
-		top: 100px;
-		position: absolute;
-		background: #ff6161;
-		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-		border-radius: 14px;
-		border: 1px black solid;
-	}
-
 	.startgame_01_span {
 		color: black;
 		font-size: 64px;
@@ -113,17 +100,6 @@
 		position: absolute;
 	}
 
-	.rectangle-9 {
-		width: 334px;
-		height: 142px;
-		left: 553px;
-		top: 300px;
-		position: absolute;
-		background: #ff6161;
-		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-		border-radius: 14px;
-		border: 1px black solid;
-	}
 
 	.highscores_span {
 		color: black;
