@@ -22,6 +22,7 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
 h1{
+  position: flex;
   color: #ff3e00;
   font-size: 2em;
   text-align: center;
@@ -36,7 +37,7 @@ color: #000000;
 text-shadow: 0px 4px 9.3px rgba(255, 0, 0, 0.25);
 }
 nav{
-  position: absolute;
+  position: flex;
 width: 120px;
 height: 50px;
 left: 52px;
