@@ -2,6 +2,7 @@
 	import { lista } from '$lib/components/highscore.svelte.js';
 	import Button from '$lib/components/Button.svelte';
 	import GameOver from '$lib/components/GameOver.svelte';
+	import {showModal1} from '$lib/components/highscore.svelte.js'
 	import { onMount, onDestroy } from 'svelte';
 	const colors = ['red', 'blue', 'green', 'yellow'];
 	const keyMappings = {
@@ -40,6 +41,7 @@
 
 	function hideModal() {
 		showModal = false; // sulje modal
+		showModal1.set(false);
 	}
 
 	function setRandomColor() {
@@ -106,6 +108,7 @@
 		clearInterval(countdownInterval); // Pysäytä laskuri
 		gameOver = true; // Aseta peli päättymään
 		showModal = true; // Näytä pelin päättymisen modal
+		showModal1.set(true);
 		console.log('Game Over!'); // debuggaus
 		// tallenna score taulukkoon
 		highscoreList.push(score);
@@ -116,6 +119,7 @@
 		score = 0;
 		gameOver = false; // Nollaa peli
 		showModal = false; // Sulje modal
+		showModal1.set(false);
 		lastClicked = '';
 		gameSpeed = initialGameSpeed; // Nollaa pelin nopeus
 		startCountdown(); // Aloita laskuri

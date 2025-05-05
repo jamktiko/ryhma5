@@ -1,16 +1,20 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  let { text, logo }: { text: string; logo?: string } = $props();
+  import {showModal1} from '$lib/components/highscore.svelte.js'
+  let { text, logo }: { text: string; logo?: string; } = $props();
   // import About from '$lib/components/About.svelte';
+  let showModal2 = $derived($showModal1)
 </script>
 
 <header>
 <h1>{text}</h1>
 {#if $page.url.pathname !== '/'}
 <nav>
- 
+ {#if !showModal2} <!--Tämä if lause ei toimi vielä-->
   <a href="/" class:is-active={$page.url.pathname === '/'}>Aloitus sivu</a> 
-
+{:else if showModal2 && $page.url.pathname !== '/'}
+<p>Aloitus sivu</p>
+{/if}
   <!-- <button onclick={() => (showAbout = true)}>About</button>  -->
 </nav>
 {/if}

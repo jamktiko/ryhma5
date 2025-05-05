@@ -2,6 +2,7 @@
 	import { lista2 } from '$lib/components/highscore.svelte.js';
 	import Button from '$lib/components/Button.svelte';
 	import GameOver from '$lib/components/GameOver.svelte';
+	import {showModal1} from '$lib/components/highscore.svelte.js'
 	import { onMount, onDestroy } from 'svelte';
 	const colors = ['red', 'blue', 'green', 'yellow'];
 	const keyMappings = {
@@ -41,6 +42,7 @@
 
 	function hideModal() {
 		showModal = false;
+		showModal1.set(false);
 	}
 
 	function setRandomColor() {
@@ -98,6 +100,7 @@
 		clearInterval(timerInterval); // Pysäytä ajastin
 		gameOver = true;
 		showModal = true;
+		showModal1.set(true);
 		console.log("Time's up! Final score: " + score);
 		highscoreList.push(score);
 		lista2.set(highscoreList); // päivittää highscore-listan
@@ -106,6 +109,7 @@
 		score = 0;
 		gameOver = false;
 		showModal = false;
+		showModal1.set(false);
 		lastClicked = '';
 
 		startCountdown();
