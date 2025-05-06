@@ -1,4 +1,4 @@
-<script lang="ts">
+<!--<script lang="ts">
 let { company, year }: { company: string; year?: number } = $props();
 </script>
 <footer>
@@ -16,4 +16,4 @@ let { company, year }: { company: string; year?: number } = $props();
 		align-items: center;
 		text-shadow: 2px 2px 1px rgba(200, 200, 200, 0.38);
 	}
-</style>
+</style>-->
