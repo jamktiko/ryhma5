@@ -51,7 +51,7 @@
 		box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
 		cursor: pointer;
 		transition: all 0.2s ease;
-		position: fixed;
+		position:absolute;
 		display: flex;
 		top: 100px;
 	}
