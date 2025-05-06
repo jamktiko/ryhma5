@@ -104,12 +104,12 @@
 
 	.text-1000 {
 		width: 100px;
-		height: 80px;
+		height: 0px;
 		left: 50%;
-		top: 37%;
+		top: 10%;
 		position: absolute;
 		text-align: center;
-		justify-content: center;
+		justify-content: flex-start;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
