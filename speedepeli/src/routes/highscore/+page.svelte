@@ -56,21 +56,14 @@
 		{/if}
 	</div>
 	<div data-layer="Rectangle 8" class="rectangle-8"></div>
-	<div data-svg-wrapper data-layer="Line 2" class="line-2">
-		<svg
-			width="1440"
-			height="2"
-			viewBox="0 0 1440 2"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
-		>
-			<path d="M0 1L1440 1.00013" stroke="black" />
-		</svg>
-	</div>
+	<div data-layer="Line 1" class="line-1"></div>
 </div>
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+	h1 {
+		font-family: 'Jersey 10';
+	}
 	.tausta {
 		width: 100%;
 		height: 100%;
@@ -95,6 +88,11 @@
 		top: 3%;
 		position: absolute;
 	}
+	@media (max-width: 700px) {
+		.highscores {
+			left: 37%;
+		}
+	}
 
 	.f000_span {
 		color: #ff0000;
@@ -106,9 +104,9 @@
 
 	.text-1000 {
 		width: 100px;
-		height: 105px;
+		height: 80px;
 		left: 50%;
-		top: 40%;
+		top: 37%;
 		position: absolute;
 		text-align: center;
 		justify-content: center;
@@ -126,10 +124,14 @@
 		background: #aeeffc;
 	}*/
 
-	.line-2 {
+	.line-1 {
+		width: 100%;
+		height: 0px;
 		left: 0px;
-		top: 100px;
+		top: 97px;
 		position: absolute;
+		outline: 1px black solid;
+		outline-offset: -0.5px;
 	}
 
 	.highscores_01 {
@@ -140,6 +142,6 @@
 		overflow: hidden;
 	}
 	.pTeksti {
-		margin: 0
+		margin: 0;
 	}
 </style>
