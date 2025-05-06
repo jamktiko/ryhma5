@@ -23,6 +23,9 @@
 </ModalPelaa>
 
 <style>
+	h1 {
+		font-family: 'Jersey 10';
+	}
 	.custom-button {
 		background: linear-gradient(180deg, #ff6161 0%, #d55151 50%, #993a3a 100%);
 		border: 3px solid #000000;
@@ -59,6 +62,7 @@
 		padding-bottom: 80px;
 	}
 	.sulje-nappi {
+		font-family: 'Jersey 10';
 		position: absolute;
 		top: 20px;
 		right: 20px;
