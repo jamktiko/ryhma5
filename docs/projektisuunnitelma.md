@@ -26,7 +26,7 @@ Tekijät: Aapo, Tatu, Teemu, Oskari
 
 ### Kuvaus
 
-_Speedgame, jossa ideana on kerätä pisteitä klikkaamalla neljästä nappulasta sitää, joka valaistuu. 30 sekunnin aikaraja. Jos mahdollista ja aika riittää, yritämme toteuttaa peliin sekä näppäimistö, että hiirellä pelattavuuden._
+_Speedgame, jossa ideana on kerätä pisteitä klikkaamalla neljästä nappulasta sitää, joka valaistuu. Peli vaikeutuu 10 pisteen välein vähentämällä klikkaus aikaa. Jos mahdollista ja aika riittää, yritämme toteuttaa peliin sekä näppäimistö, että hiirellä pelattavuuden._
 
 ### Projektiryhmä
 
@@ -38,6 +38,7 @@ _Ketä projektiin kuuluu ja mitkä ovat henkilöiden päävastuut._
 | Tatu Olkinuora | Dokumentti-päällikkö                 |
 | Teemu Jalava   | Tehtävä- Päällikkö                   |
 | Oskari Puranen | Julkaisu / Laadunvalvonta- Päällikkö |
+
 
 ### Tavoite
 
@@ -53,8 +54,8 @@ _Kirjaa tähän lukuun aikataulu. Millä tavoin projekti viedään läpi. Voitte
 | Idean valinta         | 24.04.2025 | Valitaan tuotantoon menevä projekti-idea  |
 | Idean alustava esitys | 25.4.2025  | Esitetään opettajille projektisuunnitelma |
 | Projekti päättyy      | 16.05.2025 | Ohjelmistoprojekti 1 päättyy              |
+| 
 
-|
 
 ## Raportointi, kommunikointi ja dokumentointi
 
@@ -86,7 +87,6 @@ _Dokumenttien säilytys on github repossa ja dokumentti päällikön läppärill
 
 _Kuvaa tässä kuinka projekti aikoo hallinnoida ja seurata projektiriskejä._
 
-Esimerkiksi näin.
 
 | Riskit                                            | Todennäköisyys | Impakti     | Minimointi                            |
 | ------------------------------------------------- | -------------- | ----------- | ------------------------------------- |

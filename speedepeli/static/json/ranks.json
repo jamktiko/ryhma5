@@ -1,0 +1,40 @@
+{
+	"ranks": [
+		{
+			"id": 1,
+			"name": "Vanhus",
+			"min_points": 1,
+			"max_points": 20
+		},
+		{
+			"id": 2,
+			"name": "Amatööri",
+			"min_points": 21,
+			"max_points": 40
+		},
+		{
+			"id": 3,
+			"name": "Aloittelija",
+			"min_points": 41,
+			"max_points": 60
+		},
+		{
+			"id": 4,
+			"name": "Suorittaja",
+			"min_points": 61,
+			"max_points": 80
+		},
+		{
+			"id": 5,
+			"name": "Ylisuorittaja",
+			"min_points": 81,
+			"max_points": 100
+		},
+		{
+			"id": 6,
+			"name": "Hyvä Teemu!",
+			"min_points": 200,
+			"max_points": 300
+		}
+	]
+}
