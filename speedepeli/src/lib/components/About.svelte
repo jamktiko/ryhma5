@@ -76,9 +76,10 @@
 		border-radius: 5px;
 		border: 5px white solid;
 	}
-	@media (max-width: 500px) {
+	@media (max-width: 700px) {
 		.rectangle-1 {
-			width: 350px;
+			left: -20px;
+			width: 400px;
 		}
 	}
 
@@ -89,9 +90,9 @@
 		font-weight: 400;
 		word-wrap: break-word;
 	}
-	@media (max-width: 500px) {
+	@media (max-width: 700px) {
 		.speedeonreaktiopelijokatestaareaktiokykyjsijatarkkuuttasi_span {
-			font-size: 15px;
+			font-size: 25px;
 		}
 	}
 
@@ -103,11 +104,11 @@
 		position: absolute;
 		text-align: center;
 	}
-	@media (max-width: 500px) {
+	@media (max-width: 700px) {
 		.speede-on-reaktiopeli-joka-testaa-reaktiokykyjsi-ja-tarkkuuttasi {
 			width: 400px;
-			left: -20px;
-			top: 120px;
+			left: -10px;
+			top: 100px;
 		}
 	}
 
@@ -118,9 +119,9 @@
 		font-weight: 400;
 		word-wrap: break-word;
 	}
-	@media (max-width: 500px) {
+	@media (max-width: 700px) {
 		.pelissonkolmeerimodeajotkatarjoavateripelitapoja_span {
-			font-size: 17px;
+			font-size: 24px;
 		}
 	}
 
@@ -132,10 +133,10 @@
 		position: absolute;
 		text-align: center;
 	}
-	@media (max-width: 500px) {
+	@media (max-width: 700px) {
 		.peliss-on-kolme-eri-modea-jotka-tarjoavat-eri-pelitapoja {
 			width: 400px;
-			left: -20px;
+			left: -10px;
 		}
 	}
 
@@ -146,9 +147,9 @@
 		font-weight: 400;
 		word-wrap: break-word;
 	}
-	@media (max-width: 500px) {
+	@media (max-width: 700px) {
 		.classicajoitettu_span {
-			font-size: 20px;
+			font-size: 25px;
 		}
 	}
 
@@ -160,9 +161,10 @@
 		position: absolute;
 		text-align: center;
 	}
-	@media (max-width: 500px) {
+	@media (max-width: 700px) {
 		.classic-ajoitettu {
-			left: -120px;
+			width: 400px;
+			left: 0px;
 		}
 	}
 
@@ -173,9 +175,9 @@
 		font-weight: 400;
 		word-wrap: break-word;
 	}
-	@media (max-width: 500px) {
+	@media (max-width: 700px) {
 		.kehittjttatuolkinuoraaapohampaalateemujalavaoskaripuranen_span {
-			font-size: 20px;
+			font-size: 30px;
 		}
 	}
 
@@ -187,9 +189,10 @@
 		position: absolute;
 		text-align: center;
 	}
-	@media (max-width: 500px) {
+	@media (max-width: 700px) {
 		.kehittjt-tatu-olkinuora-aapo-hampaala-teemu-jalava-oskari-puranen {
-			left: -120px;
+			left: -10px;
+			width: 400px;
 		}
 	}
 
@@ -202,9 +205,10 @@
 		outline: 1px black solid;
 		outline-offset: -0.5px;
 	}
-	@media (max-width: 500px) {
+	@media (max-width: 700px) {
 		.line-1 {
-			width: 350px;
+			width: 398px;
+			left: -15px;
 		}
 	}
 
@@ -223,7 +227,7 @@
 		overflow: hidden;
 		font-size: 50px;
 	}
-	@media (max-width: 500px) {
+	@media (max-width: 700px) {
 		.sulje-nappi {
 			left: 250px;
 		}
@@ -234,10 +238,9 @@
 		height: 600px;
 		position: relative;
 	}
-	@media (max-width: 500px) {
+	@media (max-width: 700px) {
 		.info {
 			width: 400px;
-			height: 400px;
 		}
 	}
 </style>
