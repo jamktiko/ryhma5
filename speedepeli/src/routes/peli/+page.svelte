@@ -2,7 +2,7 @@
 	import { lista } from '$lib/components/highscore.svelte.js';
 	import Button from '$lib/components/Button.svelte';
 	import GameOver from '$lib/components/GameOver.svelte';
-	import {showModal1} from '$lib/components/highscore.svelte.js'
+	import { showModal1 } from '$lib/components/highscore.svelte.js';
 	import { onMount, onDestroy } from 'svelte';
 	const colors = ['red', 'blue', 'green', 'yellow'];
 	const keyMappings = {
@@ -218,9 +218,8 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		
 	}
-	@media (max-width:600px) {
+	@media (max-width: 600px) {
 		.button-container {
 			width: 96%;
 			margin: 2%;
@@ -228,6 +227,12 @@
 	}
 	.countdown-display {
 		font-family: 'Jersey 10';
-		font-size: 60px;
+		font-size: 50px;
+		text-align: center;
+	}
+
+	.countdown-display p {
+		font-size: 30px;
+		margin: 10px 0;
 	}
 </style>

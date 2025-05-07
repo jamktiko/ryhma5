@@ -76,6 +76,12 @@
 		border-radius: 5px;
 		border: 5px white solid;
 	}
+	@media (max-width: 700px) {
+		.rectangle-1 {
+			left: -20px;
+			width: 400px;
+		}
+	}
 
 	.speedeonreaktiopelijokatestaareaktiokykyjsijatarkkuuttasi_span {
 		color: black;
@@ -83,6 +89,11 @@
 		font-family: 'Jersey 10';
 		font-weight: 400;
 		word-wrap: break-word;
+	}
+	@media (max-width: 700px) {
+		.speedeonreaktiopelijokatestaareaktiokykyjsijatarkkuuttasi_span {
+			font-size: 25px;
+		}
 	}
 
 	.speede-on-reaktiopeli-joka-testaa-reaktiokykyjsi-ja-tarkkuuttasi {
@@ -93,6 +104,13 @@
 		position: absolute;
 		text-align: center;
 	}
+	@media (max-width: 700px) {
+		.speede-on-reaktiopeli-joka-testaa-reaktiokykyjsi-ja-tarkkuuttasi {
+			width: 400px;
+			left: -10px;
+			top: 100px;
+		}
+	}
 
 	.pelissonkolmeerimodeajotkatarjoavateripelitapoja_span {
 		color: black;
@@ -100,6 +118,11 @@
 		font-family: 'Jersey 10';
 		font-weight: 400;
 		word-wrap: break-word;
+	}
+	@media (max-width: 700px) {
+		.pelissonkolmeerimodeajotkatarjoavateripelitapoja_span {
+			font-size: 24px;
+		}
 	}
 
 	.peliss-on-kolme-eri-modea-jotka-tarjoavat-eri-pelitapoja {
@@ -110,6 +133,12 @@
 		position: absolute;
 		text-align: center;
 	}
+	@media (max-width: 700px) {
+		.peliss-on-kolme-eri-modea-jotka-tarjoavat-eri-pelitapoja {
+			width: 400px;
+			left: -10px;
+		}
+	}
 
 	.classicajoitettu_span {
 		color: black;
@@ -117,6 +146,11 @@
 		font-family: 'Jersey 10';
 		font-weight: 400;
 		word-wrap: break-word;
+	}
+	@media (max-width: 700px) {
+		.classicajoitettu_span {
+			font-size: 25px;
+		}
 	}
 
 	.classic-ajoitettu {
@@ -127,6 +161,12 @@
 		position: absolute;
 		text-align: center;
 	}
+	@media (max-width: 700px) {
+		.classic-ajoitettu {
+			width: 400px;
+			left: 0px;
+		}
+	}
 
 	.kehittjttatuolkinuoraaapohampaalateemujalavaoskaripuranen_span {
 		color: black;
@@ -134,6 +174,11 @@
 		font-family: 'Jersey 10';
 		font-weight: 400;
 		word-wrap: break-word;
+	}
+	@media (max-width: 700px) {
+		.kehittjttatuolkinuoraaapohampaalateemujalavaoskaripuranen_span {
+			font-size: 30px;
+		}
 	}
 
 	.kehittjt-tatu-olkinuora-aapo-hampaala-teemu-jalava-oskari-puranen {
@@ -144,6 +189,12 @@
 		position: absolute;
 		text-align: center;
 	}
+	@media (max-width: 700px) {
+		.kehittjt-tatu-olkinuora-aapo-hampaala-teemu-jalava-oskari-puranen {
+			left: -10px;
+			width: 400px;
+		}
+	}
 
 	.line-1 {
 		width: 600px;
@@ -153,6 +204,12 @@
 		position: absolute;
 		outline: 1px black solid;
 		outline-offset: -0.5px;
+	}
+	@media (max-width: 700px) {
+		.line-1 {
+			width: 398px;
+			left: -15px;
+		}
 	}
 
 	/* .icon {
@@ -170,10 +227,20 @@
 		overflow: hidden;
 		font-size: 50px;
 	}
+	@media (max-width: 700px) {
+		.sulje-nappi {
+			left: 250px;
+		}
+	}
 
 	.info {
 		width: 600px;
 		height: 600px;
 		position: relative;
+	}
+	@media (max-width: 700px) {
+		.info {
+			width: 400px;
+		}
 	}
 </style>
