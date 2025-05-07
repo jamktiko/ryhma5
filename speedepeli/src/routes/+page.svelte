@@ -2,20 +2,9 @@
 	import { page } from '$app/stores';
 	import About from '$lib/components/About.svelte';
 	import Pelaa from '$lib/components/Pelaa.svelte';
-	//import {showModalAloitus} from '$lib/components/highscore.svelte';
 
 	let showAbout = $state(false);
 	let hidePelaa = $state(false);
-	let isDisabled = $state(false);
-
-	function modalAuki() {
-		hidePelaa = true;
-		isDisabled = true;
-	}
-	function modalSulje() {
-		hidePelaa = false;
-		isDisabled = false;
-	}
 </script>
 
 <div data-layer="Start Game" class="start-game">
@@ -24,20 +13,14 @@
 	<div data-layer="Start Game" class="start-game_01">
 		<span class="startgame_01_span">
 			<!-- <a href="/peli" class:is-active={$page.url.pathname === '/peli'}>Pelaa</a> -->
-			<button class="custom-button" onclick={modalAuki} disabled={isDisabled}>Pelaa</button>
+			<button class="custom-button" onclick={() => (hidePelaa = true)}>Pelaa</button>
 			{#if hidePelaa}
-				<Pelaa hidePelaa={modalSulje} />
+				<Pelaa hidePelaa={() => (hidePelaa = false)} />
 			{/if}
 		</span>
 	</div>
 	<div data-layer="Highscores" class="highscores">
-		<span class="highscores_span">
-			{#if !isDisabled}
-				<a href="/highscore" class="custom-button">Highscore</a>
-			{:else}
-				<p class="custom-button">Highscore</p>
-			{/if}
-		</span>
+		<span class="highscores_span"> <a href="/highscore" class="custom-button">Highscore</a></span>
 	</div>
 	<!-- <div data-layer="Info" class="info">
 		<div data-svg-wrapper data-layer="Ellipse 1" class="ellipse-1">
@@ -52,7 +35,7 @@
 			</svg>
 		</div> -->
 	<div data-svg-wrapper data-layer="Info" data-size="48" class="info_01">
-		<button class="about" onclick={() => (showAbout = true)} disabled={isDisabled}>i</button>
+		<button class="about" onclick={() => (showAbout = true)}>i</button>
 		{#if showAbout}
 			<About hideModal={() => (showAbout = false)} />
 		{/if}
@@ -90,6 +73,17 @@
 		box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
 	}
 
+	.about:hover {
+		background: linear-gradient(180deg, #ff7777 0%, #e66666 50%, #aa4444 100%);
+		transform: translateY(-2px);
+		box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+	}
+
+	.about:active {
+		background: linear-gradient(180deg, #d55151 0%, #993a3a 50%, #772222 100%);
+		transform: translateY(1px);
+		box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+	}
 	.rectangle-8 {
 		width: 100%;
 		height: 100%;
@@ -156,16 +150,23 @@
 	.about {
 		width: 80px;
 		height: 80px;
+		border: 3px solid #000000;
 		border-radius: 50px;
 		margin-right: 10%;
 		left: 90%;
 		top: 5px;
 		position: absolute;
-		background: linear-gradient(180.58deg, #fe4545 40.5%, #f20c0c 54.6%, #990000 89.86%);
-		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.63);
+		background: linear-gradient(180deg, #ff6161 0%, #d55151 50%, #993a3a 100%);
+		font-size: 45px;
+
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+		box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+		cursor: pointer;
 		backdrop-filter: blur(4.3px);
-		font-size: 50px;
+		transition: all 0.2s ease;
+		font-family: 'Jersey 10';
 	}
+
 	@media (max-width: 1000px) {
 		.about {
 			width: 60px;
@@ -173,7 +174,7 @@
 			font-size: 12;
 		}
 	}
-	@media (max-width: 600px) {
+	@media (max-width: 620px) {
 		.about {
 			width: 40px;
 			height: 40px;
