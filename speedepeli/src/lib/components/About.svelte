@@ -59,13 +59,12 @@
 		</div>
 	</div>
 
-	{#snippet footer()}
-		<button class="sulje-nappi" onclick={hideModal}>X</button>
-	{/snippet}
+	<button class="sulje-nappi" onclick={hideModal}>X</button>
 </ModalAbout>
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+
 	.rectangle-1 {
 		width: 600px;
 		height: 600px;
@@ -219,20 +218,43 @@
 	} */
 
 	.sulje-nappi {
+		background: linear-gradient(180deg, #ff6161 0%, #d55151 50%, #993a3a 100%);
+		border: 3px solid #000000;
+		border-radius: 14px;
+		color: black;
+		font-family: 'Jersey 10';
+		font-size: 45px;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+		box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+		cursor: pointer;
+		transition: all 0.2s ease;
+		position: flex;
+		text-decoration: none;
 		width: 80px;
 		height: 80px;
-		left: 504px;
-		top: 30px;
+		left: 520px;
+		top: 15px;
+		border-radius: 50px;
 		position: absolute;
 		overflow: hidden;
-		font-size: 50px;
 	}
 	@media (max-width: 700px) {
 		.sulje-nappi {
-			left: 250px;
+			left: 300px;
 		}
 	}
 
+	.sulje-nappi:hover {
+		background: linear-gradient(180deg, #ff7777 0%, #e66666 50%, #aa4444 100%);
+		transform: translateY(-2px);
+		box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+	}
+
+	.sulje-nappi:active {
+		background: linear-gradient(180deg, #d55151 0%, #993a3a 50%, #772222 100%);
+		transform: translateY(1px);
+		box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+	}
 	.info {
 		width: 600px;
 		height: 600px;
