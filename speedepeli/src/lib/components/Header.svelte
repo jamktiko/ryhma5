@@ -51,9 +51,10 @@
 		box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
 		cursor: pointer;
 		transition: all 0.2s ease;
-		position:absolute;
+		position: absolute;
 		display: flex;
 		top: 100px;
+		text-decoration: none;
 	}
 
 	.custom-button:hover {
@@ -68,12 +69,11 @@
 		box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
 	}
 
-	
 	@media (max-width: 850px) {
 		h1 {
 			font-size: 100px;
 		}
-		.custom-button{
+		.custom-button {
 			font-size: 10px;
 		}
 	}

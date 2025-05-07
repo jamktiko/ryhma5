@@ -24,7 +24,7 @@
 	<div data-layer="Start Game" class="start-game_01">
 		<span class="startgame_01_span">
 			<!-- <a href="/peli" class:is-active={$page.url.pathname === '/peli'}>Pelaa</a> -->
-			<button class="custom-button" onclick={modalAuki}  disabled={isDisabled}>Pelaa</button>
+			<button class="custom-button" onclick={modalAuki} disabled={isDisabled}>Pelaa</button>
 			{#if hidePelaa}
 				<Pelaa hidePelaa={modalSulje} />
 			{/if}
@@ -33,11 +33,11 @@
 	<div data-layer="Highscores" class="highscores">
 		<span class="highscores_span">
 			{#if !isDisabled}
-			<a href="/highscore" class="custom-button">Highscore</a>
+				<a href="/highscore" class="custom-button">Highscore</a>
 			{:else}
-			<p class="custom-button">Highscore</p>
+				<p class="custom-button">Highscore</p>
 			{/if}
-			</span>
+		</span>
 	</div>
 	<!-- <div data-layer="Info" class="info">
 		<div data-svg-wrapper data-layer="Ellipse 1" class="ellipse-1">
@@ -75,6 +75,7 @@
 		transition: all 0.2s ease;
 		position: flex;
 		top: 0;
+		text-decoration: none;
 	}
 
 	.custom-button:hover {
@@ -113,7 +114,6 @@
 		position: absolute;
 		display: flex;
 	}
-
 
 	.highscores_span {
 		color: black;

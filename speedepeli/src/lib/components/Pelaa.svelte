@@ -40,6 +40,7 @@
 		transition: all 0.2s ease;
 		position: flex;
 		top: 0;
+		text-decoration: none;
 	}
 
 	.custom-button:hover {
