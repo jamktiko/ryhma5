@@ -26,12 +26,11 @@
 		width: clamp(180px, 20vw, 280px);
 		height: clamp(180px, 20vw, 280px);
 		border-radius: 50%;
-		background: radial-gradient(
-			circle,
-			rgba(255, 255, 255, 0.25) 0%,
-			rgba(196, 196, 196, 0.22) 30%,
-			rgba(93, 93, 93, 0.15) 70%
-		);
+		border-color:aqua;
+		background: linear-gradient(180deg, rgba(255, 255, 255, 0.34) 50.78%, rgba(196, 196, 196, 0.36) 60.58%, rgba(93, 93, 93, 0.22) 77.88%);
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.63);
+		backdrop-filter: blur(4.3px);
+
 	}
 
 	.game-button {
@@ -56,7 +55,7 @@
 
 	/* Responsive adjustments for different screen sizes */
 	@media (max-width: 768px) {
-		.button-wrapper {
+		.button-wrapper, .game-button {
 			width: clamp(120px, 22vw, 200px);
 			height: clamp(120px, 22vw, 200px);
 		}
@@ -67,7 +66,7 @@
 	}
 
 	@media (max-width: 480px) {
-		.button-wrapper {
+		.button-wrapper, .game-button {
 			width: clamp(80px, 20vw, 150px);
 			height: clamp(80px, 20vw, 150px);
 			margin: 0.25rem;
