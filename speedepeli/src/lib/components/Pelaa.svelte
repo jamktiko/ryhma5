@@ -26,6 +26,11 @@
 	h1 {
 		font-family: 'Jersey 10';
 	}
+	@media (max-width: 755px) {
+		h1 {
+			font-size: 25px;
+		}
+	}
 	.custom-button {
 		background: linear-gradient(180deg, #ff6161 0%, #d55151 50%, #993a3a 100%);
 		border: 3px solid #000000;
@@ -41,6 +46,12 @@
 		position: flex;
 		top: 0;
 		text-decoration: none;
+	}
+	@media (max-width: 755px) {
+		.custom-button {
+			padding: 5px 15px;
+			font-size: 22px;
+		}
 	}
 
 	.custom-button:hover {
@@ -62,6 +73,12 @@
 		background-color: #aeeffc;
 		padding-bottom: 80px;
 	}
+	@media (max-width: 755px) {
+		.container {
+			justify-content: flex-start;
+			align-items: flex-start;
+		}
+	}
 	.sulje-nappi {
 		font-family: 'Jersey 10';
 		position: absolute;
@@ -73,5 +90,10 @@
 		border-radius: 5px;
 		padding: 10px 20px;
 		cursor: pointer;
+	}
+	@media (max-width: 755px) {
+		.sulje-nappi {
+			padding: 5px 10px;
+		}
 	}
 </style>
