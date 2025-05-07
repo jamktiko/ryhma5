@@ -227,7 +227,12 @@
 	}
 	.countdown-display {
 		font-family: 'Jersey 10';
-		font-size: 60px;
+		font-size: 50px;
 		text-align: center;
+	}
+
+	.countdown-display p {
+		font-size: 30px;
+		margin: 10px 0;
 	}
 </style>
