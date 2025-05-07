@@ -252,7 +252,7 @@
 
 	.f000_01_span {
 		color: #ff0000;
-		font-size: 48px;
+		font-size: 40px;
 		font-family: 'Jersey 10';
 		font-weight: 400;
 		letter-spacing: 1.44px;
@@ -267,7 +267,7 @@
 	.text-1000_01 {
 		width: 191px;
 		height: 311px;
-		left: 359px;
+		left: 361px;
 		top: 364px;
 		position: absolute;
 		text-align: center;
