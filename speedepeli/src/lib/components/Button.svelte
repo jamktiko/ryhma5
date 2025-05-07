@@ -13,6 +13,8 @@
     border: none;
     margin: 8px;
     cursor: pointer;
+	transition: all 0.3s ease;0
+	
 
   "
 		onclick={onClick}
