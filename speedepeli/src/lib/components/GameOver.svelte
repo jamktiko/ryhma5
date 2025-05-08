@@ -2,6 +2,7 @@
 	import Modal from './Modal.svelte';
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
 	interface Props {
 		hideModal: () => void;
 		score: number;
@@ -22,12 +23,17 @@
 		min_points: number;
 		max_points: number;
 	}
-
+	let response: Response; // alustetaan response
 	onMount(async () => {
+		// katsotaan ensin kummassa pelissä ollaan
 		try {
-			const response = await fetch('/json/ranks.json');
+			if ($page.url.pathname === '/peli'){
+			response = await fetch('/json/ranks.json');
+			} else if ($page.url.pathname === '/peli2'){
+			response = await fetch('/json/ranksAjoitettu.json');
+			}
 			if (!response.ok) throw new Error('Failed to fetch ranks');
-
+			
 			const data = await response.json();
 			const ranks: Rank[] = data.ranks;
 
