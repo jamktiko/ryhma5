@@ -38,25 +38,6 @@
 			>
 		</div>
 		<div data-layer="Line 1" class="line-1"></div>
-		<div data-layer="X" data-size="48" class="x">
-			<div data-svg-wrapper data-layer="Icon" class="icon">
-				<svg
-					width="51"
-					height="51"
-					viewBox="0 0 51 51"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M48.25 2.75L2.75 48.25M2.75 2.75L48.25 48.25"
-						stroke="var(--Icon-Default-Default, #1E1E1E)"
-						stroke-width="4"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-					/>
-				</svg>
-			</div>
-		</div>
 	</div>
 
 	<button class="sulje-nappi" onclick={hideModal}>X</button>
@@ -81,6 +62,18 @@
 			width: 400px;
 		}
 	}
+	@media (max-width: 445px) {
+		.rectangle-1 {
+			width: 350px;
+			left: 20px;
+		}
+	}
+	@media (max-width: 370px) {
+		.rectangle-1 {
+			width: 250px;
+			left: 60px;
+		}
+	}
 
 	.speedeonreaktiopelijokatestaareaktiokykyjsijatarkkuuttasi_span {
 		color: black;
@@ -92,6 +85,16 @@
 	@media (max-width: 700px) {
 		.speedeonreaktiopelijokatestaareaktiokykyjsijatarkkuuttasi_span {
 			font-size: 25px;
+		}
+	}
+	@media (max-width: 445px) {
+		.speedeonreaktiopelijokatestaareaktiokykyjsijatarkkuuttasi_span {
+			font-size: 18px;
+		}
+	}
+	@media (max-width: 370px) {
+		.speedeonreaktiopelijokatestaareaktiokykyjsijatarkkuuttasi_span {
+			font-size: 15px;
 		}
 	}
 
@@ -110,6 +113,18 @@
 			top: 100px;
 		}
 	}
+	@media (max-width: 445px) {
+		.speede-on-reaktiopeli-joka-testaa-reaktiokykyjsi-ja-tarkkuuttasi {
+			width: 350px;
+			left: 20px;
+		}
+	}
+	@media (max-width: 370px) {
+		.speede-on-reaktiopeli-joka-testaa-reaktiokykyjsi-ja-tarkkuuttasi {
+			width: 250px;
+			left: 60px;
+		}
+	}
 
 	.pelissonkolmeerimodeajotkatarjoavateripelitapoja_span {
 		color: black;
@@ -121,6 +136,16 @@
 	@media (max-width: 700px) {
 		.pelissonkolmeerimodeajotkatarjoavateripelitapoja_span {
 			font-size: 24px;
+		}
+	}
+	@media (max-width: 445px) {
+		.pelissonkolmeerimodeajotkatarjoavateripelitapoja_span {
+			font-size: 20px;
+		}
+	}
+	@media (max-width: 370px) {
+		.pelissonkolmeerimodeajotkatarjoavateripelitapoja_span {
+			font-size: 15px;
 		}
 	}
 
@@ -138,7 +163,18 @@
 			left: -10px;
 		}
 	}
-
+	@media (max-width: 445px) {
+		.peliss-on-kolme-eri-modea-jotka-tarjoavat-eri-pelitapoja {
+			width: 350px;
+			left: 20px;
+		}
+	}
+	@media (max-width: 370px) {
+		.peliss-on-kolme-eri-modea-jotka-tarjoavat-eri-pelitapoja {
+			width: 250px;
+			left: 65px;
+		}
+	}
 	.classicajoitettu_span {
 		color: black;
 		font-size: 32px;
@@ -163,7 +199,19 @@
 	@media (max-width: 700px) {
 		.classic-ajoitettu {
 			width: 400px;
-			left: 0px;
+			left: -10px;
+		}
+	}
+	@media (max-width: 445px) {
+		.classic-ajoitettu {
+			width: 350px;
+			left: 20px;
+		}
+	}
+	@media (max-width: 370px) {
+		.classic-ajoitettu {
+			width: 250px;
+			left: 65px;
 		}
 	}
 
@@ -194,6 +242,18 @@
 			width: 400px;
 		}
 	}
+	@media (max-width: 445px) {
+		.kehittjt-tatu-olkinuora-aapo-hampaala-teemu-jalava-oskari-puranen {
+			left: 20px;
+			width: 350px;
+		}
+	}
+	@media (max-width: 370px) {
+		.kehittjt-tatu-olkinuora-aapo-hampaala-teemu-jalava-oskari-puranen {
+			left: 65px;
+			width: 250px;
+		}
+	}
 
 	.line-1 {
 		width: 600px;
@@ -208,6 +268,18 @@
 		.line-1 {
 			width: 398px;
 			left: -15px;
+		}
+	}
+	@media (max-width: 445px) {
+		.line-1 {
+			width: 349px;
+			left: 25px;
+		}
+	}
+	@media (max-width: 370px) {
+		.line-1 {
+			width: 249px;
+			left: 65px;
 		}
 	}
 
@@ -243,6 +315,16 @@
 			left: 300px;
 		}
 	}
+	@media (max-width: 445px) {
+		.sulje-nappi {
+			left: 270px;
+		}
+	}
+	@media (max-width: 370px) {
+		.sulje-nappi {
+			left: 170px;
+		}
+	}
 
 	.sulje-nappi:hover {
 		background: linear-gradient(180deg, #ff7777 0%, #e66666 50%, #aa4444 100%);
@@ -263,6 +345,18 @@
 	@media (max-width: 700px) {
 		.info {
 			width: 390px;
+		}
+	}
+	@media (max-width: 445px) {
+		.info {
+			width: 340px;
+			left: -20px;
+		}
+	}
+	@media (max-width: 370px) {
+		.info {
+			width: 240px;
+			left: -60px;
 		}
 	}
 </style>
