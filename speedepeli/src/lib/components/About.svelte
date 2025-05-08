@@ -262,7 +262,7 @@
 	}
 	@media (max-width: 700px) {
 		.info {
-			width: 400px;
+			width: 390px;
 		}
 	}
 </style>
