@@ -66,14 +66,19 @@
 	}
 
 	@media (max-width: 480px) {
-		.button-wrapper, .game-button {
+		.button-wrapper {
 			width: clamp(80px, 20vw, 150px);
 			height: clamp(80px, 20vw, 150px);
-			margin: 0.25rem;
+			flex-direction: row;
+		}
+		.game-button {
+			width: 100%;
+			height:100%;
 		}
 
 		.key-label {
 			font-size: clamp(40px, 8vw, 80px);
 		}
 	}
+
 </style>
