@@ -163,7 +163,7 @@
 	@media (max-width: 700px) {
 		.classic-ajoitettu {
 			width: 400px;
-			left: 0px;
+			left: -10px;
 		}
 	}
 
