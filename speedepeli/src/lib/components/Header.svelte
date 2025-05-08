@@ -85,7 +85,7 @@
 			font-size: 5px;
 		}
 	}
-	@media (max-width: 470px) {
+	@media (max-width: 480px) {
 		h1 {
 			font-size: 40px;
 		}
