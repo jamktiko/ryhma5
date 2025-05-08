@@ -27,13 +27,13 @@
 	onMount(async () => {
 		// katsotaan ensin kummassa pelissä ollaan
 		try {
-			if ($page.url.pathname === '/peli'){
-			response = await fetch('/json/ranks.json');
-			} else if ($page.url.pathname === '/peli2'){
-			response = await fetch('/json/ranksAjoitettu.json');
+			if ($page.url.pathname === '/peli') {
+				response = await fetch('/json/ranks.json');
+			} else if ($page.url.pathname === '/peli2') {
+				response = await fetch('/json/ranksAjoitettu.json');
 			}
 			if (!response.ok) throw new Error('Failed to fetch ranks');
-			
+
 			const data = await response.json();
 			const ranks: Rank[] = data.ranks;
 
@@ -122,6 +122,17 @@
 			width: 400px;
 		}
 	}
+	@media (max-width: 445px) {
+		.rectangle-1 {
+			width: 350px;
+			left: 0px;
+		}
+	}
+	@media (max-width: 370px) {
+		.rectangle-1 {
+			width: 250px;
+		}
+	}
 	.gameoverklikkasitvrvri_span {
 		color: black;
 		font-size: 96px;
@@ -132,6 +143,16 @@
 	@media (max-width: 700px) {
 		.gameoverklikkasitvrvri_span {
 			font-size: 80px;
+		}
+	}
+	@media (max-width: 445px) {
+		.gameoverklikkasitvrvri_span {
+			font-size: 70px;
+		}
+	}
+	@media (max-width: 370px) {
+		.gameoverklikkasitvrvri_span {
+			font-size: 60px;
 		}
 	}
 
@@ -149,6 +170,18 @@
 			width: 400px;
 		}
 	}
+	@media (max-width: 445px) {
+		.game-over-klikkasit-vr-vri {
+			width: 340px;
+			left: 10px;
+		}
+	}
+	@media (max-width: 370px) {
+		.game-over-klikkasit-vr-vri {
+			width: 240px;
+			left: 10px;
+		}
+	}
 	.line-1 {
 		width: 600px;
 		height: 0px;
@@ -161,6 +194,18 @@
 	@media (max-width: 700px) {
 		.line-1 {
 			width: 399px;
+			left: 5px;
+		}
+	}
+	@media (max-width: 445px) {
+		.line-1 {
+			width: 348px;
+			left: 6px;
+		}
+	}
+	@media (max-width: 370px) {
+		.line-1 {
+			width: 249px;
 			left: 5px;
 		}
 	}
@@ -182,6 +227,16 @@
 			height: 50px;
 		}
 	}
+	@media (max-width: 445px) {
+		.score-counter {
+			left: 10px;
+		}
+	}
+	@media (max-width: 370px) {
+		.score-counter {
+			left: 10px;
+		}
+	}
 
 	.f000_span {
 		color: #ff0000;
@@ -192,6 +247,16 @@
 		word-wrap: break-word;
 	}
 	@media (max-width: 700px) {
+		.f000_span {
+			font-size: 60px;
+		}
+	}
+	@media (max-width: 445px) {
+		.f000_span {
+			font-size: 60px;
+		}
+	}
+	@media (max-width: 370px) {
 		.f000_span {
 			font-size: 60px;
 		}
@@ -212,6 +277,16 @@
 		.text-1000 {
 			left: -30px;
 			top: 287px;
+		}
+	}
+	@media (max-width: 445px) {
+		.text-1000 {
+			left: -35px;
+		}
+	}
+	@media (max-width: 370px) {
+		.text-1000 {
+			left: -30px;
 		}
 	}
 
@@ -235,6 +310,16 @@
 			left: 10px;
 		}
 	}
+	@media (max-width: 445px) {
+		.score {
+			left: 10px;
+		}
+	}
+	@media (max-width: 370px) {
+		.score {
+			left: 10px;
+		}
+	}
 
 	.score-counter_01 {
 		width: 191px;
@@ -253,6 +338,18 @@
 			height: 50px;
 		}
 	}
+	@media (max-width: 445px) {
+		.score-counter_01 {
+			width: 125px;
+			left: 220px;
+		}
+	}
+	@media (max-width: 370px) {
+		.score-counter_01 {
+			width: 100px;
+			left: 150px;
+		}
+	}
 
 	.f000_01_span {
 		color: #ff0000;
@@ -265,6 +362,16 @@
 	@media (max-width: 700px) {
 		.f000_01_span {
 			font-size: 30px;
+		}
+	}
+	@media (max-width: 445px) {
+		.f000_01_span {
+			font-size: 24px;
+		}
+	}
+	@media (max-width: 370px) {
+		.f000_01_span {
+			font-size: 18px;
 		}
 	}
 
@@ -286,6 +393,16 @@
 			top: 335px;
 		}
 	}
+	@media (max-width: 445px) {
+		.text-1000_01 {
+			left: 190px;
+		}
+	}
+	@media (max-width: 370px) {
+		.text-1000_01 {
+			left: 105px;
+		}
+	}
 	.rank_span {
 		color: rgba(0, 0, 0, 0.63);
 		font-size: 48px;
@@ -303,6 +420,16 @@
 	@media (max-width: 700px) {
 		.rank {
 			left: 245px;
+		}
+	}
+	@media (max-width: 445px) {
+		.rank {
+			left: 220px;
+		}
+	}
+	@media (max-width: 370px) {
+		.rank {
+			left: 150px;
 		}
 	}
 
@@ -327,7 +454,7 @@
 		text-decoration: none;
 		width: 80px;
 		height: 80px;
-		left: 520px;
+		left: 524px;
 		top: 15px;
 		border-radius: 50px;
 		position: absolute;
@@ -335,7 +462,17 @@
 	}
 	@media (max-width: 700px) {
 		.sulje-nappi {
-			left: 300px;
+			left: 324px;
+		}
+	}
+	@media (max-width: 445px) {
+		.sulje-nappi {
+			left: 254px;
+		}
+	}
+	@media (max-width: 370px) {
+		.sulje-nappi {
+			left: 154px;
 		}
 	}
 
@@ -365,7 +502,7 @@
 		text-decoration: none;
 		width: 80px;
 		height: 80px;
-		left: 420px;
+		left: 4px;
 		top: 15px;
 		border-radius: 50px;
 		position: absolute;
@@ -373,7 +510,17 @@
 	}
 	@media (max-width: 700px) {
 		.ressu-nappi {
-			left: 200px;
+			left: 5px;
+		}
+	}
+	@media (max-width: 445px) {
+		.ressu-nappi {
+			left: -16px;
+		}
+	}
+	@media (max-width: 370px) {
+		.ressu-nappi {
+			left: -15px;
 		}
 	}
 	.ressu-nappi:hover {
@@ -396,6 +543,18 @@
 	@media (max-width: 700px) {
 		.classi-gameover-alt {
 			width: 400px;
+		}
+	}
+	@media (max-width: 445px) {
+		.classi-gameover-alt {
+			width: 320px;
+			left: -20px;
+		}
+	}
+	@media (max-width: 370px) {
+		.classi-gameover-alt {
+			width: 220px;
+			left: -20px;
 		}
 	}
 </style>
