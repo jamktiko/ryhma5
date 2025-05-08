@@ -31,6 +31,11 @@
 			font-size: 25px;
 		}
 	}
+	@media (max-width: 390px) {
+		h1 {
+			font-size: 20px;
+		}
+	}
 	.custom-button {
 		background: linear-gradient(180deg, #ff6161 0%, #d55151 50%, #993a3a 100%);
 		border: 3px solid #000000;
@@ -51,6 +56,12 @@
 		.custom-button {
 			padding: 5px 15px;
 			font-size: 22px;
+		}
+	}
+	@media (max-width: 390px) {
+		.custom-button {
+			padding: 3px 10px;
+			font-size: 15px;
 		}
 	}
 
@@ -94,6 +105,12 @@
 	@media (max-width: 755px) {
 		.sulje-nappi {
 			padding: 5px 10px;
+		}
+	}
+	@media (max-width: 390px) {
+		.sulje-nappi {
+			right: 0px;
+			top: 10px;
 		}
 	}
 </style>
