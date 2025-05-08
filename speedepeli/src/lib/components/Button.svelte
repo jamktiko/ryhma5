@@ -25,8 +25,8 @@
 		margin: 0.5rem;
 		width: clamp(180px, 20vw, 280px);
 		height: clamp(180px, 20vw, 280px);
-		border-radius: 50%;
-		border-color:aqua;
+		border-radius: 100%;
+		border-color:none;
 		background: linear-gradient(180deg, rgba(255, 255, 255, 0.34) 50.78%, rgba(196, 196, 196, 0.36) 60.58%, rgba(93, 93, 93, 0.22) 77.88%);
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.63);
 		backdrop-filter: blur(4.3px);
@@ -34,8 +34,8 @@
 	}
 
 	.game-button {
-		width: 90%;
-		height: 90%;
+		width: 100%;
+		height: 100%;
 		border-radius: 50%;
 		border: none;
 		margin: -5px;
