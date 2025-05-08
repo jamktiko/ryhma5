@@ -5,6 +5,16 @@
 
 	let showAbout = $state(false);
 	let hidePelaa = $state(false);
+	let isDisabled = $state(false);
+
+	function modalAuki(){
+		isDisabled = true;
+		hidePelaa = true
+	}
+	function modalKiinni(){
+		isDisabled = false;
+		hidePelaa = false
+	}
 </script>
 
 <div data-layer="Start Game" class="start-game">
@@ -13,14 +23,20 @@
 	<div data-layer="Start Game" class="start-game_01">
 		<span class="startgame_01_span">
 			<!-- <a href="/peli" class:is-active={$page.url.pathname === '/peli'}>Pelaa</a> -->
-			<button class="custom-button" onclick={() => (hidePelaa = true)}>Pelaa</button>
+			<button class="custom-button" onclick={modalAuki} disabled={isDisabled}>Pelaa</button>
 			{#if hidePelaa}
-				<Pelaa hidePelaa={() => (hidePelaa = false)} />
+				<Pelaa hidePelaa={modalKiinni} />
 			{/if}
 		</span>
 	</div>
 	<div data-layer="Highscores" class="highscores">
-		<span class="highscores_span"> <a href="/highscore" class="custom-button">Highscore</a></span>
+		<span class="highscores_span"> 
+			{#if !isDisabled}
+			<a href="/highscore" class="custom-button">Highscore</a>
+			{:else}
+			<p>Highscore</p>
+			{/if}
+		</span>
 	</div>
 	<!-- <div data-layer="Info" class="info">
 		<div data-svg-wrapper data-layer="Ellipse 1" class="ellipse-1">
@@ -35,7 +51,7 @@
 			</svg>
 		</div> -->
 	<div data-svg-wrapper data-layer="Info" data-size="48" class="info_01">
-		<button class="about" onclick={() => (showAbout = true)}>i</button>
+		<button class="about" onclick={() => (showAbout = true)} disabled={isDisabled}>i</button>
 		{#if showAbout}
 			<About hideModal={() => (showAbout = false)} />
 		{/if}
