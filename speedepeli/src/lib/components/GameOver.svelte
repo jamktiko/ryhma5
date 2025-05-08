@@ -56,7 +56,7 @@
 			{/if}
 		</div>
 		<div data-layer="Line 1" class="line-1"></div>
-		<div data-layer="sulje-nappi" data-size="48" class="sulje-nappi">
+		<!-- <div data-layer="sulje-nappi" data-size="48" class="sulje-nappi">
 			<div data-svg-wrapper data-layer="Icon" class="icon">
 				<svg
 					width="51"
@@ -74,7 +74,7 @@
 					/>
 				</svg>
 			</div>
-		</div>
+		</div> -->
 		<div data-layer="score counter" class="score-counter"></div>
 		<div data-layer="1000" class="text-1000">
 			<span class="f000_span"
