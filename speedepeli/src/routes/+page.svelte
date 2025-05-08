@@ -34,7 +34,7 @@
 			{#if !isDisabled}
 			<a href="/highscore" class="custom-button">Highscore</a>
 			{:else}
-			<p>Highscore</p>
+			<p class="custom-button">Highscore</p>
 			{/if}
 		</span>
 	</div>
