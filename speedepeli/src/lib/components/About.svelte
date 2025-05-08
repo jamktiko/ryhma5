@@ -71,7 +71,7 @@
 	@media (max-width: 370px) {
 		.rectangle-1 {
 			width: 250px;
-			left: 60px;
+			left: 50px;
 		}
 	}
 
@@ -172,7 +172,7 @@
 	@media (max-width: 370px) {
 		.peliss-on-kolme-eri-modea-jotka-tarjoavat-eri-pelitapoja {
 			width: 250px;
-			left: 65px;
+			left: 55px;
 		}
 	}
 	.classicajoitettu_span {
@@ -211,7 +211,7 @@
 	@media (max-width: 370px) {
 		.classic-ajoitettu {
 			width: 250px;
-			left: 65px;
+			left: 60px;
 		}
 	}
 
@@ -250,7 +250,7 @@
 	}
 	@media (max-width: 370px) {
 		.kehittjt-tatu-olkinuora-aapo-hampaala-teemu-jalava-oskari-puranen {
-			left: 65px;
+			left: 60px;
 			width: 250px;
 		}
 	}
@@ -279,7 +279,7 @@
 	@media (max-width: 370px) {
 		.line-1 {
 			width: 249px;
-			left: 65px;
+			left: 55px;
 		}
 	}
 
@@ -322,7 +322,7 @@
 	}
 	@media (max-width: 370px) {
 		.sulje-nappi {
-			left: 170px;
+			left: 160px;
 		}
 	}
 
