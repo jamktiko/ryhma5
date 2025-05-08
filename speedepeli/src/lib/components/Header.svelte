@@ -85,4 +85,9 @@
 			font-size: 5px;
 		}
 	}
+	@media (max-width: 470px) {
+		h1 {
+			font-size: 40px;
+		}
+	}
 </style>
