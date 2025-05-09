@@ -69,7 +69,7 @@
 
 
 	/* Responsive adjustments for different screen sizes */
-	@media (max-width: 768px) {
+	@media (max-width: 1024px) {
 		.button-wrapper, .game-button {
 			width: clamp(120px, 22vw, 200px);
 			height: clamp(120px, 22vw, 200px);
@@ -80,8 +80,8 @@
 		}
 	}
 
-	@media (max-width: 480px) {
-		.button-wrapper {
+	@media (max-width: 768px) {
+		.button-wrapper, .game-button {
 			width: clamp(80px, 20vw, 150px);
 			height: clamp(80px, 20vw, 150px);
 			flex-direction: row;
@@ -93,6 +93,29 @@
 
 		.key-label {
 			font-size: clamp(40px, 8vw, 80px);
+		}
+	}
+
+	@media (max-width: 480px) {
+		.button-wrapper, .game-button {
+			width: clamp(120px, 22vw, 200px);
+			height: clamp(120px, 22vw, 200px);
+			flex-direction: column;
+		}
+
+		.key-label {
+			font-size: clamp(50px, 10vw, 100px);
+		}
+	}
+	@media (max-width: 320px) {
+		.button-wrapper, .game-button {
+			width: clamp(100px, 15vw, 100px);
+			height: clamp(100px, 15vw, 100px);
+			flex-direction: column;
+		}
+
+		.key-label {
+			font-size: clamp(30px, 6vw, 60px);
 		}
 	}
 
