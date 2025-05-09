@@ -45,13 +45,28 @@
 		justify-content: center;
 		align-items: center;
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+		text-decoration: none;
+		
 	}
+	.game-button:hover {
+	
+		transform: translateY(-2px);
+		box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+	}
+
+	.game-button:active {
+		background: linear-gradient(180deg, #72727247 0%, #8e8e8e1f 50%, #8b8b8b24 100%);
+		transform: translateY(2px);
+		box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+	}
+
 
 	.key-label {
 		font-family: 'Jersey 10', sans-serif;
 		font-size: clamp(80px, 8vw, 150px);
 		color: grey;
 	}
+
 
 	/* Responsive adjustments for different screen sizes */
 	@media (max-width: 768px) {
