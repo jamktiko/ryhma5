@@ -93,6 +93,11 @@
 			left: 37%;
 		}
 	}
+	@media (max-width: 400px) {
+		.highscores {
+			left: 25%;
+		}
+	}
 
 	.f000_span {
 		color: #ff0000;
@@ -106,7 +111,7 @@
 		width: 100px;
 		height: 0px;
 		left: 50%;
-		top: 10%;
+		top: 12%;
 		position: absolute;
 		text-align: center;
 		justify-content: flex-start;
@@ -136,7 +141,7 @@
 
 	.highscores_01 {
 		width: 100%;
-		height: 1024px;
+		height: 750px;
 		position: relative;
 		background: white;
 		overflow: hidden;

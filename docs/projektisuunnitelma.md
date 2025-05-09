@@ -54,7 +54,8 @@ _Kirjaa tähän lukuun aikataulu. Millä tavoin projekti viedään läpi. Voitte
 | Idean valinta         | 24.04.2025 | Valitaan tuotantoon menevä projekti-idea  |
 | Idean alustava esitys | 25.4.2025  | Esitetään opettajille projektisuunnitelma |
 | Projekti päättyy      | 16.05.2025 | Ohjelmistoprojekti 1 päättyy              |
-| 
+| Toimiva peli demo     | 2.05.2025  | koitetaan saada pelistä pelattava demo    |
+| Pelin testi julkaisu  | 9.5.2025   | Netlify julkaisua kokeiltu onnistuneesti  |
 
 
 ## Raportointi, kommunikointi ja dokumentointi

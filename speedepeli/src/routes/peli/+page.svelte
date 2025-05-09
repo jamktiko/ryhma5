@@ -150,7 +150,7 @@
 	{:else}
 		<div class="score-display">
 			<h2>Score: {score}</h2>
-			<p>Active color: {activeColor}</p>
+			<!-- <p>Active color: {activeColor}</p> -->
 			<p>Nopeus: {gameSpeed}ms</p>
 		</div>
 		<div class="button-container">
@@ -224,6 +224,9 @@
 			width: 96%;
 			margin: 2%;
 		}
+		h2, p {
+		font-size: 20px;
+		}
 	}
 	.countdown-display {
 		font-family: 'Jersey 10';
@@ -235,4 +238,5 @@
 		font-size: 30px;
 		margin: 10px 0;
 	}
+	
 </style>

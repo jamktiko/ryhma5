@@ -138,7 +138,7 @@
 		<div class="score-display">
 			<h2>Score: {score}</h2>
 			<div class="timer">Time: {timeRemaining}s</div>
-			<p>Active color: {activeColor}</p>
+			<!-- <p>Active color: {activeColor}</p> -->
 		</div>
 		<div class="button-container">
 			<Button
@@ -222,5 +222,11 @@
 	.countdown-display p {
 		font-size: 30px;
 		margin: 10px 0;
+	}
+
+	@media (max-width:600px) {
+		.score-display, .timer {
+			font-size: 15px;
+		}
 	}
 </style>
