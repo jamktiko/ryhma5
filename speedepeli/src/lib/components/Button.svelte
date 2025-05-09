@@ -99,6 +99,10 @@
 	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
 	transform: none;
 }
+.game-button:active {
+		background: linear-gradient(180deg, #72727247 0%, #8e8e8e1f 50%, #8b8b8b24 100%);
+		box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+	}
 	}
 
 	@media (max-width: 480px) {
@@ -116,6 +120,10 @@
 	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
 	transform: none;
 }
+.game-button:active {
+		background: linear-gradient(180deg, #72727247 0%, #8e8e8e1f 50%, #8b8b8b24 100%);
+		box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+	}
 	}
 	@media (max-width: 320px) {
 		.button-wrapper, .game-button {
@@ -132,6 +140,10 @@
 	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
 	transform: none;
 }
+.game-button:active {
+		background: linear-gradient(180deg, #72727247 0%, #8e8e8e1f 50%, #8b8b8b24 100%);
+		box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+	}
 	}
 
 </style>
