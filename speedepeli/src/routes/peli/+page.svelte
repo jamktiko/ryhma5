@@ -173,7 +173,7 @@
 				keyLabel="D"
 			/>
 			<Button
-				color="#00F7FF"
+				color="#0011FF"
 				active={activeColor === 'blue'}
 				onClick={() => handleClick('blue')}
 				keyLabel="F"

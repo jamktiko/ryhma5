@@ -50,13 +50,13 @@
 	}
 	.game-button:hover {
 	
-		transform: translateY(-2px);
+		transform: translateY(1px);
 		box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
 	}
 
 	.game-button:active {
 		background: linear-gradient(180deg, #72727247 0%, #8e8e8e1f 50%, #8b8b8b24 100%);
-		transform: translateY(2px);
+		transform: translateY(-2px);
 		box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
 	}
 
