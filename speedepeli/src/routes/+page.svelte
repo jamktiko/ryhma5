@@ -7,13 +7,13 @@
 	let hidePelaa = $state(false);
 	let isDisabled = $state(false);
 
-	function modalAuki(){
+	function modalAuki() {
 		isDisabled = true;
-		hidePelaa = true
+		hidePelaa = true;
 	}
-	function modalKiinni(){
+	function modalKiinni() {
 		isDisabled = false;
-		hidePelaa = false
+		hidePelaa = false;
 	}
 </script>
 
@@ -30,11 +30,11 @@
 		</span>
 	</div>
 	<div data-layer="Highscores" class="highscores">
-		<span class="highscores_span"> 
+		<span class="highscores_span">
 			{#if !isDisabled}
-			<a href="/highscore" class="custom-button">Highscore</a>
+				<a href="/highscore" class="custom-button">Highscore</a>
 			{:else}
-			<p class="custom-button">Highscore</p>
+				<p class="custom-button">Highscore</p>
 			{/if}
 		</span>
 	</div>
@@ -195,6 +195,11 @@
 			width: 40px;
 			height: 40px;
 			font-size: 25px;
+		}
+	}
+	@media (max-width: 430px) {
+		.about {
+			left: 86%;
 		}
 	}
 </style>
