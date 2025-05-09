@@ -96,7 +96,7 @@
 			display: none;
 		}
 		.game-button:hover {
-	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
 	transform: none;
 }
 .game-button:active {
@@ -117,7 +117,7 @@
 			display: none;
 		}
 		.game-button:hover {
-	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
 	transform: none;
 }
 .game-button:active {
@@ -137,7 +137,7 @@
 			display: none;
 		}
 		.game-button:hover {
-	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
 	transform: none;
 }
 .game-button:active {
