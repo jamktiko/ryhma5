@@ -95,6 +95,10 @@
 			font-size: clamp(40px, 8vw, 80px);
 			display: none;
 		}
+		.game-button:hover {
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+	transform: none;
+}
 	}
 
 	@media (max-width: 480px) {
@@ -108,6 +112,10 @@
 			font-size: clamp(50px, 10vw, 100px);
 			display: none;
 		}
+		.game-button:hover {
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+	transform: none;
+}
 	}
 	@media (max-width: 320px) {
 		.button-wrapper, .game-button {
@@ -120,6 +128,10 @@
 			font-size: clamp(30px, 6vw, 60px);
 			display: none;
 		}
+		.game-button:hover {
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+	transform: none;
+}
 	}
 
 </style>
