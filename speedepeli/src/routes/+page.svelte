@@ -2,18 +2,31 @@
 	import { page } from '$app/stores';
 	import About from '$lib/components/About.svelte';
 	import Pelaa from '$lib/components/Pelaa.svelte';
+	import { onMount } from 'svelte';
 
 	let showAbout = $state(false);
 	let hidePelaa = $state(false);
 	let isDisabled = $state(false);
+	let audio: HTMLAudioElement;
+
+	onMount(() => {
+		audio = new Audio('/audio/mainmenu.mp3');
+		audio.loop = true;
+		audio.volume = 0.5; // Voit säätää äänenvoimakkuutta 0.0–1.0
+		audio.play().catch((e) => {
+			console.warn('Äänen automaattinen toisto estetty selaimessa:', e);
+		});
+	});
 
 	function modalAuki() {
 		isDisabled = true;
 		hidePelaa = true;
+		audio.pause();
 	}
 	function modalKiinni() {
 		isDisabled = false;
 		hidePelaa = false;
+		audio.play();
 	}
 </script>
 
