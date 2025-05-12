@@ -3,38 +3,59 @@
 	import About from '$lib/components/About.svelte';
 	import Pelaa from '$lib/components/Pelaa.svelte';
 	import { onMount } from 'svelte';
+	import { taustaAani } from '$lib/components/highscore.svelte';
 
 	let showAbout = $state(false);
 	let hidePelaa = $state(false);
 	let isDisabled = $state(false);
 	let audio: HTMLAudioElement;
 	let infoAudio: HTMLAudioElement 
+	let menuAudio: HTMLAudioElement;
 	function toistaInfoAudio(){
 		infoAudio = new Audio('/audio/info.wav');
 		showAbout = true;
 		infoAudio.currentTime = 0; // Kelaa ääni alkuun
 		infoAudio.play();
 	}
-
-	onMount(() => {
-		audio = new Audio('/audio/mainmenu.mp3');
-		audio.loop = true;
-		audio.volume = 0.5; // Voit säätää äänenvoimakkuutta 0.0–1.0
-		audio.play().catch((e) => {
-			console.warn('Äänen automaattinen toisto estetty selaimessa:', e);
-		});
-	});
+	function toistaMenuAudio(){
+		menuAudio = new Audio('/audio/menunappi.wav');
+		menuAudio.currentTime = 0; // Kelaa ääni alkuun
+		menuAudio.play();
+		modalAuki();
+	}
 
 	function modalAuki() {
 		isDisabled = true;
 		hidePelaa = true;
-		audio.pause();
+		//audio.pause();
 	}
 	function modalKiinni() {
 		isDisabled = false;
 		hidePelaa = false;
-		audio.play();
+		menuAudio.currentTime = 0; // Kelaa ääni alkuun
+		menuAudio.play();
+		//audio.play();
 	}
+
+	let disablePlay = $derived($taustaAani);
+	
+	function play() {
+		 //disablePlay = true;
+			taustaAani.set(true);
+			audio = new Audio('/audio/mainmenu.mp3');
+			audio.loop = true;
+			audio.volume = 0.5; // Voit säätää äänenvoimakkuutta 0.0–1.0
+			audio.play().catch((e) => {
+				console.warn('Äänen automaattinen toisto estetty selaimessa:', e);
+			});
+		}
+
+	function mute(){
+		taustaAani.set(false);
+		audio.pause();
+		//disablePlay = false;
+	}
+
 </script>
 
 <div data-layer="Start Game" class="start-game">
@@ -43,7 +64,7 @@
 	<div data-layer="Start Game" class="start-game_01">
 		<span class="startgame_01_span">
 			<!-- <a href="/peli" class:is-active={$page.url.pathname === '/peli'}>Pelaa</a> -->
-			<button class="custom-button" onclick={modalAuki} disabled={isDisabled}>Pelaa</button>
+			<button class="custom-button" onclick={toistaMenuAudio} disabled={isDisabled}>Pelaa</button>
 			{#if hidePelaa}
 				<Pelaa hidePelaa={modalKiinni} />
 			{/if}
@@ -77,6 +98,8 @@
 		{/if}
 	</div>
 </div>
+<button onclick={play} disabled={disablePlay}>Play</button>
+		<button onclick={mute} disabled={!disablePlay}>Mute</button>
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
