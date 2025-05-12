@@ -1,3 +1,4 @@
+
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { showModal1 } from '$lib/components/highscore.svelte.js';
@@ -10,7 +11,7 @@
 	<h1>{text}</h1>
 	{#if $page.url.pathname !== '/' && !showModal2}
 		<nav>
-			<a href="/" class="custom-button">Aloitus sivu</a>
+			<a href="/" class="material-symbols-outlined custom-button">home</a>
 
 			<!-- <button onclick={() => (showAbout = true)}>About</button>  -->
 		</nav>
@@ -44,8 +45,8 @@
 		border: 3px solid #000000;
 		border-radius: 8px;
 		color: black;
-		font-family: 'Jersey 10', sans-serif;
-		font-size: 20px;
+		/* font-family: 'Jersey 10', sans-serif; */
+		/* font-size: 20px; */
 		padding: 5px 10px;
 		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 		box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
@@ -56,6 +57,13 @@
 		top: 100px;
 		text-decoration: none;
 	}
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
 
 	.custom-button:hover {
 		background: linear-gradient(180deg, #ff7777 0%, #e66666 50%, #aa4444 100%);
