@@ -95,12 +95,15 @@
 		position: absolute;
 		top: 20px;
 		right: 20px;
-		background-color: #ff0000;
-		color: white;
-		border: none;
-		border-radius: 5px;
 		padding: 10px 20px;
 		cursor: pointer;
+		border: 3px solid #000000;
+		border-radius: 50px;
+		background: linear-gradient(180deg, #ff6161 0%, #d55151 50%, #993a3a 100%);
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+		box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+		backdrop-filter: blur(4.3px);
+		transition: all 0.2s ease;
 	}
 	@media (max-width: 755px) {
 		.sulje-nappi {
