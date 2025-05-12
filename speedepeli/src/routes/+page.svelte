@@ -9,31 +9,38 @@
 	let isDisabled = $state(false);
 	let audio: HTMLAudioElement;
 	let infoAudio: HTMLAudioElement 
+	let menuAudio: HTMLAudioElement;
 	function toistaInfoAudio(){
 		infoAudio = new Audio('/audio/info.wav');
 		showAbout = true;
 		infoAudio.currentTime = 0; // Kelaa ääni alkuun
 		infoAudio.play();
 	}
+	function toistaMenuAudio(){
+		menuAudio = new Audio('/audio/menunappi.wav');
+		menuAudio.currentTime = 0; // Kelaa ääni alkuun
+		menuAudio.play();
+		modalAuki();
+	}
 
-	onMount(() => {
-		audio = new Audio('/audio/mainmenu.mp3');
-		audio.loop = true;
-		audio.volume = 0.5; // Voit säätää äänenvoimakkuutta 0.0–1.0
-		audio.play().catch((e) => {
-			console.warn('Äänen automaattinen toisto estetty selaimessa:', e);
-		});
-	});
+	// onMount(() => {
+	// 	audio = new Audio('/audio/mainmenu.mp3');
+	// 	audio.loop = true;
+	// 	audio.volume = 0.5; // Voit säätää äänenvoimakkuutta 0.0–1.0
+	// 	audio.play().catch((e) => {
+	// 		console.warn('Äänen automaattinen toisto estetty selaimessa:', e);
+	// 	});
+	// });
 
 	function modalAuki() {
 		isDisabled = true;
 		hidePelaa = true;
-		audio.pause();
+		//audio.pause();
 	}
 	function modalKiinni() {
 		isDisabled = false;
 		hidePelaa = false;
-		audio.play();
+		//audio.play();
 	}
 </script>
 
@@ -43,7 +50,7 @@
 	<div data-layer="Start Game" class="start-game_01">
 		<span class="startgame_01_span">
 			<!-- <a href="/peli" class:is-active={$page.url.pathname === '/peli'}>Pelaa</a> -->
-			<button class="custom-button" onclick={modalAuki} disabled={isDisabled}>Pelaa</button>
+			<button class="custom-button" onclick={toistaMenuAudio} disabled={isDisabled}>Pelaa</button>
 			{#if hidePelaa}
 				<Pelaa hidePelaa={modalKiinni} />
 			{/if}
