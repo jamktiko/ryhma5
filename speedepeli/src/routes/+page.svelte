@@ -8,6 +8,13 @@
 	let hidePelaa = $state(false);
 	let isDisabled = $state(false);
 	let audio: HTMLAudioElement;
+	let infoAudio: HTMLAudioElement 
+	function toistaInfoAudio(){
+		infoAudio = new Audio('/audio/info.wav');
+		showAbout = true;
+		infoAudio.currentTime = 0; // Kelaa ääni alkuun
+		infoAudio.play();
+	}
 
 	onMount(() => {
 		audio = new Audio('/audio/mainmenu.mp3');
@@ -64,7 +71,7 @@
 			</svg>
 		</div> -->
 	<div data-svg-wrapper data-layer="Info" data-size="48" class="info_01">
-		<button class="about" onclick={() => (showAbout = true)} disabled={isDisabled}>i</button>
+		<button class="about" onclick={toistaInfoAudio} disabled={isDisabled}>i</button>
 		{#if showAbout}
 			<About hideModal={() => (showAbout = false)} />
 		{/if}
