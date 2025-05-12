@@ -40,6 +40,8 @@
 	function modalKiinni() {
 		isDisabled = false;
 		hidePelaa = false;
+		menuAudio.currentTime = 0; // Kelaa ääni alkuun
+		menuAudio.play();
 		//audio.play();
 	}
 </script>
