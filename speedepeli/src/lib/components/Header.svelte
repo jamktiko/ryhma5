@@ -39,7 +39,7 @@
 		text-shadow: 0px 4px 9.3px rgba(255, 0, 0, 0.25);
 	}
 
-	@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+	/* @import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap'); */
 	.custom-button {
 		background: linear-gradient(180deg, #ff6161 0%, #d55151 50%, #993a3a 100%);
 		border: 3px solid #000000;
@@ -62,7 +62,7 @@
   'FILL' 0,
   'wght' 400,
   'GRAD' 0,
-  'opsz' 24
+  'opsz' 40
 }
 
 	.custom-button:hover {
@@ -82,7 +82,7 @@
 			font-size: 100px;
 		}
 		.custom-button {
-			font-size: 10px;
+			font-size: 20px;
 		}
 	}
 	@media (max-width: 700px) {
@@ -90,7 +90,7 @@
 			font-size: 70px;
 		}
 		.custom-button {
-			font-size: 5px;
+			font-size: 20px;
 		}
 	}
 	@media (max-width: 480px) {
