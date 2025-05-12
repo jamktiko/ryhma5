@@ -129,13 +129,12 @@
 	onMount(() => {
 		startCountdown(); // Aloita laskuri
 
-		// Add keyboard event listener
-		window.addEventListener('keydown', handleKeyPress);
+		window.addEventListener('keydown', handleKeyPress); // Lisää kuuntelija näppäimille joka rekisteröi painallukset
 
 		return () => {
 			clearInterval(intervalId);
 			clearInterval(countdownInterval); // Pysäytä laskuri
-			// Remove keyboard event listener on cleanup
+
 			window.removeEventListener('keydown', handleKeyPress);
 		};
 	});
@@ -224,8 +223,9 @@
 			width: 96%;
 			margin: 2%;
 		}
-		h2, p {
-		font-size: 20px;
+		h2,
+		p {
+			font-size: 20px;
 		}
 	}
 	.countdown-display {
@@ -238,5 +238,4 @@
 		font-size: 30px;
 		margin: 10px 0;
 	}
-	
 </style>
