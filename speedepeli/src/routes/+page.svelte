@@ -3,6 +3,7 @@
 	import About from '$lib/components/About.svelte';
 	import Pelaa from '$lib/components/Pelaa.svelte';
 	import { onMount } from 'svelte';
+	import { taustaAani } from '$lib/components/highscore.svelte';
 
 	let showAbout = $state(false);
 	let hidePelaa = $state(false);
@@ -23,15 +24,6 @@
 		modalAuki();
 	}
 
-	// onMount(() => {
-	// 	audio = new Audio('/audio/mainmenu.mp3');
-	// 	audio.loop = true;
-	// 	audio.volume = 0.5; // Voit säätää äänenvoimakkuutta 0.0–1.0
-	// 	audio.play().catch((e) => {
-	// 		console.warn('Äänen automaattinen toisto estetty selaimessa:', e);
-	// 	});
-	// });
-
 	function modalAuki() {
 		isDisabled = true;
 		hidePelaa = true;
@@ -44,6 +36,26 @@
 		menuAudio.play();
 		//audio.play();
 	}
+
+	let disablePlay = $derived($taustaAani);
+	
+	function play() {
+		 //disablePlay = true;
+			taustaAani.set(true);
+			audio = new Audio('/audio/mainmenu.mp3');
+			audio.loop = true;
+			audio.volume = 0.5; // Voit säätää äänenvoimakkuutta 0.0–1.0
+			audio.play().catch((e) => {
+				console.warn('Äänen automaattinen toisto estetty selaimessa:', e);
+			});
+		}
+
+	function mute(){
+		taustaAani.set(false);
+		audio.pause();
+		//disablePlay = false;
+	}
+
 </script>
 
 <div data-layer="Start Game" class="start-game">
@@ -86,6 +98,8 @@
 		{/if}
 	</div>
 </div>
+<button onclick={play} disabled={disablePlay}>Play</button>
+		<button onclick={mute} disabled={!disablePlay}>Mute</button>
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
