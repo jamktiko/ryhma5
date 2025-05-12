@@ -27,20 +27,17 @@
 	function modalAuki() {
 		isDisabled = true;
 		hidePelaa = true;
-		//audio.pause();
 	}
 	function modalKiinni() {
 		isDisabled = false;
 		hidePelaa = false;
 		menuAudio.currentTime = 0; // Kelaa ääni alkuun
 		menuAudio.play();
-		//audio.play();
 	}
 
 	let disablePlay = $derived($taustaAani);
 	
 	function play() {
-		 //disablePlay = true;
 			taustaAani.set(true);
 			audio = new Audio('/audio/mainmenu.mp3');
 			audio.loop = true;
@@ -53,7 +50,6 @@
 	function mute(){
 		taustaAani.set(false);
 		audio.pause();
-		//disablePlay = false;
 	}
 
 </script>
