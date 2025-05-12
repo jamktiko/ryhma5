@@ -130,7 +130,7 @@
 			box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
 		}
 	}
-	@media (max-width: 320px) {
+	@media (max-width: 350px) {
 		.button-wrapper,
 		.game-button {
 			width: clamp(100px, 15vw, 100px);

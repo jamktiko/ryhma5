@@ -90,4 +90,9 @@
 			font-size: 40px;
 		}
 	}
+	@media (max-height: 560px) {
+		header {
+			display: none;
+		}
+	}
 </style>

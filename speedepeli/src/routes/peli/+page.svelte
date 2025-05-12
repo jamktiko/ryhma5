@@ -25,6 +25,18 @@
 	let showModal = $state(false); // näyttääkö pelin päättymisen jälkeen modalin
 	let highscoreList: number[] = $derived($lista); // highscore lista
 
+// ääniä
+const nappiAudio = new Audio('/audio/oikeanappi.wav')
+const vaaraNappiAudio = new Audio('/audio/vaaranappi.wav')
+function toistaNappiAudio() {
+	nappiAudio.currentTime = 0; // Kelaa ääni alkuun
+	nappiAudio.play();
+}
+function toistaVaaranappiAudio() {
+	vaaraNappiAudio.currentTime = 0; // Kelaa ääni alkuun
+	vaaraNappiAudio.play();
+}
+
 	//countdown muuttujat
 	let countdownValue = $state(3); // aloituslaskuri
 	let isCountingDown = $state(true); // onko laskuri käynnissä
@@ -57,6 +69,7 @@
 		lastClicked = color; // viimeksi klikattu väri
 		clickedThisRound = true; // Pelaaja on klikannut väriä tällä kierroksella
 		if (color === activeColor) {
+			toistaNappiAudio(); // soita ääni, kun nappia painetaan
 			score += 1;
 			console.log('Oikein! Pisteet: ' + score);
 
@@ -69,6 +82,7 @@
 			setRandomColor(); // Aseta uusi satunnainen väri
 			startInterval(); // Aloita uusi interval
 		} else {
+			vaaraNappiAudio.play();
 			triggerGameOver(); // Jos väri on väärä, peli päättyy
 		}
 	}
