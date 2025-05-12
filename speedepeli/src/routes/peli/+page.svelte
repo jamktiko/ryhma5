@@ -25,17 +25,17 @@
 	let showModal = $state(false); // näyttääkö pelin päättymisen jälkeen modalin
 	let highscoreList: number[] = $derived($lista); // highscore lista
 
-// ääniä
-const nappiAudio = new Audio('/audio/oikeanappi.wav')
-const vaaraNappiAudio = new Audio('/audio/vaaranappi.wav')
-function toistaNappiAudio() {
-	nappiAudio.currentTime = 0; // Kelaa ääni alkuun
-	nappiAudio.play();
-}
-function toistaVaaranappiAudio() {
-	vaaraNappiAudio.currentTime = 0; // Kelaa ääni alkuun
-	vaaraNappiAudio.play();
-}
+	// ääniä
+	const nappiAudio = new Audio('/audio/oikeanappi.wav');
+	const vaaraNappiAudio = new Audio('/audio/vaaranappi.wav');
+	function toistaNappiAudio() {
+		nappiAudio.currentTime = 0; // Kelaa ääni alkuun
+		nappiAudio.play();
+	}
+	function toistaVaaranappiAudio() {
+		vaaraNappiAudio.currentTime = 0; // Kelaa ääni alkuun
+		vaaraNappiAudio.play();
+	}
 
 	//countdown muuttujat
 	let countdownValue = $state(3); // aloituslaskuri
@@ -82,7 +82,7 @@ function toistaVaaranappiAudio() {
 			setRandomColor(); // Aseta uusi satunnainen väri
 			startInterval(); // Aloita uusi interval
 		} else {
-			vaaraNappiAudio.play();
+			toistaVaaranappiAudio(); // soita ääni, kun väärä nappi painetaan
 			triggerGameOver(); // Jos väri on väärä, peli päättyy
 		}
 	}
