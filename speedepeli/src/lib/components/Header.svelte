@@ -5,6 +5,26 @@
 	let { text, logo }: { text: string; logo?: string } = $props();
 	// import About from '$lib/components/About.svelte';
 	let showModal2 = $derived($showModal1);
+	let isPlaying = $state(false);
+	let volume = $state(50);
+	
+	function play(){
+		isPlaying=true;
+		//myAudio = new Audio('/audio/mainmenu.mp3');
+		//myAudio.loop = true;
+		//myAudio.play()
+		(document.getElementById('myAudio') as HTMLAudioElement)?.play();
+	}
+	function pause(){
+		isPlaying=false;
+		//myAudio.pause();
+		(document.getElementById('myAudio') as HTMLAudioElement)?.pause();
+	}
+
+	function setVolume(event: Event) {
+		const newVolume = (event.target as HTMLInputElement).value;
+		(document.getElementById('myAudio') as HTMLAudioElement).volume = parseInt(newVolume) / 100;
+	}
 </script>
 
 <header>
@@ -17,9 +37,13 @@
 		</nav>
 	{/if}
 
-	<audio id="myAudio" controls loop>
-		<source src="/audio/mainmenu.mp3" type="audio/mpeg">
-	</audio>
+	<audio id="myAudio" src="/audio/mainmenu.mp3"></audio>
+
+	<div class="audiobox">
+		<button class="play" onclick={play} disabled={isPlaying}>Play</button>
+		<button class="pause" onclick={pause} disabled={!isPlaying}>Pause</button>
+		<input type="range" min="0" max="100" step="1" bind:value={volume} oninput={setVolume} />
+	</div>
 	<!-- {#if showAbout}
   <About hideModal={() => (showAbout = false)} />
 {/if} -->
@@ -58,7 +82,7 @@
 		transition: all 0.2s ease;
 		position: absolute;
 		display: flex;
-		top: 100px;
+		top: 110px;
 		text-decoration: none;
 	}
 .material-symbols-outlined {
