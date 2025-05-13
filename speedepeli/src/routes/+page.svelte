@@ -184,7 +184,7 @@
 
 	.start-game {
 		width: 100%;
-		height: 100vh;
+		height: 78vh;
 		position: relative;
 		background: white;
 		overflow: hidden;
