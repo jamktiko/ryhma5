@@ -5,6 +5,13 @@
 	}
 
 	let { hideModal }: Props = $props();
+	let menuAudio: HTMLAudioElement;
+	function toistaMenuAudio() {
+		menuAudio = new Audio('/audio/menunappi.wav');
+		menuAudio.currentTime = 0; // Kelaa ääni alkuun
+		menuAudio.play();
+		hideModal();
+	}
 </script>
 
 <ModalAbout>
@@ -40,7 +47,7 @@
 		<div data-layer="Line 1" class="line-1"></div>
 	</div>
 
-	<button class="sulje-nappi" onclick={hideModal}>X</button>
+	<button class="sulje-nappi" onclick={toistaMenuAudio}>X</button>
 </ModalAbout>
 
 <style>
