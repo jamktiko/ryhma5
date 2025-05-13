@@ -8,7 +8,7 @@
 	let showAbout = $state(false);
 	let hidePelaa = $state(false);
 	let isDisabled = $state(false);
-	let audio: HTMLAudioElement;
+	//let audio: HTMLAudioElement;
 	let infoAudio: HTMLAudioElement;
 	let menuAudio: HTMLAudioElement;
 	function toistaInfoAudio() {
@@ -36,21 +36,21 @@
 	}
 
 	let disablePlay = $derived($taustaAani);
+// tausta aani, jos aikaa
+	// function play() {
+	// 		taustaAani.set(true);
+	// 		audio = new Audio('/audio/mainmenu.mp3');
+	// 		audio.loop = true;
+	// 		audio.volume = 0.5; // Voit säätää äänenvoimakkuutta 0.0–1.0
+	// 		audio.play().catch((e) => {
+	// 			console.warn('Äänen automaattinen toisto estetty selaimessa:', e);
+	// 		});
+	// 	}
 
-	function play() {
-			taustaAani.set(true);
-			audio = new Audio('/audio/mainmenu.mp3');
-			audio.loop = true;
-			audio.volume = 0.5; // Voit säätää äänenvoimakkuutta 0.0–1.0
-			audio.play().catch((e) => {
-				console.warn('Äänen automaattinen toisto estetty selaimessa:', e);
-			});
-		}
-
-	function mute() {
-		taustaAani.set(false);
-		audio.pause();
-	}
+	// function mute() {
+	// 	taustaAani.set(false);
+	// 	audio.pause();
+	// }
 </script>
 
 <div data-layer="Start Game" class="start-game">
@@ -93,8 +93,8 @@
 		{/if}
 	</div>
 </div>
-<button onclick={play} disabled={disablePlay}>Play</button>
-<button onclick={mute} disabled={!disablePlay}>Mute</button>
+<!-- <button onclick={play} disabled={disablePlay}>Play</button>
+<button onclick={mute} disabled={!disablePlay}>Mute</button> -->
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
