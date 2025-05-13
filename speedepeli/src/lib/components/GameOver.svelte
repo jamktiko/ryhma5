@@ -11,10 +11,22 @@
 
 	let { hideModal, score, clickedThisRound }: Props = $props(); //
 	let rank = $state(); // Pelaajan rankki
+	let menuAudio: HTMLAudioElement;
+	let loadAudio: HTMLAudioElement;
 
-	function returnHome() {
+	function toistaMenuAudioreturn() {
+		menuAudio = new Audio('/audio/menunappi.wav');
+		menuAudio.currentTime = 0; // Kelaa ääni alkuun
+		menuAudio.play();
 		hideModal(); // Sulje modal
 		goto('/'); // Siirry etusivulle
+	}
+
+	function toistaMenuAudiorestart() {
+		loadAudio = new Audio('/audio/load.wav');
+		loadAudio.currentTime = 0; // Kelaa ääni alkuun
+		loadAudio.play();
+		hideModal(); // Sulje modal
 	}
 
 	interface Rank {
@@ -96,11 +108,11 @@
 		<div data-layer="Rank:" class="rank"><span class="rank_span">Rank:</span></div>
 	</div>
 
-	<button class="sulje-nappi" onclick={returnHome}>X</button>
+	<button class="sulje-nappi" onclick={toistaMenuAudioreturn}>X</button>
 	<button
 		class="ressu-nappi"
 		onclick={() => {
-			hideModal();
+			toistaMenuAudiorestart();
 		}}>Restart</button
 	>
 </Modal>
