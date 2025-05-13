@@ -16,6 +16,10 @@
 			<!-- <button onclick={() => (showAbout = true)}>About</button>  -->
 		</nav>
 	{/if}
+
+	<audio id="myAudio" controls loop>
+		<source src="/audio/mainmenu.mp3" type="audio/mpeg">
+	</audio>
 	<!-- {#if showAbout}
   <About hideModal={() => (showAbout = false)} />
 {/if} -->
