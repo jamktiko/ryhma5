@@ -99,8 +99,14 @@
 		}
 	}
 	@media (max-height: 560px) {
-		header {
+		h1 {
 			display: none;
 		}
+		.custom-button {
+			font-size: 20px;
+			top: 50px;
+			left: 100px;
+		}
+		
 	}
 </style>
