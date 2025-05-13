@@ -2,7 +2,8 @@
 ## Videon perus idea
  -  Toteutetaan screen capturena
  -  Filmaillaan pelin toimintoa, siinähän se idea parhaiten näkyy
- -  
+
+
 
 
 
