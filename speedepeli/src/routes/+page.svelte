@@ -8,16 +8,16 @@
 	let showAbout = $state(false);
 	let hidePelaa = $state(false);
 	let isDisabled = $state(false);
-	let audio: HTMLAudioElement;
-	let infoAudio: HTMLAudioElement 
+	//let audio: HTMLAudioElement;
+	let infoAudio: HTMLAudioElement;
 	let menuAudio: HTMLAudioElement;
-	function toistaInfoAudio(){
+	function toistaInfoAudio() {
 		infoAudio = new Audio('/audio/info.wav');
 		showAbout = true;
 		infoAudio.currentTime = 0; // Kelaa ääni alkuun
 		infoAudio.play();
 	}
-	function toistaMenuAudio(){
+	function toistaMenuAudio() {
 		menuAudio = new Audio('/audio/menunappi.wav');
 		menuAudio.currentTime = 0; // Kelaa ääni alkuun
 		menuAudio.play();
@@ -27,35 +27,30 @@
 	function modalAuki() {
 		isDisabled = true;
 		hidePelaa = true;
-		//audio.pause();
 	}
 	function modalKiinni() {
 		isDisabled = false;
 		hidePelaa = false;
 		menuAudio.currentTime = 0; // Kelaa ääni alkuun
 		menuAudio.play();
-		//audio.play();
 	}
 
 	let disablePlay = $derived($taustaAani);
-	
-	function play() {
-		 //disablePlay = true;
-			taustaAani.set(true);
-			audio = new Audio('/audio/mainmenu.mp3');
-			audio.loop = true;
-			audio.volume = 0.5; // Voit säätää äänenvoimakkuutta 0.0–1.0
-			audio.play().catch((e) => {
-				console.warn('Äänen automaattinen toisto estetty selaimessa:', e);
-			});
-		}
+// tausta aani, jos aikaa
+	// function play() {
+	// 		taustaAani.set(true);
+	// 		audio = new Audio('/audio/mainmenu.mp3');
+	// 		audio.loop = true;
+	// 		audio.volume = 0.5; // Voit säätää äänenvoimakkuutta 0.0–1.0
+	// 		audio.play().catch((e) => {
+	// 			console.warn('Äänen automaattinen toisto estetty selaimessa:', e);
+	// 		});
+	// 	}
 
-	function mute(){
-		taustaAani.set(false);
-		audio.pause();
-		//disablePlay = false;
-	}
-
+	// function mute() {
+	// 	taustaAani.set(false);
+	// 	audio.pause();
+	// }
 </script>
 
 <div data-layer="Start Game" class="start-game">
@@ -98,8 +93,8 @@
 		{/if}
 	</div>
 </div>
-<button onclick={play} disabled={disablePlay}>Play</button>
-		<button onclick={mute} disabled={!disablePlay}>Mute</button>
+<!-- <button onclick={play} disabled={disablePlay}>Play</button>
+<button onclick={mute} disabled={!disablePlay}>Mute</button> -->
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
@@ -189,7 +184,7 @@
 
 	.start-game {
 		width: 100%;
-		height: 500px;
+		height: 100vh;
 		position: relative;
 		background: white;
 		overflow: hidden;
