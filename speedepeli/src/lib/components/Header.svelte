@@ -82,7 +82,7 @@
 		transition: all 0.2s ease;
 		position: absolute;
 		display: flex;
-		top: 110px;
+		top: 60px;
 		text-decoration: none;
 	}
 .material-symbols-outlined {
@@ -103,6 +103,22 @@
 		background: linear-gradient(180deg, #d55151 0%, #993a3a 50%, #772222 100%);
 		transform: translateY(1px);
 		box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+	}
+	.audiobox {background: linear-gradient(180deg, #ff6161 0%, #d55151 50%, #993a3a 100%);
+		border: 3px solid #000000;
+		border-radius: 8px;
+		color: black;
+		/* font-family: 'Jersey 10', sans-serif; */
+		/* font-size: 20px; */
+		padding: 5px -5px;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+		box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+		cursor: pointer;
+		transition: all 0.2s ease;
+		position: absolute;
+		display: flex;
+		top: 110px;
+		text-decoration: none;
 	}
 
 	@media (max-width: 850px) {
@@ -132,9 +148,13 @@
 		}
 		.custom-button {
 			font-size: 20px;
-			top: 50px;
+			top: 70px;
 			left: 100px;
 		}
-		
+		.audiobox
+	 {
+		top: 28px;
+		left: 100px;
+	 }
 	}
 </style>
