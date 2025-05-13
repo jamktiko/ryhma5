@@ -37,7 +37,7 @@
 		</nav>
 	{/if}
 
-	<audio id="myAudio" src="/audio/mainmenu.mp3"></audio>
+	<audio id="myAudio" src="/audio/mainmenu.mp3" loop></audio>
 
 	<div class="audiobox">
 		<button class="play" onclick={play} disabled={isPlaying}>Play</button>
