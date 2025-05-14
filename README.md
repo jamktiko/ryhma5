@@ -18,16 +18,23 @@ Speede Game Pro is a game for our Ohjelmistoprojekti 1 course. The game is based
 ### Installing
 
 - How/where to download your program
-    - 
-- Any modifications needed to be made to files/folders
+  
+```
+	git clone https://github.com/jamktiko/ryhma5
+```
 
+- Any modifications needed to be made to files/folders
+      - Go to the directory you cloned and in the /speedepeli folder run:
+```
+	npm install
+```
 ### Executing program
 
 - How to run the program
 - Step-by-step bullets
 
 ```
-code blocks for commands
+	npm run dev
 ```
 
 ## Help
