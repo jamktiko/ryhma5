@@ -27,7 +27,7 @@
 		</div>
 		<div class="credit">
 			<span class="credit_span">
-				Sound effectien kehittäjä Kenney Vleugels Musiikin kehittäjä Ben Dover</span
+				Sound effectien kehittäjä Kenney Vleugels. Musiikin kehittäjä Joth</span
 			>
 		</div>
 		<div

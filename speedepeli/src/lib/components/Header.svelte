@@ -1,4 +1,3 @@
-
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { showModal1 } from '$lib/components/highscore.svelte.js';
@@ -7,16 +6,16 @@
 	let showModal2 = $derived($showModal1);
 	let isPlaying = $state(false);
 	let volume = $state(50);
-	
-	function play(){
-		isPlaying=true;
+
+	function play() {
+		isPlaying = true;
 		//myAudio = new Audio('/audio/mainmenu.mp3');
 		//myAudio.loop = true;
 		//myAudio.play()
 		(document.getElementById('myAudio') as HTMLAudioElement)?.play();
 	}
-	function pause(){
-		isPlaying=false;
+	function pause() {
+		isPlaying = false;
 		//myAudio.pause();
 		(document.getElementById('myAudio') as HTMLAudioElement)?.pause();
 	}
@@ -37,11 +36,15 @@
 		</nav>
 	{/if}
 
-	<audio id="myAudio" src="/audio/mainmenu.mp3" loop></audio>
+	<audio id="myAudio" src="/audio/pelausmusa1.mp3" loop></audio>
 
 	<div class="audiobox">
-		<button class="play" onclick={play} disabled={isPlaying}><span class="material-symbols-outlined">play_arrow</span></button>
-		<button class="pause" onclick={pause} disabled={!isPlaying}><span class="material-symbols-outlined">pause</span></button>
+		<button class="play" onclick={play} disabled={isPlaying}
+			><span class="material-symbols-outlined">play_arrow</span></button
+		>
+		<button class="pause" onclick={pause} disabled={!isPlaying}
+			><span class="material-symbols-outlined">pause</span></button
+		>
 		<input type="range" min="0" max="100" step="1" bind:value={volume} oninput={setVolume} />
 	</div>
 	<!-- {#if showAbout}
@@ -85,13 +88,13 @@
 		top: 60px;
 		text-decoration: none;
 	}
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 40
-}
+	.material-symbols-outlined {
+		font-variation-settings:
+			'FILL' 0,
+			'wght' 400,
+			'GRAD' 0,
+			'opsz' 40;
+	}
 
 	.custom-button:hover {
 		background: linear-gradient(180deg, #ff7777 0%, #e66666 50%, #aa4444 100%);
@@ -104,7 +107,8 @@
 		transform: translateY(1px);
 		box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
 	}
-	.audiobox {background: linear-gradient(180deg, #ff6161 0%, #d55151 50%, #993a3a 100%);
+	.audiobox {
+		background: linear-gradient(180deg, #ff6161 0%, #d55151 50%, #993a3a 100%);
 		border: 2px solid #000000;
 		border-radius: 8px;
 		color: black;
@@ -116,8 +120,9 @@
 		top: 110px;
 		text-decoration: none;
 	}
-	.play, .pause {
-		background:linear-gradient(180deg, #ff6161 0%, #d55151 50%, #993a3a 100%);
+	.play,
+	.pause {
+		background: linear-gradient(180deg, #ff6161 0%, #d55151 50%, #993a3a 100%);
 		border: 0px solid #000000;
 		border-radius: 8px;
 		color: black;
@@ -126,24 +131,26 @@
 		box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
 		cursor: pointer;
 		transition: all 0.2s ease;
-
 	}
 
-		.pause:hover {
-			box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
-			transform: none;
-		}
-		.pause:active {
-			background: linear-gradient(180deg, #72727247 0%, #8e8e8e1f 50%, #8b8b8b24 100%);
-			box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); }
+	.pause:hover {
+		box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+		transform: none;
+	}
+	.pause:active {
+		background: linear-gradient(180deg, #72727247 0%, #8e8e8e1f 50%, #8b8b8b24 100%);
+		box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+	}
 
-			.play:hover {
-			box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
-			transform: none; }
+	.play:hover {
+		box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+		transform: none;
+	}
 
-			.play:active {
-			background: linear-gradient(180deg, #72727247 0%, #8e8e8e1f 50%, #8b8b8b24 100%);
-			box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); }
+	.play:active {
+		background: linear-gradient(180deg, #72727247 0%, #8e8e8e1f 50%, #8b8b8b24 100%);
+		box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+	}
 
 	@media (max-width: 850px) {
 		h1 {
@@ -175,10 +182,9 @@
 			top: 70px;
 			left: 100px;
 		}
-		.audiobox
-	 {
-		top: 28px;
-		left: 100px;
-	 }
+		.audiobox {
+			top: 28px;
+			left: 100px;
+		}
 	}
 </style>
