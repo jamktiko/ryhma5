@@ -6,6 +6,11 @@
 
 
 
+### Käsikirjoitus
+
+Onko tylsää?... Pelaa Speede Game pro! 
+Voit pelaa hiirellä tai näppäimistöllä!
+Kersku kavereillesi pisteistäsi!
 
 
 
