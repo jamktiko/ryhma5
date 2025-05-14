@@ -25,6 +25,11 @@
 				>Speede on reaktiopeli, joka testaa reaktiokykyjäsi ja tarkkuuttasi.</span
 			>
 		</div>
+		<div class="credit">
+			<span class="credit_span">
+				Sound effectien kehittäjä Kenney Vleugels Musiikin kehittäjä Ben Dover</span
+			>
+		</div>
 		<div
 			data-layer="Pelissä on kolme eri modea, jotka tarjoavat eri pelitapoja:"
 			class="peliss-on-kolme-eri-modea-jotka-tarjoavat-eri-pelitapoja"
@@ -132,6 +137,55 @@
 			left: 60px;
 		}
 	}
+	.credit {
+		width: 600px;
+		height: 65px;
+		left: 0px;
+		top: 165px;
+		position: absolute;
+		text-align: center;
+	}
+	@media (max-width: 700px) {
+		.credit {
+			width: 400px;
+			left: -10px;
+			top: 165px;
+		}
+	}
+	@media (max-width: 445px) {
+		.credit {
+			width: 350px;
+			left: 20px;
+		}
+	}
+	@media (max-width: 370px) {
+		.credit {
+			width: 250px;
+			left: 60px;
+		}
+	}
+	.credit_span {
+		color: black;
+		font-size: 30px;
+		font-family: 'Jersey 10';
+		font-weight: 400;
+		word-wrap: break-word;
+	}
+	@media (max-width: 700px) {
+		.credit_span {
+			font-size: 25px;
+		}
+	}
+	@media (max-width: 445px) {
+		.credit_span {
+			font-size: 18px;
+		}
+	}
+	@media (max-width: 370px) {
+		.credit_span {
+			font-size: 15px;
+		}
+	}
 
 	.pelissonkolmeerimodeajotkatarjoavateripelitapoja_span {
 		color: black;
@@ -160,7 +214,7 @@
 		width: 600px;
 		height: 65px;
 		left: 0px;
-		top: 161px;
+		top: 230px;
 		position: absolute;
 		text-align: center;
 	}
@@ -199,7 +253,7 @@
 		width: 600px;
 		height: 102px;
 		left: 0px;
-		top: 231px;
+		top: 300px;
 		position: absolute;
 		text-align: center;
 	}
