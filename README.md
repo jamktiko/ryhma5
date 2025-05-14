@@ -13,11 +13,12 @@ Speede Game Pro is a game for our Ohjelmistoprojekti 1 course. The game is based
 
 ### Dependencies
 
-- Describe any prerequisites, libraries, frameworks, etc., the sofware uses.
+- The game was made using svelte and sveltekit tools and css for the UI
 
 ### Installing
 
 - How/where to download your program
+    - 
 - Any modifications needed to be made to files/folders
 
 ### Executing program
@@ -39,8 +40,10 @@ command to run if program contains helper info
 
 ## Authors
 
-Contributors names
-
+Aapo Hampaala
+Teemu Jalava
+Tatu Olkinuora
+Oskari Puranen
 ## Version History
 
 - 0.2
