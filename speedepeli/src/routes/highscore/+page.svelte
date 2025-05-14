@@ -26,7 +26,7 @@
 </script>
 
 <h1>Gamemodes</h1>
-<select bind:value={gameMode}>
+<select class="vetovalikko" bind:value={gameMode}>
 	<option value="classic">Classic</option>
 	<option value="ajoitettu">Ajoitettu</option>
 </select>
@@ -148,5 +148,17 @@
 	}
 	.pTeksti {
 		margin: 0;
+	}
+	.vetovalikko {
+		background: linear-gradient(180deg, #ff6161 0%, #d55151 50%, #993a3a 100%);
+		border: 3px solid #000000;
+		border-radius: 8px;
+		color: black;
+		/* font-family: 'Jersey 10', sans-serif; */
+		 font-size: 15px;
+		padding: 5px -2,5px;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+		box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+		
 	}
 </style>
