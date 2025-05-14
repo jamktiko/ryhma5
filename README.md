@@ -46,10 +46,10 @@ command to run if program contains helper info
 
 ## Authors
 
-Aapo Hampaala
-Teemu Jalava
-Tatu Olkinuora
-Oskari Puranen
+ - Aapo Hampaala
+ - Teemu Jalava
+ - Tatu Olkinuora
+ - Oskari Puranen
 ## Version History
 
 - 0.2
