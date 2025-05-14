@@ -26,7 +26,7 @@
 </script>
 
 <h1>Gamemodes</h1>
-<select bind:value={gameMode}>
+<select class="vetovalikko" bind:value={gameMode}>
 	<option value="classic">Classic</option>
 	<option value="ajoitettu">Ajoitettu</option>
 </select>
@@ -93,6 +93,11 @@
 			left: 37%;
 		}
 	}
+	@media (max-width: 400px) {
+		.highscores {
+			left: 25%;
+		}
+	}
 
 	.f000_span {
 		color: #ff0000;
@@ -106,7 +111,7 @@
 		width: 100px;
 		height: 0px;
 		left: 50%;
-		top: 10%;
+		top: 12%;
 		position: absolute;
 		text-align: center;
 		justify-content: flex-start;
@@ -136,12 +141,24 @@
 
 	.highscores_01 {
 		width: 100%;
-		height: 1024px;
+		height: 750px;
 		position: relative;
 		background: white;
 		overflow: hidden;
 	}
 	.pTeksti {
 		margin: 0;
+	}
+	.vetovalikko {
+		background: linear-gradient(180deg, #ff6161 0%, #d55151 50%, #993a3a 100%);
+		border: 3px solid #000000;
+		border-radius: 8px;
+		color: black;
+		/* font-family: 'Jersey 10', sans-serif; */
+		 font-size: 15px;
+		padding: 5px -2,5px;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+		box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+		
 	}
 </style>

@@ -2,6 +2,7 @@
 	import Modal from './Modal.svelte';
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
 	interface Props {
 		hideModal: () => void;
 		score: number;
@@ -10,10 +11,22 @@
 
 	let { hideModal, score, clickedThisRound }: Props = $props(); //
 	let rank = $state(); // Pelaajan rankki
+	let menuAudio: HTMLAudioElement;
+	let loadAudio: HTMLAudioElement;
 
-	function returnHome() {
+	function toistaMenuAudioreturn() {
+		menuAudio = new Audio('/audio/menunappi.wav');
+		menuAudio.currentTime = 0; // Kelaa ääni alkuun
+		menuAudio.play();
 		hideModal(); // Sulje modal
 		goto('/'); // Siirry etusivulle
+	}
+
+	function toistaMenuAudiorestart() {
+		loadAudio = new Audio('/audio/load.wav');
+		loadAudio.currentTime = 0; // Kelaa ääni alkuun
+		loadAudio.play();
+		hideModal(); // Sulje modal
 	}
 
 	interface Rank {
@@ -22,10 +35,15 @@
 		min_points: number;
 		max_points: number;
 	}
-
+	let response: Response; // alustetaan response
 	onMount(async () => {
+		// katsotaan ensin kummassa pelissä ollaan
 		try {
-			const response = await fetch('/json/ranks.json');
+			if ($page.url.pathname === '/peli') {
+				response = await fetch('/json/ranks.json');
+			} else if ($page.url.pathname === '/peli2') {
+				response = await fetch('/json/ranksAjoitettu.json');
+			}
 			if (!response.ok) throw new Error('Failed to fetch ranks');
 
 			const data = await response.json();
@@ -56,7 +74,7 @@
 			{/if}
 		</div>
 		<div data-layer="Line 1" class="line-1"></div>
-		<div data-layer="sulje-nappi" data-size="48" class="sulje-nappi">
+		<!-- <div data-layer="sulje-nappi" data-size="48" class="sulje-nappi">
 			<div data-svg-wrapper data-layer="Icon" class="icon">
 				<svg
 					width="51"
@@ -74,7 +92,7 @@
 					/>
 				</svg>
 			</div>
-		</div>
+		</div> -->
 		<div data-layer="score counter" class="score-counter"></div>
 		<div data-layer="1000" class="text-1000">
 			<span class="f000_span"
@@ -90,15 +108,13 @@
 		<div data-layer="Rank:" class="rank"><span class="rank_span">Rank:</span></div>
 	</div>
 
-	{#snippet footer()}
-		<button class="sulje-nappi" onclick={returnHome}>X</button>
-		<button
-			class="ressu-nappi"
-			onclick={() => {
-				hideModal();
-			}}>Restart</button
-		>
-	{/snippet}
+	<button class="sulje-nappi" onclick={toistaMenuAudioreturn}>X</button>
+	<button
+		class="ressu-nappi"
+		onclick={() => {
+			toistaMenuAudiorestart();
+		}}>Restart</button
+	>
 </Modal>
 
 <style>
@@ -118,6 +134,17 @@
 			width: 400px;
 		}
 	}
+	@media (max-width: 445px) {
+		.rectangle-1 {
+			width: 350px;
+			left: 0px;
+		}
+	}
+	@media (max-width: 370px) {
+		.rectangle-1 {
+			width: 250px;
+		}
+	}
 	.gameoverklikkasitvrvri_span {
 		color: black;
 		font-size: 96px;
@@ -128,6 +155,16 @@
 	@media (max-width: 700px) {
 		.gameoverklikkasitvrvri_span {
 			font-size: 80px;
+		}
+	}
+	@media (max-width: 445px) {
+		.gameoverklikkasitvrvri_span {
+			font-size: 70px;
+		}
+	}
+	@media (max-width: 370px) {
+		.gameoverklikkasitvrvri_span {
+			font-size: 60px;
 		}
 	}
 
@@ -145,6 +182,18 @@
 			width: 400px;
 		}
 	}
+	@media (max-width: 445px) {
+		.game-over-klikkasit-vr-vri {
+			width: 340px;
+			left: 10px;
+		}
+	}
+	@media (max-width: 370px) {
+		.game-over-klikkasit-vr-vri {
+			width: 240px;
+			left: 10px;
+		}
+	}
 	.line-1 {
 		width: 600px;
 		height: 0px;
@@ -157,6 +206,18 @@
 	@media (max-width: 700px) {
 		.line-1 {
 			width: 399px;
+			left: 5px;
+		}
+	}
+	@media (max-width: 445px) {
+		.line-1 {
+			width: 348px;
+			left: 6px;
+		}
+	}
+	@media (max-width: 370px) {
+		.line-1 {
+			width: 249px;
 			left: 5px;
 		}
 	}
@@ -178,6 +239,16 @@
 			height: 50px;
 		}
 	}
+	@media (max-width: 445px) {
+		.score-counter {
+			left: 10px;
+		}
+	}
+	@media (max-width: 370px) {
+		.score-counter {
+			left: 10px;
+		}
+	}
 
 	.f000_span {
 		color: #ff0000;
@@ -188,6 +259,16 @@
 		word-wrap: break-word;
 	}
 	@media (max-width: 700px) {
+		.f000_span {
+			font-size: 60px;
+		}
+	}
+	@media (max-width: 445px) {
+		.f000_span {
+			font-size: 60px;
+		}
+	}
+	@media (max-width: 370px) {
 		.f000_span {
 			font-size: 60px;
 		}
@@ -208,6 +289,16 @@
 		.text-1000 {
 			left: -30px;
 			top: 287px;
+		}
+	}
+	@media (max-width: 445px) {
+		.text-1000 {
+			left: -35px;
+		}
+	}
+	@media (max-width: 370px) {
+		.text-1000 {
+			left: -30px;
 		}
 	}
 
@@ -231,6 +322,16 @@
 			left: 10px;
 		}
 	}
+	@media (max-width: 445px) {
+		.score {
+			left: 10px;
+		}
+	}
+	@media (max-width: 370px) {
+		.score {
+			left: 10px;
+		}
+	}
 
 	.score-counter_01 {
 		width: 191px;
@@ -249,6 +350,18 @@
 			height: 50px;
 		}
 	}
+	@media (max-width: 445px) {
+		.score-counter_01 {
+			width: 125px;
+			left: 220px;
+		}
+	}
+	@media (max-width: 370px) {
+		.score-counter_01 {
+			width: 100px;
+			left: 150px;
+		}
+	}
 
 	.f000_01_span {
 		color: #ff0000;
@@ -261,6 +374,16 @@
 	@media (max-width: 700px) {
 		.f000_01_span {
 			font-size: 30px;
+		}
+	}
+	@media (max-width: 445px) {
+		.f000_01_span {
+			font-size: 24px;
+		}
+	}
+	@media (max-width: 370px) {
+		.f000_01_span {
+			font-size: 18px;
 		}
 	}
 
@@ -282,6 +405,16 @@
 			top: 335px;
 		}
 	}
+	@media (max-width: 445px) {
+		.text-1000_01 {
+			left: 190px;
+		}
+	}
+	@media (max-width: 370px) {
+		.text-1000_01 {
+			left: 105px;
+		}
+	}
 	.rank_span {
 		color: rgba(0, 0, 0, 0.63);
 		font-size: 48px;
@@ -301,6 +434,16 @@
 			left: 245px;
 		}
 	}
+	@media (max-width: 445px) {
+		.rank {
+			left: 220px;
+		}
+	}
+	@media (max-width: 370px) {
+		.rank {
+			left: 150px;
+		}
+	}
 
 	/* .icon {
 		left: 22.75px;
@@ -309,31 +452,99 @@
 	} */
 
 	.sulje-nappi {
+		background: linear-gradient(180deg, #ff6161 0%, #d55151 50%, #993a3a 100%);
+		border: 3px solid #000000;
+		border-radius: 14px;
+		color: black;
+		font-family: 'Jersey 10';
+		font-size: 45px;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+		box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+		cursor: pointer;
+		transition: all 0.2s ease;
+		position: flex;
+		text-decoration: none;
 		width: 80px;
 		height: 80px;
-		left: 504px;
-		top: 30px;
+		left: 524px;
+		top: 15px;
+		border-radius: 50px;
 		position: absolute;
 		overflow: hidden;
-		font-size: 50px;
 	}
 	@media (max-width: 700px) {
 		.sulje-nappi {
-			left: 310px;
+			left: 324px;
 		}
 	}
+	@media (max-width: 445px) {
+		.sulje-nappi {
+			left: 254px;
+		}
+	}
+	@media (max-width: 370px) {
+		.sulje-nappi {
+			left: 154px;
+		}
+	}
+
+	.sulje-nappi:hover {
+		background: linear-gradient(180deg, #ff7777 0%, #e66666 50%, #aa4444 100%);
+		transform: translateY(-2px);
+		box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+	}
+
+	.sulje-nappi:active {
+		background: linear-gradient(180deg, #d55151 0%, #993a3a 50%, #772222 100%);
+		transform: translateY(1px);
+		box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+	}
 	.ressu-nappi {
+		background: linear-gradient(180deg, #ff6161 0%, #d55151 50%, #993a3a 100%);
+		border: 3px solid #000000;
+		border-radius: 14px;
+		color: black;
+		font-family: 'Jersey 10';
+		font-size: 25px;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+		box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+		cursor: pointer;
+		transition: all 0.2s ease;
+		position: flex;
+		text-decoration: none;
 		width: 80px;
 		height: 80px;
-		left: 400px;
-		top: 30px;
+		left: 4px;
+		top: 15px;
+		border-radius: 50px;
 		position: absolute;
 		overflow: hidden;
 	}
 	@media (max-width: 700px) {
 		.ressu-nappi {
-			left: 210px;
+			left: 5px;
 		}
+	}
+	@media (max-width: 445px) {
+		.ressu-nappi {
+			left: -16px;
+		}
+	}
+	@media (max-width: 370px) {
+		.ressu-nappi {
+			left: -15px;
+		}
+	}
+	.ressu-nappi:hover {
+		background: linear-gradient(180deg, #ff7777 0%, #e66666 50%, #aa4444 100%);
+		transform: translateY(-2px);
+		box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+	}
+
+	.ressu-nappi:active {
+		background: linear-gradient(180deg, #d55151 0%, #993a3a 50%, #772222 100%);
+		transform: translateY(1px);
+		box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
 	}
 
 	.classi-gameover-alt {
@@ -344,6 +555,18 @@
 	@media (max-width: 700px) {
 		.classi-gameover-alt {
 			width: 400px;
+		}
+	}
+	@media (max-width: 445px) {
+		.classi-gameover-alt {
+			width: 320px;
+			left: -20px;
+		}
+	}
+	@media (max-width: 370px) {
+		.classi-gameover-alt {
+			width: 220px;
+			left: -20px;
 		}
 	}
 </style>

@@ -25,6 +25,18 @@
 	let showModal = $state(false); // näyttääkö pelin päättymisen jälkeen modalin
 	let highscoreList: number[] = $derived($lista); // highscore lista
 
+	// ääniä
+	const nappiAudio = new Audio('/audio/oikeanappi.wav');
+	const vaaraNappiAudio = new Audio('/audio/vaaranappi.wav');
+	function toistaNappiAudio() {
+		nappiAudio.currentTime = 0; // Kelaa ääni alkuun
+		nappiAudio.play();
+	}
+	function toistaVaaranappiAudio() {
+		vaaraNappiAudio.currentTime = 0; // Kelaa ääni alkuun
+		vaaraNappiAudio.play();
+	}
+
 	//countdown muuttujat
 	let countdownValue = $state(3); // aloituslaskuri
 	let isCountingDown = $state(true); // onko laskuri käynnissä
@@ -57,6 +69,7 @@
 		lastClicked = color; // viimeksi klikattu väri
 		clickedThisRound = true; // Pelaaja on klikannut väriä tällä kierroksella
 		if (color === activeColor) {
+			toistaNappiAudio(); // soita ääni, kun nappia painetaan
 			score += 1;
 			console.log('Oikein! Pisteet: ' + score);
 
@@ -69,6 +82,7 @@
 			setRandomColor(); // Aseta uusi satunnainen väri
 			startInterval(); // Aloita uusi interval
 		} else {
+			toistaVaaranappiAudio(); // soita ääni, kun väärä nappi painetaan
 			triggerGameOver(); // Jos väri on väärä, peli päättyy
 		}
 	}
@@ -129,13 +143,12 @@
 	onMount(() => {
 		startCountdown(); // Aloita laskuri
 
-		// Add keyboard event listener
-		window.addEventListener('keydown', handleKeyPress);
+		window.addEventListener('keydown', handleKeyPress); // Lisää kuuntelija näppäimille joka rekisteröi painallukset
 
 		return () => {
 			clearInterval(intervalId);
 			clearInterval(countdownInterval); // Pysäytä laskuri
-			// Remove keyboard event listener on cleanup
+
 			window.removeEventListener('keydown', handleKeyPress);
 		};
 	});
@@ -150,7 +163,7 @@
 	{:else}
 		<div class="score-display">
 			<h2>Score: {score}</h2>
-			<p>Active color: {activeColor}</p>
+			<!-- <p>Active color: {activeColor}</p> -->
 			<p>Nopeus: {gameSpeed}ms</p>
 		</div>
 		<div class="button-container">
@@ -173,7 +186,7 @@
 				keyLabel="D"
 			/>
 			<Button
-				color="#00F7FF"
+				color="#0011FF"
 				active={activeColor === 'blue'}
 				onClick={() => handleClick('blue')}
 				keyLabel="F"
@@ -223,6 +236,10 @@
 		.button-container {
 			width: 96%;
 			margin: 2%;
+		}
+		h2,
+		p {
+			font-size: 20px;
 		}
 	}
 	.countdown-display {

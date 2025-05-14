@@ -2,9 +2,55 @@
 	import { page } from '$app/stores';
 	import About from '$lib/components/About.svelte';
 	import Pelaa from '$lib/components/Pelaa.svelte';
+	import { onMount } from 'svelte';
+	import { taustaAani } from '$lib/components/highscore.svelte';
 
 	let showAbout = $state(false);
 	let hidePelaa = $state(false);
+	let isDisabled = $state(false);
+	//let audio: HTMLAudioElement;
+	let infoAudio: HTMLAudioElement;
+	let menuAudio: HTMLAudioElement;
+	function toistaInfoAudio() {
+		infoAudio = new Audio('/audio/info.wav');
+		showAbout = true;
+		infoAudio.currentTime = 0; // Kelaa ääni alkuun
+		infoAudio.play();
+	}
+	function toistaMenuAudio() {
+		menuAudio = new Audio('/audio/menunappi.wav');
+		menuAudio.currentTime = 0; // Kelaa ääni alkuun
+		menuAudio.play();
+		modalAuki();
+	}
+
+	function modalAuki() {
+		isDisabled = true;
+		hidePelaa = true;
+	}
+	function modalKiinni() {
+		isDisabled = false;
+		hidePelaa = false;
+		menuAudio.currentTime = 0; // Kelaa ääni alkuun
+		menuAudio.play();
+	}
+
+	let disablePlay = $derived($taustaAani);
+// tausta aani, jos aikaa
+	// function play() {
+	// 		taustaAani.set(true);
+	// 		audio = new Audio('/audio/mainmenu.mp3');
+	// 		audio.loop = true;
+	// 		audio.volume = 0.5; // Voit säätää äänenvoimakkuutta 0.0–1.0
+	// 		audio.play().catch((e) => {
+	// 			console.warn('Äänen automaattinen toisto estetty selaimessa:', e);
+	// 		});
+	// 	}
+
+	// function mute() {
+	// 	taustaAani.set(false);
+	// 	audio.pause();
+	// }
 </script>
 
 <div data-layer="Start Game" class="start-game">
@@ -13,14 +59,20 @@
 	<div data-layer="Start Game" class="start-game_01">
 		<span class="startgame_01_span">
 			<!-- <a href="/peli" class:is-active={$page.url.pathname === '/peli'}>Pelaa</a> -->
-			<button class="custom-button" onclick={() => (hidePelaa = true)}>Pelaa</button>
+			<button class="custom-button" onclick={toistaMenuAudio} disabled={isDisabled}>Pelaa</button>
 			{#if hidePelaa}
-				<Pelaa hidePelaa={() => (hidePelaa = false)} />
+				<Pelaa hidePelaa={modalKiinni} />
 			{/if}
 		</span>
 	</div>
 	<div data-layer="Highscores" class="highscores">
-		<span class="highscores_span"> <a href="/highscore" class="custom-button">Highscore</a></span>
+		<span class="highscores_span">
+			{#if !isDisabled}
+				<a href="/highscore" class="custom-button">Highscore</a>
+			{:else}
+				<p class="custom-button">Highscore</p>
+			{/if}
+		</span>
 	</div>
 	<!-- <div data-layer="Info" class="info">
 		<div data-svg-wrapper data-layer="Ellipse 1" class="ellipse-1">
@@ -35,12 +87,14 @@
 			</svg>
 		</div> -->
 	<div data-svg-wrapper data-layer="Info" data-size="48" class="info_01">
-		<button class="about" onclick={() => (showAbout = true)}>i</button>
+		<button class="about" onclick={toistaInfoAudio} disabled={isDisabled}>i</button>
 		{#if showAbout}
 			<About hideModal={() => (showAbout = false)} />
 		{/if}
 	</div>
 </div>
+<!-- <button onclick={play} disabled={disablePlay}>Play</button>
+<button onclick={mute} disabled={!disablePlay}>Mute</button> -->
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
@@ -130,7 +184,7 @@
 
 	.start-game {
 		width: 100%;
-		height: 500px;
+		height: 78vh;
 		position: relative;
 		background: white;
 		overflow: hidden;
@@ -179,6 +233,11 @@
 			width: 40px;
 			height: 40px;
 			font-size: 25px;
+		}
+	}
+	@media (max-width: 430px) {
+		.about {
+			left: 86%;
 		}
 	}
 </style>

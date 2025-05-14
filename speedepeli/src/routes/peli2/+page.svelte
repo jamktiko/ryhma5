@@ -29,6 +29,19 @@
 	let isCountingDown = $state(true);
 	let countdownInterval: ReturnType<typeof setInterval>;
 
+	// ääniä
+const nappiAudio = new Audio('/audio/oikeanappi.wav')
+const vaaraNappiAudio = new Audio('/audio/vaaranappi.wav')
+function toistaNappiAudio() {
+	nappiAudio.currentTime = 0; // Kelaa ääni alkuun
+	nappiAudio.play();
+}
+function toistaVaaranappiAudio() {
+	vaaraNappiAudio.currentTime = 0; // Kelaa ääni alkuun
+	vaaraNappiAudio.play();
+}
+
+
 	function handleKeyPress(event: KeyboardEvent) {
 		if (gameOver || isCountingDown) return;
 		const key = event.key.toLowerCase();
@@ -55,9 +68,11 @@
 		console.log('klikattu', color);
 		lastClicked = color;
 		if (color === activeColor) {
+			toistaNappiAudio(); // soita ääni, kun nappia painetaan
 			score += 1;
 			console.log('Oikein! Pisteet: ' + score);
 		} else {
+			toistaVaaranappiAudio(); // soita kun painaa väärää
 			score = Math.max(0, score - 1); // Vähennä pistettä, jos väärä väri, mutta älä mene alle nollan
 			console.log('Väärä väri, mutta jatketaan!');
 		}
@@ -138,7 +153,7 @@
 		<div class="score-display">
 			<h2>Score: {score}</h2>
 			<div class="timer">Time: {timeRemaining}s</div>
-			<p>Active color: {activeColor}</p>
+			<!-- <p>Active color: {activeColor}</p> -->
 		</div>
 		<div class="button-container">
 			<Button
@@ -160,7 +175,7 @@
 				keyLabel="D"
 			/>
 			<Button
-				color="#00F7FF"
+				color="#0011FF"
 				active={activeColor === 'blue'}
 				onClick={() => handleClick('blue')}
 				keyLabel="F"
@@ -222,5 +237,11 @@
 	.countdown-display p {
 		font-size: 30px;
 		margin: 10px 0;
+	}
+
+	@media (max-width:600px) {
+		.score-display, .timer {
+			font-size: 15px;
+		}
 	}
 </style>

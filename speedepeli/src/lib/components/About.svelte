@@ -5,6 +5,13 @@
 	}
 
 	let { hideModal }: Props = $props();
+	let menuAudio: HTMLAudioElement;
+	function toistaMenuAudio() {
+		menuAudio = new Audio('/audio/menunappi.wav');
+		menuAudio.currentTime = 0; // Kelaa ääni alkuun
+		menuAudio.play();
+		hideModal();
+	}
 </script>
 
 <ModalAbout>
@@ -16,6 +23,11 @@
 		>
 			<span class="speedeonreaktiopelijokatestaareaktiokykyjsijatarkkuuttasi_span"
 				>Speede on reaktiopeli, joka testaa reaktiokykyjäsi ja tarkkuuttasi.</span
+			>
+		</div>
+		<div class="credit">
+			<span class="credit_span">
+				Sound effectien kehittäjä Kenney Vleugels. Musiikin kehittäjä Joth</span
 			>
 		</div>
 		<div
@@ -38,34 +50,14 @@
 			>
 		</div>
 		<div data-layer="Line 1" class="line-1"></div>
-		<div data-layer="X" data-size="48" class="x">
-			<div data-svg-wrapper data-layer="Icon" class="icon">
-				<svg
-					width="51"
-					height="51"
-					viewBox="0 0 51 51"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M48.25 2.75L2.75 48.25M2.75 2.75L48.25 48.25"
-						stroke="var(--Icon-Default-Default, #1E1E1E)"
-						stroke-width="4"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-					/>
-				</svg>
-			</div>
-		</div>
 	</div>
 
-	{#snippet footer()}
-		<button class="sulje-nappi" onclick={hideModal}>X</button>
-	{/snippet}
+	<button class="sulje-nappi" onclick={toistaMenuAudio}>X</button>
 </ModalAbout>
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+
 	.rectangle-1 {
 		width: 600px;
 		height: 600px;
@@ -82,6 +74,18 @@
 			width: 400px;
 		}
 	}
+	@media (max-width: 445px) {
+		.rectangle-1 {
+			width: 350px;
+			left: 20px;
+		}
+	}
+	@media (max-width: 370px) {
+		.rectangle-1 {
+			width: 250px;
+			left: 50px;
+		}
+	}
 
 	.speedeonreaktiopelijokatestaareaktiokykyjsijatarkkuuttasi_span {
 		color: black;
@@ -93,6 +97,16 @@
 	@media (max-width: 700px) {
 		.speedeonreaktiopelijokatestaareaktiokykyjsijatarkkuuttasi_span {
 			font-size: 25px;
+		}
+	}
+	@media (max-width: 445px) {
+		.speedeonreaktiopelijokatestaareaktiokykyjsijatarkkuuttasi_span {
+			font-size: 18px;
+		}
+	}
+	@media (max-width: 370px) {
+		.speedeonreaktiopelijokatestaareaktiokykyjsijatarkkuuttasi_span {
+			font-size: 15px;
 		}
 	}
 
@@ -111,6 +125,67 @@
 			top: 100px;
 		}
 	}
+	@media (max-width: 445px) {
+		.speede-on-reaktiopeli-joka-testaa-reaktiokykyjsi-ja-tarkkuuttasi {
+			width: 350px;
+			left: 20px;
+		}
+	}
+	@media (max-width: 370px) {
+		.speede-on-reaktiopeli-joka-testaa-reaktiokykyjsi-ja-tarkkuuttasi {
+			width: 250px;
+			left: 60px;
+		}
+	}
+	.credit {
+		width: 600px;
+		height: 65px;
+		left: 0px;
+		top: 165px;
+		position: absolute;
+		text-align: center;
+	}
+	@media (max-width: 700px) {
+		.credit {
+			width: 400px;
+			left: -10px;
+			top: 165px;
+		}
+	}
+	@media (max-width: 445px) {
+		.credit {
+			width: 350px;
+			left: 20px;
+		}
+	}
+	@media (max-width: 370px) {
+		.credit {
+			width: 250px;
+			left: 60px;
+		}
+	}
+	.credit_span {
+		color: black;
+		font-size: 30px;
+		font-family: 'Jersey 10';
+		font-weight: 400;
+		word-wrap: break-word;
+	}
+	@media (max-width: 700px) {
+		.credit_span {
+			font-size: 25px;
+		}
+	}
+	@media (max-width: 445px) {
+		.credit_span {
+			font-size: 18px;
+		}
+	}
+	@media (max-width: 370px) {
+		.credit_span {
+			font-size: 15px;
+		}
+	}
 
 	.pelissonkolmeerimodeajotkatarjoavateripelitapoja_span {
 		color: black;
@@ -124,12 +199,22 @@
 			font-size: 24px;
 		}
 	}
+	@media (max-width: 445px) {
+		.pelissonkolmeerimodeajotkatarjoavateripelitapoja_span {
+			font-size: 20px;
+		}
+	}
+	@media (max-width: 370px) {
+		.pelissonkolmeerimodeajotkatarjoavateripelitapoja_span {
+			font-size: 15px;
+		}
+	}
 
 	.peliss-on-kolme-eri-modea-jotka-tarjoavat-eri-pelitapoja {
 		width: 600px;
 		height: 65px;
 		left: 0px;
-		top: 161px;
+		top: 230px;
 		position: absolute;
 		text-align: center;
 	}
@@ -139,7 +224,18 @@
 			left: -10px;
 		}
 	}
-
+	@media (max-width: 445px) {
+		.peliss-on-kolme-eri-modea-jotka-tarjoavat-eri-pelitapoja {
+			width: 350px;
+			left: 20px;
+		}
+	}
+	@media (max-width: 370px) {
+		.peliss-on-kolme-eri-modea-jotka-tarjoavat-eri-pelitapoja {
+			width: 250px;
+			left: 55px;
+		}
+	}
 	.classicajoitettu_span {
 		color: black;
 		font-size: 32px;
@@ -157,14 +253,26 @@
 		width: 600px;
 		height: 102px;
 		left: 0px;
-		top: 231px;
+		top: 300px;
 		position: absolute;
 		text-align: center;
 	}
 	@media (max-width: 700px) {
 		.classic-ajoitettu {
 			width: 400px;
-			left: 0px;
+			left: -10px;
+		}
+	}
+	@media (max-width: 445px) {
+		.classic-ajoitettu {
+			width: 350px;
+			left: 20px;
+		}
+	}
+	@media (max-width: 370px) {
+		.classic-ajoitettu {
+			width: 250px;
+			left: 60px;
 		}
 	}
 
@@ -195,6 +303,18 @@
 			width: 400px;
 		}
 	}
+	@media (max-width: 445px) {
+		.kehittjt-tatu-olkinuora-aapo-hampaala-teemu-jalava-oskari-puranen {
+			left: 20px;
+			width: 350px;
+		}
+	}
+	@media (max-width: 370px) {
+		.kehittjt-tatu-olkinuora-aapo-hampaala-teemu-jalava-oskari-puranen {
+			left: 60px;
+			width: 250px;
+		}
+	}
 
 	.line-1 {
 		width: 600px;
@@ -211,6 +331,18 @@
 			left: -15px;
 		}
 	}
+	@media (max-width: 445px) {
+		.line-1 {
+			width: 349px;
+			left: 25px;
+		}
+	}
+	@media (max-width: 370px) {
+		.line-1 {
+			width: 249px;
+			left: 55px;
+		}
+	}
 
 	/* .icon {
 		left: 22.75px;
@@ -219,20 +351,53 @@
 	} */
 
 	.sulje-nappi {
+		background: linear-gradient(180deg, #ff6161 0%, #d55151 50%, #993a3a 100%);
+		border: 3px solid #000000;
+		border-radius: 14px;
+		color: black;
+		font-family: 'Jersey 10';
+		font-size: 45px;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+		box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+		cursor: pointer;
+		transition: all 0.2s ease;
+		position: flex;
+		text-decoration: none;
 		width: 80px;
 		height: 80px;
-		left: 504px;
-		top: 30px;
+		left: 520px;
+		top: 15px;
+		border-radius: 50px;
 		position: absolute;
 		overflow: hidden;
-		font-size: 50px;
 	}
 	@media (max-width: 700px) {
 		.sulje-nappi {
-			left: 250px;
+			left: 300px;
+		}
+	}
+	@media (max-width: 445px) {
+		.sulje-nappi {
+			left: 270px;
+		}
+	}
+	@media (max-width: 370px) {
+		.sulje-nappi {
+			left: 160px;
 		}
 	}
 
+	.sulje-nappi:hover {
+		background: linear-gradient(180deg, #ff7777 0%, #e66666 50%, #aa4444 100%);
+		transform: translateY(-2px);
+		box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+	}
+
+	.sulje-nappi:active {
+		background: linear-gradient(180deg, #d55151 0%, #993a3a 50%, #772222 100%);
+		transform: translateY(1px);
+		box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+	}
 	.info {
 		width: 600px;
 		height: 600px;
@@ -240,7 +405,19 @@
 	}
 	@media (max-width: 700px) {
 		.info {
-			width: 400px;
+			width: 390px;
+		}
+	}
+	@media (max-width: 445px) {
+		.info {
+			width: 340px;
+			left: -20px;
+		}
+	}
+	@media (max-width: 370px) {
+		.info {
+			width: 240px;
+			left: -60px;
 		}
 	}
 </style>
